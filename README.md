@@ -1,341 +1,398 @@
 <div align="center">
 
+<img src="assets/logo.png" alt="AstraOS Logo" width="170">
+
 # 🚀 AstraOS
 
 ### A Modern Open-Source Educational Operating System
 
-**Building the Future of Learning Through Systems Programming**
+### **Build • Learn • Collaborate • Innovate**
 
-![Status](https://img.shields.io/badge/Status-Development-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Language](https://img.shields.io/badge/C-Critical-blue)
-![Assembly](https://img.shields.io/badge/x86--64-Assembly-orange)
-![Open Source](https://img.shields.io/badge/Open-Source-success)
+<p align="center">
+
+<a href="https://github.com/samirlevate8788-creator/AstraOS">
+<img src="https://img.shields.io/github/stars/samirlevate8788-creator/AstraOS?style=for-the-badge"/>
+</a>
+
+<a href="https://github.com/samirlevate8788-creator/AstraOS/network/members">
+<img src="https://img.shields.io/github/forks/samirlevate8788-creator/AstraOS?style=for-the-badge"/>
+</a>
+
+<a href="https://github.com/samirlevate8788-creator/AstraOS/issues">
+<img src="https://img.shields.io/github/issues/samirlevate8788-creator/AstraOS?style=for-the-badge"/>
+</a>
+
+<a href="LICENSE">
+<img src="https://img.shields.io/github/license/samirlevate8788-creator/AstraOS?style=for-the-badge"/>
+</a>
+
+<a href="#">
+<img src="https://img.shields.io/badge/Open%20Source-Community-blue?style=for-the-badge"/>
+</a>
+
+<a href="#">
+<img src="https://img.shields.io/badge/Made%20With-HTML%20CSS%20JavaScript-orange?style=for-the-badge"/>
+</a>
+
+</p>
 
 ---
 
-### 🌍 Official Links
+## 🌍 Official Links
 
-🌐 Portfolio: https://samirlevate8788-creator.github.io/portfolio/
+🌐 **Website**
 
-💼 LinkedIn: *(Coming Soon)*
+Coming Soon
 
-🐙 GitHub Organization: *(Coming Soon)*
+📖 **Documentation**
+
+Coming Soon
+
+💬 **Community**
+
+Coming Soon
+
+🐞 **Report Bug**
+
+https://github.com/samirlevate8788-creator/AstraOS/issues
+
+💡 **Feature Request**
+
+https://github.com/samirlevate8788-creator/AstraOS/issues
+
+⭐ **Give us a Star**
+
+https://github.com/samirlevate8788-creator/AstraOS
 
 </div>
 
 ---
 
-# 📖 Introduction
+# 📖 Table of Contents
 
-AstraOS is a modern educational operating system built completely from scratch using **C**, **C++**, and **x86-64 Assembly**.
-
-The goal of AstraOS is to help students understand how operating systems work internally while following professional software engineering practices such as:
-
-- Open Source Collaboration
-- Modular Architecture
-- Git Workflow
+- About
+- Vision
+- Mission
+- Features
+- Architecture
+- Folder Structure
+- Tech Stack
+- Installation
+- Quick Start
 - Documentation
-- Code Reviews
-- Testing
-- Continuous Improvement
+- Team
+- Contributors
+- Roadmap
+- Milestones
+- Contributing
+- Security
+- License
+- Community
+- Contact
 
-Unlike traditional academic projects, AstraOS is designed as a real engineering project that contributors can proudly showcase on GitHub, LinkedIn, and their professional portfolio.
+---
+
+# 🌟 About AstraOS
+
+AstraOS is a student-led open-source educational operating system project created to help students gain practical software development experience through real-world collaboration.
+
+Instead of working on isolated academic projects, contributors participate in an organized open-source environment using Git, GitHub, documentation, issue tracking, code reviews, and collaborative development practices.
+
+The project aims to create a platform where learning happens by building meaningful technology together.
 
 ---
 
 # 🎯 Vision
 
-To create a clean, modular, and educational operating system that enables students worldwide to learn operating system development through practical implementation.
+To build an educational open-source ecosystem where students, developers, and technology enthusiasts collaborate on real projects, improve their skills, and contribute to impactful software.
 
 ---
 
 # 🚀 Mission
 
-- Build a modern educational operating system.
-- Learn low-level programming.
-- Promote open-source collaboration.
-- Develop industry-level engineering skills.
-- Build a portfolio-worthy software project.
+Our mission is to create an environment where anyone can:
+
+- Learn Open Source
+- Improve Coding Skills
+- Build Real Projects
+- Work in Teams
+- Gain Practical Experience
+- Grow Through Collaboration
 
 ---
+
+# 💙 Core Values
+
+✔ Learn Together
+
+✔ Build Together
+
+✔ Respect Everyone
+
+✔ Community First
+
+✔ Transparency
+
+✔ Innovation
+
+✔ Continuous Learning
+
+---
+
+# 🔥 Why AstraOS?
+
+Unlike traditional college projects,
+
+AstraOS focuses on:
+
+✅ Professional Git Workflow
+
+✅ Documentation
+
+✅ Team Collaboration
+
+✅ Beginner Friendly Contributions
+
+✅ Real Development Process
+
+✅ Practical Learning
+
+✅ Open Source Community
+
+---
+
+> 🚀 "Great software is built by communities, not individuals."
 
 # ✨ Features
 
-## Bootloader
+AstraOS is designed to provide a modern and collaborative open-source experience.
 
-- Custom Bootloader
-- Protected Mode
-- Long Mode
-- Kernel Loader
+## 🚀 Core Features
 
----
-
-## Kernel
-
-- 64-bit Kernel
-- VGA Output
-- Kernel Initialization
-- Panic Handler
-
----
-
-## Memory Management
-
-- Physical Memory Manager
-- Virtual Memory
-- Paging
-- Heap Allocation
+- 🎨 Modern Responsive Website
+- 🌙 Dark / Light Theme
+- ⚡ High Performance
+- 📱 Mobile Friendly
+- 🔥 Premium UI & Animations
+- 📚 Documentation
+- 🌍 Community Driven
+- 🤝 Beginner Friendly
+- 🔒 Open Source
+- 💻 Clean Code Architecture
 
 ---
 
-## Interrupt Management
-
-- GDT
-- IDT
-- ISR
-- IRQ
-
----
-
-## Scheduler
-
-- Process Management
-- Thread Scheduling
-- Context Switching
-- Multitasking
-
----
-
-## File System
-
-AstraFS
-
-Features
-
-- Create File
-- Delete File
-- Read File
-- Write File
-- Directory Support
-
----
-
-## Device Drivers
-
-- Keyboard Driver
-- Mouse Driver
-- VGA Driver
-- Timer Driver
-
----
-
-## Shell
-
-Built-in Commands
-
-- help
-- version
-- clear
-- ls
-- mkdir
-- shutdown
-- reboot
-
----
-
-## GUI
-
-Planned Features
-
-- Desktop
-- Window Manager
-- Taskbar
-- Mouse Support
-- Icons
-
----
-
-## Networking
-
-- TCP/IP Basics
-- Socket Interface
-- Ping
-- Future Internet Support
-
----
-
-# 🏗 Project Architecture
+# 🏗️ Project Architecture
 
 ```
-                 User Applications
-                         │
-                    GUI / Shell
-                         │
-                  System Calls
-                         │
-                Process Scheduler
-                         │
-            Memory Management Unit
-                         │
-             Device Drivers Layer
-                         │
-               AstraFS File System
-                         │
-                    64-bit Kernel
-                         │
-                   Bootloader
-                         │
-                    Computer Hardware
-```
 
----
-
-# 💻 Technology Stack
-
-## Languages
-
-- C
-- C++
-- x86-64 Assembly
-
-## Tools
-
-- GCC Cross Compiler
-- NASM
-- Make
-- Git
-- GitHub
-- VS Code
-- QEMU
-- GDB
-
----
-
-# 📁 Repository Structure
-
-```
-AstraOS
+┌──────────────────────────────┐
+│ User Browser │
+└──────────────┬───────────────┘
 │
-├── bootloader
-├── kernel
-├── memory
-├── scheduler
-├── filesystem
-├── drivers
-├── shell
-├── gui
-├── networking
-├── docs
-├── scripts
-├── website
-└── README.md
+▼
+Frontend (HTML/CSS/JS)
+│
+▼
+UI Components
+│
+▼
+Core Engine
+│
+├──────────────┐
+│ │
+▼ ▼
+GitHub API Contact System
+│ │
+└──────┬───────┘
+│
+▼
+GitHub Repository
+
 ```
 
 ---
 
-# 📅 Roadmap
+# 📁 Project Structure
 
-## Phase 1
+```
 
-- Bootloader
-- Kernel
-- VGA
-- Interrupts
-- Memory Basics
+AstraOS/
+│
+├── assets/
+│ ├── icons/
+│ ├── images/
+│ └── logo/
+│
+├── css/
+│ ├── style.css
+│ ├── responsive.css
+│ └── animations.css
+│
+├── js/
+│ ├── script.js
+│ ├── github.js
+│ ├── ui.js
+│ └── utils.js
+│
+├── docs/
+│ ├── installation.md
+│ ├── contributing.md
+│ └── roadmap.md
+│
+├── pages/
+│ ├── about.html
+│ ├── team.html
+│ ├── roadmap.html
+│ ├── documentation.html
+│ └── contact.html
+│
+├── .github/
+│ ├── ISSUE_TEMPLATE/
+│ ├── workflows/
+│ └── PULL_REQUEST_TEMPLATE.md
+│
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CHANGELOG.md
+└── CODE_OF_CONDUCT.md
 
----
-
-## Phase 2
-
-- Paging
-- Scheduler
-- Multitasking
-- AstraFS
-- Drivers
-
----
-
-## Phase 3
-
-- GUI
-- Networking
-- Testing
-- Documentation
-- Stable Release
-
----
-
-# 👥 Team
-
-## Founder & Team Lead
-
-**Samir Levate**
-
-Responsibilities
-
-- System Architecture
-- GitHub Management
-- Code Review
-- Documentation
-- Integration
-- Project Planning
-
----
-
-## Co-Founder
-
-**Shubham Gaikwad**
-
-Responsibilities
-
-- Recruitment
-- Team Management
-- Community
-- Documentation
+```
 
 ---
 
-# 🤝 Contributing
+# ⚙ Tech Stack
 
-We welcome passionate contributors interested in:
-
-- Operating Systems
-- C Programming
-- C++
-- Assembly
-- Linux
-- Computer Architecture
-- Open Source
-
-Contribution Workflow
-
-1. Fork Repository
-2. Create Feature Branch
-3. Commit Changes
-4. Push Branch
-5. Open Pull Request
+| Category | Technology |
+|-----------|------------|
+| Frontend | HTML5 |
+| Styling | CSS3 |
+| Programming | JavaScript |
+| Version Control | Git |
+| Repository | GitHub |
+| Deployment | GitHub Pages |
 
 ---
 
-# 📊 Development Workflow
+# 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/samirlevate8788-creator/AstraOS.git
+```
+
+Go into the project folder
+
+```bash
+cd AstraOS
+```
+
+Open the project
+
+```bash
+index.html
+```
+
+or use
+
+```bash
+Live Server
+```
+
+---
+
+# 📦 Requirements
+
+- Latest Browser
+- VS Code (Recommended)
+- Git
+- GitHub Account
+
+---
+
+# 💻 Installation
+
+### 1. Fork Repository
+
+Click **Fork** on GitHub.
+
+---
+
+### 2. Clone
+
+```bash
+git clone https://github.com/YOUR_USERNAME/AstraOS.git
+```
+
+---
+
+### 3. Open VS Code
+
+```bash
+code .
+```
+
+---
+
+### 4. Start Development
+
+Edit
+
+```
+HTML
+
+CSS
+
+JavaScript
+```
+
+Commit changes
+
+Push
+
+Create Pull Request
+
+---
+
+# 📚 Documentation
+
+Documentation is available inside the **docs/** folder.
+
+Topics include:
+
+- Installation
+- Project Structure
+- Coding Guidelines
+- Contributing Guide
+- Roadmap
+- Development Workflow
+
+---
+
+# 🛠 Development Workflow
+
+```
 
 Issue
-↓
-
-Discussion
 
 ↓
 
-Design
+Branch
 
 ↓
 
-Implementation
+Development
 
 ↓
 
-Testing
+Commit
+
+↓
+
+Pull Request
 
 ↓
 
@@ -347,99 +404,402 @@ Merge
 
 ↓
 
-Documentation
+Deployment
 
-↓
-
-Release
-
----
-
-# 📌 Coding Standards
-
-- Clean Code
-- Git Flow
-- Pull Requests Required
-- Code Reviews
-- Weekly Milestones
-- Daily Commits
-- Documentation First
-
----
-
-# 🏆 Milestones
-
-Version 0.1
-
-- Bootloader
-
-Version 0.2
-
-- Kernel
-
-Version 0.3
-
-- Memory Manager
-
-Version 0.4
-
-- Scheduler
-
-Version 0.5
-
-- Drivers
-
-Version 0.6
-
-- Shell
-
-Version 0.7
-
-- GUI
-
-Version 0.8
-
-- Networking
-
-Version 1.0
-
-- Stable Release
+```
 
 ---
 
 # 🎯 Goals
 
-- Learn Operating Systems
-- Learn Kernel Development
-- Build Open Source Community
-- Improve Systems Programming Skills
-- Create Professional Portfolio
-- Publish Technical Documentation
+- Build a professional educational project
+- Learn Git & GitHub
+- Improve coding skills
+- Encourage collaboration
+- Welcome beginners
+- Create real-world development experience
 
 ---
 
-# 📜 License
+# 👨‍💻 Meet Our Team
 
-This project is licensed under the MIT License.
+<div align="center">
+
+## 🚀 Founder & Project Lead
+
+<table>
+<tr align="center">
+<td>
+
+<img src="assets/team/samir.png" width="130px" alt="Samir"/>
+
+### Samir Levate
+
+**Founder & Project Lead**
+
+Building AstraOS from the ground up with a vision to empower students through real-world open-source collaboration.
+
+</td>
+</tr>
+</table>
 
 ---
 
-# ⭐ Support
+## 💻 Core Team
 
-If you like AstraOS, consider giving this repository a ⭐ Star.
+<table>
+<tr align="center">
 
-Every contribution, issue report, and pull request helps improve the project.
+<td width="250">
+
+<img src="assets/team/shubham.png" width="100px"/>
+
+### Shubham Gaikwad
+
+Core Team Member
+
+</td>
+
+<td width="250">
+
+<img src="assets/team/ashish.png" width="100px"/>
+
+### Ashish Papadkar
+
+Core Team Member
+
+</td>
+
+<td width="250">
+
+<img src="assets/team/manohar.png" width="100px"/>
+
+### Manohar
+
+Core Team Member
+
+</td>
+
+</tr>
+
+<tr align="center">
+
+<td>
+
+<img src="assets/team/mayur.png" width="100px"/>
+
+### Mayur Tayde
+
+Core Team Member
+
+</td>
+
+<td>
+
+<img src="assets/team/aleena.png" width="100px"/>
+
+### Aleena Shaikh
+
+Junior Contributor
+
+</td>
+
+<td>
+
+## 🚀
+
+**Your Name Here**
+
+Join AstraOS
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+---
+
+# 🌟 Our Mission
+
+Our mission is simple:
+
+> **Create an open-source community where students learn by building real software together.**
+
+We believe learning happens best when people collaborate, review each other's work, solve real problems, and continuously improve.
+
+---
+
+# 📊 Project Status
+
+| Category | Status |
+|-----------|--------|
+| Website | ✅ Active |
+| Documentation | 🚧 In Progress |
+| Team Formation | ✅ Growing |
+| GitHub Repository | ✅ Public |
+| Community | 🚀 Building |
+| Alpha Release | ⏳ Planned |
+
+---
+
+# 🛣️ Development Roadmap
+
+## Phase 1 — Foundation ✅
+
+- Website
+- Branding
+- GitHub Repository
+- Initial Team
+- Documentation
+
+---
+
+## Phase 2 — Community 🚧
+
+- Contributor Program
+- Documentation Expansion
+- Issue Templates
+- Pull Requests
+- Code Reviews
+
+---
+
+## Phase 3 — Growth
+
+- Alpha Release
+- Beta Release
+- Community Events
+- Workshops
+- Student Collaborations
+
+---
+
+## Phase 4 — Future
+
+- AstraOS v1.0
+- Developer Documentation
+- Plugin Ecosystem
+- International Contributors
+
+---
+
+# 📈 Current Goals
+
+🎯 Build an active contributor community.
+
+⭐ Reach the first GitHub stars.
+
+👥 Welcome new contributors.
+
+📚 Improve documentation.
+
+🚀 Release Alpha Version.
+
+---
+
+# 🤝 Become a Contributor
+
+Whether you're a beginner or an experienced developer, you're welcome to contribute.
+
+Ways to contribute:
+
+- 💻 Code
+- 📝 Documentation
+- 🎨 UI/UX
+- 🐞 Bug Reports
+- 💡 Feature Ideas
+- 🧪 Testing
+- 🌍 Community Support
+
+---
+
+# ❤️ Community Principles
+
+✔ Respect Everyone
+
+✔ Help Beginners
+
+✔ Learn Together
+
+✔ Share Knowledge
+
+✔ Build Publicly
+
+✔ Keep Improving
+
+---
+
+# 🏆 Recognition
+
+Every meaningful contribution helps strengthen the project.
+
+Contributors are recognized through:
+
+- GitHub contribution history
+- Project contributor list
+- Release acknowledgements (when applicable)
+- Community appreciation
+
+---
+
+# 📸 Screenshots
+
+> Screenshots and project previews will be added as AstraOS evolves.
+
+---
+
+# 📊 Repository Insights
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/samirlevate8788-creator/AstraOS?style=for-the-badge)
+
+![GitHub forks](https://img.shields.io/github/forks/samirlevate8788-creator/AstraOS?style=for-the-badge)
+
+![GitHub issues](https://img.shields.io/github/issues/samirlevate8788-creator/AstraOS?style=for-the-badge)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/samirlevate8788-creator/AstraOS?style=for-the-badge)
+
+![GitHub License](https://img.shields.io/github/license/samirlevate8788-creator/AstraOS?style=for-the-badge)
+
+</div>
+
+---
+
+# 🌍 Community
+
+We welcome students, developers, designers, technical writers, and open-source enthusiasts from around the world.
+
+Whether you're making your first contribution or you're an experienced developer, AstraOS is a place to learn, collaborate, and grow.
+
+---
+
+# 🤝 How to Contribute
+
+We love contributions of every size.
+
+You can help by:
+
+- 🐞 Reporting bugs
+- ✨ Suggesting features
+- 💻 Writing code
+- 📖 Improving documentation
+- 🎨 Designing UI
+- 🧪 Testing
+- 🌍 Helping the community
+
+Please read **CONTRIBUTING.md** before opening a Pull Request.
+
+---
+
+# 📜 Open Source Philosophy
+
+AstraOS is built on transparency, collaboration, and continuous learning.
+
+We encourage:
+
+- Respectful communication
+- Knowledge sharing
+- Constructive feedback
+- Clean coding practices
+- Inclusive collaboration
+
+---
+
+# 🔒 Security
+
+If you discover a security issue, please report it privately to the maintainers instead of creating a public issue.
+
+Please refer to **SECURITY.md** for responsible disclosure guidelines.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the **LICENSE** file for more details.
+
+---
+
+# 📬 Contact
+
+📧 Email
+
+your-email@example.com
+
+🌐 Website
+
+Coming Soon
+
+💼 LinkedIn
+
+(Add your company page)
+
+🐙 GitHub
+
+https://github.com/samirlevate8788-creator/AstraOS
+
+---
+
+# 💙 Support AstraOS
+
+If you like this project,
+
+⭐ Star the repository
+
+🍴 Fork the project
+
+📢 Share it with friends
+
+🤝 Become a contributor
+
+Every contribution helps AstraOS grow.
+
+---
+
+# 🙏 Acknowledgements
+
+A heartfelt thank you to:
+
+- Every contributor
+- Every supporter
+- Every learner
+- Every community member
+
+Your support helps AstraOS move forward.
+
+---
+
+# 🚀 Future Vision
+
+Our long-term vision includes:
+
+- 🌍 Global contributor community
+- 📚 Rich educational resources
+- 🚀 Stable AstraOS releases
+- 🤝 Student collaboration initiatives
+- 💡 Innovative open-source learning experiences
 
 ---
 
 <div align="center">
 
-## 🚀 AstraOS
+# ⭐ If you found AstraOS helpful,
 
-### Learn • Build • Collaborate • Innovate
+### Please consider giving this repository a ⭐
 
-**Building an Operating System from Scratch**
+It motivates the team and helps the project reach more learners.
 
-Made with ❤️ by the AstraOS Team
+---
+
+## ❤️ Made with passion by the AstraOS Team
+
+### Build • Learn • Collaborate • Innovate
+
+**© 2026 AstraOS Project. All Rights Reserved.**
 
 </div>
