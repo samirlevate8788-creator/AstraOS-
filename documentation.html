@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documentation | AstraOS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<a href="index.html">AstraOS</a>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="documentation.html" class="active">Documentation</a></li>
+
+<li><a href="team.html">Team</a></li>
+
+<li><a href="roadmap.html">Roadmap</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="https://github.com/samirlevate8788-creator/AstraOS"
+
+target="_blank"
+
+class="github-btn">
+
+<i class="fa-brands fa-github"></i>
+
+GitHub
+
+</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero about-hero">
+
+<div class="hero-content">
+
+<h1>
+
+AstraOS <span>Documentation</span>
+
+</h1>
+
+<p>
+
+Official developer guide for building, understanding and contributing to AstraOS.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= QUICK LINKS ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Documentation Index</h2>
+
+<p>
+
+Everything you need to get started with AstraOS.
+
+</p>
+
+</div>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-download"></i>
+
+<h3>Installation</h3>
+
+<p>
+
+Download and install AstraOS on your machine.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>Build Guide</h3>
+
+<p>
+
+Compile AstraOS from source using GCC, NASM and Make.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>Kernel</h3>
+
+<p>
+
+Understand the internal architecture of AstraOS Kernel.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-code-branch"></i>
+
+<h3>Contributing</h3>
+
+<p>
+
+Learn how to contribute to AstraOS.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= REQUIREMENTS ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Development Requirements</h2>
+
+<p>
+
+Software required before building AstraOS.
+
+</p>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>Software</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>Git</td>
+
+<td>Clone Repository</td>
+
+</tr>
+
+<tr>
+
+<td>GCC</td>
+
+<td>C Compiler</td>
+
+</tr>
+
+<tr>
+
+<td>NASM</td>
+
+<td>Assembly Compiler</td>
+
+</tr>
+
+<tr>
+
+<td>Make</td>
+
+<td>Build Automation</td>
+
+</tr>
+
+<tr>
+
+<td>QEMU</td>
+
+<td>Operating System Emulator</td>
+
+</tr>
+
+<tr>
+
+<td>VS Code</td>
+
+<td>Recommended IDE</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- ================= DIRECTORY STRUCTURE ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Repository Structure</h2>
+
+</div>
+
+<pre><code>
+
+AstraOS/
+
+├── bootloader/
+
+├── kernel/
+
+├── drivers/
+
+├── filesystem/
+
+├── shell/
+
+├── networking/
+
+├── gui/
+
+├── memory/
+
+├── docs/
+
+├── website/
+
+├── README.md
+
+└── LICENSE
+
+</code></pre>
+
+</section>
+
+<!-- ================= NEXT PART ================= -->
+<!-- Installation Guide Starts Here -->
+ <!-- ================= INSTALLATION GUIDE ================= -->
+
+<section class="documentation">
+
+    <div class="section-title">
+        <h2>Installation Guide</h2>
+        <p>Follow these steps to set up AstraOS on your development machine.</p>
+    </div>
+
+    <div class="doc-card">
+
+        <h3>Step 1 — Clone the Repository</h3>
+
+<pre><code>
+git clone https://github.com/samirlevate8788-creator/AstraOS.git
+cd AstraOS
+</code></pre>
+
+    </div>
+
+    <div class="doc-card">
+
+        <h3>Step 2 — Install Required Tools</h3>
+
+<pre><code>
+✔ Git
+
+✔ GCC Compiler
+
+✔ NASM Assembler
+
+✔ Make
+
+✔ QEMU Emulator
+</code></pre>
+
+    </div>
+
+    <div class="doc-card">
+
+        <h3>Step 3 — Verify Installation</h3>
+
+<pre><code>
+git --version
+
+gcc --version
+
+nasm -v
+
+make --version
+
+qemu-system-x86_64 --version
+</code></pre>
+
+    </div>
+
+</section>
+
+<!-- ================= BUILD GUIDE ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Build AstraOS</h2>
+
+<p>Compile the operating system from source.</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>Build Command</h3>
+
+<pre><code>
+make clean
+
+make
+</code></pre>
+
+</div>
+
+<div class="doc-card">
+
+<h3>Generated Files</h3>
+
+<table>
+
+<tr>
+
+<th>File</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>kernel.bin</td>
+
+<td>Compiled Kernel</td>
+
+</tr>
+
+<tr>
+
+<td>boot.bin</td>
+
+<td>Bootloader</td>
+
+</tr>
+
+<tr>
+
+<td>astraos.iso</td>
+
+<td>Bootable ISO Image</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= RUN USING QEMU ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Run AstraOS</h2>
+
+<p>Launch AstraOS using QEMU Emulator.</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>Boot Command</h3>
+
+<pre><code>
+qemu-system-x86_64 -cdrom astraos.iso
+</code></pre>
+
+</div>
+
+<div class="alert">
+
+<strong>Tip:</strong>
+
+If virtualization is enabled, AstraOS will boot significantly faster.
+
+</div>
+
+</section>
+
+<!-- ================= TROUBLESHOOTING ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Troubleshooting</h2>
+
+</div>
+
+<div class="doc-card">
+
+<h3>Common Issues</h3>
+
+<table>
+
+<tr>
+
+<th>Error</th>
+
+<th>Solution</th>
+
+</tr>
+
+<tr>
+
+<td>make: command not found</td>
+
+<td>Install Make utility.</td>
+
+</tr>
+
+<tr>
+
+<td>gcc not found</td>
+
+<td>Install GCC compiler.</td>
+
+</tr>
+
+<tr>
+
+<td>NASM missing</td>
+
+<td>Install NASM assembler.</td>
+
+</tr>
+
+<tr>
+
+<td>QEMU not detected</td>
+
+<td>Install QEMU and restart terminal.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= NEXT PART ================= -->
+<!-- Kernel Architecture Starts Here -->
+ <!-- ================= KERNEL ARCHITECTURE ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Kernel Architecture</h2>
+
+<p>
+
+The AstraOS kernel is modular, lightweight and designed for learning modern operating system concepts.
+
+</p>
+
+</div>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>Bootloader</h3>
+
+<p>
+
+Initializes the hardware and loads the AstraOS kernel into memory.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-memory"></i>
+
+<h3>Memory Manager</h3>
+
+<p>
+
+Responsible for memory allocation, paging and efficient RAM management.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-hard-drive"></i>
+
+<h3>File System</h3>
+
+<p>
+
+Provides storage management and file handling interfaces.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-terminal"></i>
+
+<h3>Shell</h3>
+
+<p>
+
+Command-line interface for interacting with AstraOS.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BOOT PROCESS ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Boot Process</h2>
+
+<p>
+
+How AstraOS starts from power-on to the shell.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<pre><code>
+Power On
+
+↓
+
+BIOS / UEFI
+
+↓
+
+Bootloader
+
+↓
+
+Kernel Initialization
+
+↓
+
+Memory Setup
+
+↓
+
+Driver Initialization
+
+↓
+
+File System Mount
+
+↓
+
+Shell Starts
+
+↓
+
+User Ready
+</code></pre>
+
+</div>
+
+</section>
+
+<!-- ================= MEMORY MANAGEMENT ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Memory Management</h2>
+
+</div>
+
+<div class="doc-card">
+
+<p>
+
+The memory manager handles allocation, deallocation and protection of memory used by the operating system and applications.
+
+</p>
+
+<ul>
+
+<li>✔ Physical Memory Management</li>
+
+<li>✔ Virtual Memory</li>
+
+<li>✔ Paging Support</li>
+
+<li>✔ Dynamic Allocation</li>
+
+<li>✔ Kernel Heap</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ================= FILE SYSTEM ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>File System</h2>
+
+</div>
+
+<div class="doc-card">
+
+<p>
+
+The AstraOS file system is designed to be simple, modular and easy to understand.
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Module</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>Boot Sector</td>
+
+<td>System Startup</td>
+
+</tr>
+
+<tr>
+
+<td>Root Directory</td>
+
+<td>Main File Storage</td>
+
+</tr>
+
+<tr>
+
+<td>File Table</td>
+
+<td>Metadata Management</td>
+
+</tr>
+
+<tr>
+
+<td>Storage Driver</td>
+
+<td>Disk Communication</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= SHELL COMMANDS ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Basic Shell Commands</h2>
+
+</div>
+
+<div class="doc-card">
+
+<table>
+
+<tr>
+
+<th>Command</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>help</td>
+
+<td>Display all commands</td>
+
+</tr>
+
+<tr>
+
+<td>clear</td>
+
+<td>Clear terminal screen</td>
+
+</tr>
+
+<tr>
+
+<td>version</td>
+
+<td>Display AstraOS version</td>
+
+</tr>
+
+<tr>
+
+<td>reboot</td>
+
+<td>Restart operating system</td>
+
+</tr>
+
+<tr>
+
+<td>shutdown</td>
+
+<td>Power off system</td>
+
+</tr>
+
+<tr>
+
+<td>about</td>
+
+<td>Show project information</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= FUTURE MODULES ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Future Modules</h2>
+
+</div>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-wifi"></i>
+
+<h3>Networking</h3>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-window-maximize"></i>
+
+<h3>GUI Desktop</h3>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Security</h3>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-cloud"></i>
+
+<h3>Cloud Support</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= NEXT PART ================= -->
+<!-- FAQ + Contribution + Footer -->
+ <!-- ================= FAQ ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Frequently Asked Questions</h2>
+
+<p>
+
+Common questions from AstraOS developers and contributors.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>❓ Is AstraOS Open Source?</h3>
+
+<p>
+
+Yes. AstraOS is completely open-source and welcomes contributions from developers worldwide.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>❓ Which programming languages are used?</h3>
+
+<p>
+
+AstraOS is primarily developed using C, Assembly (NASM), Makefile and Shell scripting.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>❓ Can beginners contribute?</h3>
+
+<p>
+
+Absolutely! We encourage students and first-time contributors to participate in documentation, bug fixes, testing and feature development.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>❓ Which platforms are supported?</h3>
+
+<p>
+
+Currently AstraOS targets the x86_64 architecture and is tested using QEMU.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CONTRIBUTING ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Contribution Guidelines</h2>
+
+<p>
+
+Help us build AstraOS together.
+
+</p>
+
+</div>
+
+<div class="doc-card">
+
+<h3>Contribution Workflow</h3>
+
+<ol>
+
+<li>Fork the AstraOS repository.</li>
+
+<li>Create a new feature branch.</li>
+
+<li>Write clean and documented code.</li>
+
+<li>Test your implementation.</li>
+
+<li>Commit your changes with meaningful messages.</li>
+
+<li>Push your branch to GitHub.</li>
+
+<li>Open a Pull Request for review.</li>
+
+</ol>
+
+</div>
+
+<div class="alert">
+
+<strong>Code Style:</strong>
+
+Follow consistent formatting, meaningful variable names and include comments where necessary.
+
+</div>
+
+</section>
+
+<!-- ================= LICENSE ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>License</h2>
+
+</div>
+
+<div class="doc-card">
+
+<p>
+
+AstraOS is distributed under the <strong>MIT License</strong>, allowing developers to use, modify and distribute the project while preserving the original license.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= SUPPORT ================= -->
+
+<section class="documentation">
+
+<div class="section-title">
+
+<h2>Need Help?</h2>
+
+<p>
+
+Join the AstraOS community or contact the core team.
+
+</p>
+
+</div>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-brands fa-github"></i>
+
+<h3>GitHub</h3>
+
+<p>
+
+Report issues, submit pull requests and explore the source code.
+
+</p>
+
+<a href="https://github.com/samirlevate8788-creator/AstraOS"
+
+target="_blank"
+
+class="primary-btn">
+
+Visit Repository
+
+</a>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Email</h3>
+
+<p>
+
+Contact the AstraOS development team for questions or collaboration.
+
+</p>
+
+<a href="mailto:sameerlewate8788@gmail.com"
+
+class="primary-btn">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<h2>AstraOS</h2>
+
+<p>
+
+A Modern Open-Source Educational Operating System.
+
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="documentation.html">Documentation</a>
+
+<a href="team.html">Team</a>
+
+<a href="roadmap.html">Roadmap</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p class="copyright">
+
+© 2026 AstraOS Project. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
