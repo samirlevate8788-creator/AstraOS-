@@ -2713,3 +2713,102 @@ filter:hue-rotate(180deg);
 }
 
 }
+.member-skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin:18px 0;
+}
+
+.member-skills span{
+    padding:7px 14px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.35);
+    border-radius:25px;
+    color:#6ea8ff;
+    font-size:.82rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.member-skills span:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   Core Team Card Size
+========================== */
+
+.core-team .team-card{
+    width: 560px;      /* Pehle 480px tha */
+    max-width: 560px;
+    min-height: 500px; /* Height kam */
+    padding: 25px 30px;
+}
+
+.core-team .team-card p{
+    max-width: 90%;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+.core-team .member-skills{
+    margin: 18px 0;
+    gap: 10px;
+}
+
+.core-team .team-card img{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 18px;
+}
+
+.core-team .team-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin:30px 0;
+}
+
+.nav-logo{
+    height:90px;
+    width:auto;
+    display:block;
+}
+
+.github-card{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.github-card:hover{
+    transform:translateY(-8px);
+}
+
+.btn-linkedin{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #2563eb;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-linkedin i{
+    font-size: 24px;
+}
+
+.btn-linkedin:hover{
+    background: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37,99,235,.35);
+}

@@ -1638,3 +1638,9 @@ document.addEventListener("DOMContentLoaded", () => {
     AstraOS.init();
 
 });
+
+document.querySelectorAll('.github-card').forEach(card => {
+    card.addEventListener('click', () => {
+        window.open('https://github.com/samirlevate8788-creator/AstraOS-', '_blank');
+    });
+});
