@@ -1,0 +1,10 @@
+label live-@FLAVOUR@
+    menu label ^AstraOS Live (@FLAVOUR@)
+    menu default
+    kernel @KERNEL@
+    append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@
+
+label live-@FLAVOUR@-failsafe
+    menu label ^AstraOS Live (@FLAVOUR@ failsafe)
+    kernel @KERNEL@
+    append initrd=@INITRD@ boot=live config @LB_BOOTAPPEND_LIVE@ @LB_BOOTAPPEND_FAILSAFE@

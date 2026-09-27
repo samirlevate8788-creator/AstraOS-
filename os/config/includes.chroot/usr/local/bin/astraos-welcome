@@ -1,0 +1,65 @@
+#!/usr/bin/python3
+import math
+import subprocess
+import tkinter as tk
+from pathlib import Path
+
+NAVY = "#070d1b"
+PANEL = "#0e1830"
+CYAN = "#28b9ff"
+WHITE = "#f4f8ff"
+MUTED = "#9fb3cf"
+LOGO = Path("/usr/share/pixmaps/astraos-logo.png")
+
+root = tk.Tk()
+root.title("Welcome to AstraOS")
+root.configure(bg=NAVY)
+root.geometry("680x520")
+root.minsize(560, 460)
+
+content = tk.Frame(root, bg=NAVY, padx=38, pady=28)
+content.pack(fill="both", expand=True)
+
+try:
+    logo = tk.PhotoImage(file=str(LOGO))
+    factor = max(1, math.ceil(max(logo.width(), logo.height()) / 180))
+    if factor > 1:
+        logo = logo.subsample(factor, factor)
+    image = tk.Label(content, image=logo, bg=NAVY, borderwidth=0)
+    image.image = logo
+    image.pack(pady=(0, 12))
+except tk.TclError:
+    tk.Label(content, text="A", font=("Inter", 42, "bold"), fg=CYAN, bg=NAVY).pack()
+
+tk.Label(content, text="Welcome to AstraOS", font=("Inter", 23, "bold"),
+         fg=WHITE, bg=NAVY).pack(pady=(0, 8))
+tk.Label(content, text="Build  •  Learn  •  Innovate", font=("Inter", 12),
+         fg=CYAN, bg=NAVY).pack()
+tk.Label(content, text="AstraOS 0.1 · Debian 13 · XFCE live session",
+         font=("Inter", 10), fg=MUTED, bg=NAVY).pack(pady=(12, 22))
+
+tk.Label(content, text="Your desktop is ready. Open a terminal to start building, "
+         "or explore the AstraOS project online.",
+         font=("Inter", 11), fg=WHITE, bg=NAVY, wraplength=520,
+         justify="center").pack(pady=(0, 24))
+
+def open_terminal():
+    subprocess.Popen(["xfce4-terminal"], start_new_session=True)
+
+def open_project():
+    subprocess.Popen(["xdg-open", "https://github.com/samirlevate8788-creator/AstraOS-"],
+                     start_new_session=True)
+
+actions = tk.Frame(content, bg=NAVY)
+actions.pack()
+tk.Button(actions, text="Open Terminal", command=open_terminal, bg=CYAN, fg="#04101d",
+          activebackground="#79d4ff", relief="flat", padx=20, pady=10,
+          font=("Inter", 10, "bold")).pack(side="left", padx=6)
+tk.Button(actions, text="AstraOS on GitHub", command=open_project, bg=PANEL, fg=WHITE,
+          activebackground="#1a2a49", relief="flat", padx=20, pady=10,
+          font=("Inter", 10, "bold")).pack(side="left", padx=6)
+
+tk.Label(content, text="This live session does not save changes after shutdown.",
+         font=("Inter", 9), fg=MUTED, bg=NAVY).pack(side="bottom", pady=(20, 0))
+
+root.mainloop()

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=AstraOS
+Description=AstraOS branded boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/astraos
+ScriptFile=/usr/share/plymouth/themes/astraos/astraos.script

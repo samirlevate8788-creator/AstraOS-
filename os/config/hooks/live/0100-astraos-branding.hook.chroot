@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+if command -v plymouth-set-default-theme >/dev/null 2>&1; then
+    plymouth-set-default-theme astraos
+    if command -v update-initramfs >/dev/null 2>&1; then
+        update-initramfs -u -k all
+    fi
+fi
+
+chmod 0755 /usr/local/bin/astraos-welcome

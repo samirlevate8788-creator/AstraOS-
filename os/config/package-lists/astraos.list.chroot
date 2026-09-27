@@ -1,0 +1,34 @@
+# AstraOS 0.1 desktop
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+network-manager
+network-manager-gnome
+
+# Everyday apps
+firefox-esr
+mousepad
+xfce4-terminal
+
+# System and disk tools
+xfce4-taskmanager
+gnome-disk-utility
+gparted
+sudo
+isolinux
+syslinux-utils
+
+# Developer essentials
+git
+curl
+wget
+build-essential
+python3-tk
+
+# AstraOS look and feel
+plymouth
+plymouth-themes
+papirus-icon-theme
+fonts-inter
+librsvg2-bin
