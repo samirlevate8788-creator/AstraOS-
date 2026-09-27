@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Download, boot and build the AstraOS 0.1 Debian live system.">
+  <meta name="description" content="Download, boot and build AstraOS 0.1.1, the BIOS and UEFI boot-fixed Debian live system.">
   <title>Documentation | AstraOS</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,20 +26,20 @@
   <main>
     <section class="hero about-hero"><div class="hero-content">
       <p class="release-kicker">GUIDES · BUILD · BOOT</p><h1>AstraOS <span>Documentation</span></h1>
-      <p>Everything needed to try the v0.1 live image or rebuild it from the source configuration.</p>
-      <div class="hero-buttons"><a class="primary-btn" href="download.html">Download v0.1</a><a class="secondary-btn" href="#build">Build from source</a></div>
+      <p>Everything needed to try the AstraOS 0.1.1 boot-hotfix image or rebuild it from the source configuration.</p>
+      <div class="hero-buttons"><a class="primary-btn" href="download.html">Download v0.1.1</a><a class="secondary-btn" href="#build">Build from source</a></div>
     </div></section>
     <section class="documentation" id="boot">
       <div class="section-title"><h2>Boot the live system</h2></div>
       <div class="doc-card">
         <ol class="guide-list">
-          <li>Download <a class="text-link" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.1/AstraOS-0.1-amd64.iso">AstraOS-0.1-amd64.iso</a> and its SHA-256 file.</li>
+          <li>Download <a class="text-link" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.1.1/AstraOS-0.1.1-amd64.iso">AstraOS-0.1.1-amd64.iso</a> and its SHA-256 file.</li>
           <li>Verify the ISO checksum before writing it.</li>
           <li>Write the ISO to an 8 GB or larger USB drive with an image-writing utility. This erases the selected USB drive.</li>
           <li>Restart and choose the USB drive in the PC's firmware boot menu.</li>
           <li>If UEFI refuses to start the unsigned bootloader, disable Secure Boot in firmware and try again.</li>
         </ol>
-        <p>AstraOS starts as a live desktop and does not install onto the internal drive. This preview has not yet been tested across a range of PCs.</p>
+        <p>The BIOS and UEFI paths have reached the live desktop in QEMU/KVM, and the XFCE terminal opened successfully. AstraOS runs as a live session and does not install onto the internal drive. Physical PC compatibility still needs testing.</p>
       </div>
     </section>
     <section class="documentation" id="build">
@@ -65,7 +65,7 @@ sudo bash ./build.sh</code></pre>
     </section>
     <section class="documentation">
       <div class="section-title"><h2>v0.1 scope</h2></div>
-      <div class="doc-card"><p>This is a Debian-based live distribution, not a custom kernel or installer. Its UEFI loader is unsigned, so Secure Boot is not supported by this preview. BIOS and UEFI boot entries are present in the image; PC-specific runtime compatibility still needs testing.</p></div>
+      <div class="doc-card"><p>This is a Debian-based live distribution, not a custom kernel or disk installer. Version 0.1.1 fixes the live image's BIOS and UEFI boot packaging. Both paths and the desktop were verified in QEMU/KVM; PC-specific runtime compatibility still needs testing. The UEFI loader is unsigned, so Secure Boot may need to be disabled.</p></div>
     </section>
   </main>
   <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div></footer>

@@ -32,6 +32,9 @@ fi
 
 cd "$BUILD_DIR"
 lb clean
+# Ubuntu's live-build 3.x firmware scan requests a non-existent root
+# Contents-amd64.gz on Debian mirrors. Firmware is selected explicitly in the
+# AstraOS package list instead.
 lb config \
   --ignore-system-defaults \
   --mode debian \
@@ -54,6 +57,7 @@ lb config \
   --architectures amd64 \
   --linux-flavours amd64 \
   --linux-packages linux-image \
+  --firmware-chroot false \
   --initramfs live-boot \
   --initsystem systemd \
   --syslinux-theme live-build \
@@ -65,6 +69,26 @@ lb config \
   --binary-images iso-hybrid \
   --archive-areas "main contrib non-free non-free-firmware" \
   --bootappend-live "boot=live components quiet splash username=astra hostname=astraos"
+
+# Keep the BIOS Syslinux modules beside isolinux.bin in the ISO. The boot menu
+# loads vesamenu.c32, which in turn needs ldlinux.c32, libcom32.c32 and
+# libutil.c32; live-build does not consistently include these modules when
+# isolinux.bin and vesamenu.c32 are supplied through legacy symlinks.
+SYSLINUX_BIOS_MODULE_DIR=/usr/lib/syslinux/modules/bios
+SYSLINUX_ISO_MODULE_DIR="$BUILD_DIR/config/includes.binary/isolinux"
+for MODULE in ldlinux.c32 libcom32.c32 libutil.c32 vesamenu.c32; do
+  if [ ! -f "$SYSLINUX_BIOS_MODULE_DIR/$MODULE" ]; then
+    echo "Required BIOS boot module is missing: $SYSLINUX_BIOS_MODULE_DIR/$MODULE" >&2
+    exit 1
+  fi
+done
+mkdir -p "$SYSLINUX_ISO_MODULE_DIR"
+cp -f \
+  "$SYSLINUX_BIOS_MODULE_DIR/ldlinux.c32" \
+  "$SYSLINUX_BIOS_MODULE_DIR/libcom32.c32" \
+  "$SYSLINUX_BIOS_MODULE_DIR/libutil.c32" \
+  "$SYSLINUX_BIOS_MODULE_DIR/vesamenu.c32" \
+  "$SYSLINUX_ISO_MODULE_DIR/"
 
 lb build
 
@@ -93,20 +117,22 @@ grub-mkstandalone \
   "boot/grub/grub.cfg=$SOURCE_DIR/config/bootloaders/grub-efi/grub.cfg"
 
 truncate -s 16M "$EFI_IMAGE"
-mformat -i "$EFI_IMAGE" -F -v ASTRAOS ::
+# Keep this 16 MiB removable EFI image FAT16. Forcing FAT32 at this size
+# produces a filesystem that UEFI firmware cannot mount reliably.
+mformat -i "$EFI_IMAGE" -v ASTRAOS ::
 mmd -i "$EFI_IMAGE" ::/EFI
 mmd -i "$EFI_IMAGE" ::/EFI/BOOT
 mcopy -i "$EFI_IMAGE" "$EFI_WORK/BOOTX64.EFI" ::/EFI/BOOT/BOOTX64.EFI
 mkdir -p "$BUILD_DIR/binary/EFI/BOOT"
 cp -f "$EFI_WORK/BOOTX64.EFI" "$BUILD_DIR/binary/EFI/BOOT/BOOTX64.EFI"
 
-DUAL_ISO="$BUILD_DIR/AstraOS-0.1-amd64-dual.iso"
+DUAL_ISO="$BUILD_DIR/AstraOS-0.1.1-amd64-dual.iso"
 xorriso -as mkisofs \
   -r -J -joliet-long -iso-level 3 \
   -V ASTRAOS_0_1 \
   -A "AstraOS Live" \
   -publisher "AstraOS Project" \
-  -p "AstraOS v0.1 build" \
+  -p "AstraOS v0.1.1 boot hotfix build" \
   -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
   -partition_cyl_align on \
   -partition_offset 0 \
@@ -123,8 +149,8 @@ xorriso -as mkisofs \
   -o "$DUAL_ISO" \
   "$BUILD_DIR/binary"
 
-cp -f "$DUAL_ISO" "$SOURCE_DIR/dist/AstraOS-0.1-amd64.iso"
-(cd "$SOURCE_DIR/dist" && sha256sum AstraOS-0.1-amd64.iso > AstraOS-0.1-amd64.iso.sha256)
-printf 'AstraOS ISO: %s\n' "$SOURCE_DIR/dist/AstraOS-0.1-amd64.iso"
+cp -f "$DUAL_ISO" "$SOURCE_DIR/dist/AstraOS-0.1.1-amd64.iso"
+(cd "$SOURCE_DIR/dist" && sha256sum AstraOS-0.1.1-amd64.iso > AstraOS-0.1.1-amd64.iso.sha256)
+printf 'AstraOS ISO: %s\n' "$SOURCE_DIR/dist/AstraOS-0.1.1-amd64.iso"
 printf 'AstraOS SHA-256: '
 cut -d ' ' -f 1 "$SOURCE_DIR/dist/AstraOS-0.1-amd64.iso.sha256"

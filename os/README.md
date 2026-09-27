@@ -1,8 +1,8 @@
-# AstraOS 0.1 live build
+# AstraOS 0.1.1 boot hotfix build
 
-AstraOS 0.1 starts as a Debian 13 (trixie) amd64 live system. This build tree keeps the existing website at the repository root and puts Linux distribution code under os/.
+AstraOS 0.1.1 is a boot-packaging hotfix for the Debian 13 (trixie) amd64 live system. The desktop still identifies as AstraOS 0.1. This build tree keeps the website at the repository root and puts Linux distribution code under os/.
 
-The first image is designed to boot on BIOS and UEFI PCs to an AstraOS-branded XFCE desktop with a custom boot menu and splash, browser, terminal, text editor, networking, disk tools, a small welcome app, and a developer toolchain. Debian remains visible as the underlying distribution in /etc/os-release so package managers and applications keep their normal compatibility checks.
+The image starts an AstraOS-branded XFCE desktop with a custom BIOS boot menu, UEFI loader, splash, browser, terminal, text editor, networking, disk tools, a small welcome app, and a developer toolchain. BIOS and UEFI boot-to-desktop and terminal startup were verified in QEMU/KVM. Physical PC compatibility remains to be checked. Debian remains visible as the underlying distribution in /etc/os-release so package managers and applications keep their normal compatibility checks.
 
 ## Build on this Windows PC
 
@@ -13,13 +13,13 @@ The existing Ubuntu WSL distribution is the build environment. Run these command
     cd /mnt/c/Users/HP/Documents/Codex/AstraOS/os
     sudo bash ./build.sh
 
-build.sh copies this configuration to /var/tmp/astraos-live-build inside Ubuntu's Linux filesystem, builds there, and copies the resulting ISO and SHA-256 checksum to os/dist/. Override ASTRAOS_BUILD_DIR if you want a different Linux-filesystem build directory.
+build.sh copies this configuration to /var/tmp/astraos-live-build inside Ubuntu's Linux filesystem, builds there, and copies `AstraOS-0.1.1-amd64.iso` and its SHA-256 checksum to os/dist/. Override ASTRAOS_BUILD_DIR if you want a different Linux-filesystem build directory.
 
 The build needs network access to Debian mirrors and several gigabytes of free space. The ISO is a live boot image; a disk installer is not included in this first build tree yet. The locally generated UEFI loader is unsigned, so Secure Boot may need to be disabled in firmware before booting it.
 
 ## Try the live image
 
-Write `dist/AstraOS-0.1-amd64.iso` to an 8 GB or larger USB drive with an image-writing utility, then choose that USB drive in the PC's firmware boot menu. Writing an image erases the selected USB drive. AstraOS runs as a live desktop from the USB; this build does not install itself to the internal drive.
+Write `dist/AstraOS-0.1.1-amd64.iso` to an 8 GB or larger USB drive with an image-writing utility, then choose that USB drive in the PC's firmware boot menu. Writing an image erases the selected USB drive. AstraOS runs as a live desktop from the USB; this build does not install itself to the internal drive. The UEFI loader is unsigned, so Secure Boot may need to be disabled.
 
 ## Source layout
 

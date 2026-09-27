@@ -19,6 +19,16 @@ sudo
 isolinux
 syslinux-utils
 
+# Firmware for common desktop hardware and CPU microcode
+firmware-linux
+firmware-atheros
+firmware-brcm80211
+firmware-iwlwifi
+firmware-mediatek
+firmware-realtek
+amd64-microcode
+intel-microcode
+
 # Developer essentials
 git
 curl

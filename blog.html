@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AstraOS development updates and v0.1 release notes.">
+  <meta name="description" content="AstraOS development updates, v0.1.1 BIOS and UEFI boot validation, and future utilities.">
   <title>Updates | AstraOS</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,15 +30,15 @@
     </div></section>
     <section class="documentation">
       <article class="doc-card">
-        <p class="release-kicker">27 SEPTEMBER 2026 · V0.1 ALPHA</p>
-        <h2>The first AstraOS live image is ready</h2>
-        <p>AstraOS 0.1 takes the first practical step: a Debian 13 live system that boots into an AstraOS-branded XFCE desktop. The image includes a browser, terminal, text editor, networking, disk utilities, developer essentials, a custom boot menu, wallpaper and a welcome app.</p>
-        <p>The boot catalog contains BIOS and UEFI entries. The locally built UEFI loader is unsigned, the image is live-only, and compatibility still needs testing across real PCs and virtual machines.</p>
-        <a class="primary-btn" href="download.html">Download the preview</a>
+        <p class="release-kicker">27 SEPTEMBER 2026 · V0.1.1 BOOT HOTFIX</p>
+        <h2>AstraOS boots in BIOS and UEFI virtual machines</h2>
+        <p>AstraOS 0.1.1 fixes the BIOS Syslinux modules and UEFI boot image packaging for the Debian 13 live desktop. QEMU/KVM tests reached the branded XFCE desktop in both BIOS and UEFI modes, and the XFCE terminal opened successfully.</p>
+        <p>The image includes Firefox ESR, Mousepad, networking and disk tools, developer essentials, AstraOS wallpaper, boot menu and welcome app. It is still a live-only preview with no disk installer; the unsigned UEFI loader may require Secure Boot to be disabled. Testing on physical PCs remains open.</p>
+        <a class="primary-btn" href="download.html">Download AstraOS 0.1.1</a>
       </article>
-      <div class="section-title"><h2>What comes next</h2><p>Validate boot and desktop startup, then focus on AstraOS-specific tools.</p></div>
+      <div class="section-title"><h2>What comes next</h2><p>Check compatibility on physical PCs, then focus on AstraOS-specific tools.</p></div>
       <div class="feature-container">
-        <article class="feature-card"><i class="fa-solid fa-vial"></i><h3>Boot validation</h3><p>Test the image in a VM and on representative hardware; record compatibility fixes.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-vial"></i><h3>Hardware validation</h3><p>Test the image on representative physical PCs and record compatibility results.</p></article>
         <article class="feature-card"><i class="fa-solid fa-sliders"></i><h3>Desktop utilities</h3><p>Develop an AstraOS settings panel, first-run flow and software installer.</p></article>
         <article class="feature-card"><i class="fa-solid fa-book"></i><h3>Documentation</h3><p>Keep build, boot and troubleshooting instructions tied to the image people can download.</p></article>
       </div>
