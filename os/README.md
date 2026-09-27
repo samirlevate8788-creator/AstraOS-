@@ -17,6 +17,10 @@ build.sh copies this configuration to /var/tmp/astraos-live-build inside Ubuntu'
 
 The build needs network access to Debian mirrors and several gigabytes of free space. The ISO is a live boot image; a disk installer is not included in this first build tree yet. The locally generated UEFI loader is unsigned, so Secure Boot may need to be disabled in firmware before booting it.
 
+## Try the live image
+
+Write `dist/AstraOS-0.1-amd64.iso` to an 8 GB or larger USB drive with an image-writing utility, then choose that USB drive in the PC's firmware boot menu. Writing an image erases the selected USB drive. AstraOS runs as a live desktop from the USB; this build does not install itself to the internal drive.
+
 ## Source layout
 
 - config/package-lists/ selects desktop and utility packages.
