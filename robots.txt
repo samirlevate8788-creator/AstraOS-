@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samirlevate8788-creator.github.io/AstraOS-/sitemap.xml
