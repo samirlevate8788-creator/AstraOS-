@@ -1554,6 +1554,107 @@ footer{
 
 }
 
+/* AstraOS v0.1 release and guide panels */
+.release-kicker{
+    color:#7dd3fc;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.roadmap-status{
+    display:inline-block;
+    margin-left:8px;
+    padding:3px 9px;
+    border:1px solid rgba(125,211,252,.35);
+    border-radius:999px;
+    color:#7dd3fc;
+    font-size:12px;
+    letter-spacing:.04em;
+    vertical-align:middle;
+}
+
+.release-panel{
+    max-width:1100px;
+    margin:0 auto;
+    padding:36px;
+    display:grid;
+    grid-template-columns:minmax(0,1.5fr) minmax(230px,.8fr);
+    gap:36px;
+    align-items:center;
+    background:linear-gradient(135deg,rgba(37,99,235,.18),#0f172a 58%);
+    border:1px solid rgba(125,211,252,.2);
+    border-radius:22px;
+    box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+.release-panel h3{
+    font-size:28px;
+    margin:6px 0 14px;
+}
+
+.release-panel p,
+.release-note{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.release-note{
+    margin-top:18px;
+    padding:14px 16px;
+    border-left:3px solid #38bdf8;
+    background:rgba(2,6,23,.45);
+    border-radius:0 10px 10px 0;
+}
+
+.release-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.release-actions .primary-btn,
+.release-actions .secondary-btn{
+    text-align:center;
+}
+
+.text-link{
+    color:#7dd3fc;
+    text-decoration:underline;
+    text-underline-offset:3px;
+}
+
+.checksum code{
+    display:block;
+    overflow-wrap:anywhere;
+    word-break:break-all;
+    line-height:1.8;
+}
+
+.guide-list{
+    padding-left:24px;
+    color:#cbd5e1;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+    .release-panel{
+        grid-template-columns:1fr;
+        padding:24px;
+    }
+    .release-actions{
+        width:100%;
+    }
+    .release-actions .primary-btn,
+    .release-actions .secondary-btn{
+        width:100%;
+    }
+}
+
 /* =========================================
    SELECTION
 ========================================= */

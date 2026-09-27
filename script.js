@@ -982,7 +982,7 @@ Object.assign(AstraOS, {
 
         owner: "samirlevate8788-creator",
 
-        repo: "AstraOS"
+        repo: "AstraOS-"
 
     },
 
@@ -1112,7 +1112,7 @@ Object.assign(AstraOS, {
 
             const url =
 
-            `https://api.github.com/repos/${this.github.owner}/${this.github.repo}/releases/latest`;
+                `https://api.github.com/repos/${this.github.owner}/${this.github.repo}/releases?per_page=1`;
 
             const response =
 
@@ -1120,9 +1120,13 @@ Object.assign(AstraOS, {
 
             if (!response.ok) return;
 
-            const release =
+            const releases =
 
                 await response.json();
+
+            const release = releases[0];
+
+            if (!release) return;
 
             this.updateText(
 
@@ -1515,7 +1519,7 @@ Object.assign(AstraOS, {
 
                 Project: "AstraOS",
 
-                Version: "3.0",
+                Version: "0.1 Alpha",
 
                 Author: this.github?.owner || "Unknown",
 
@@ -1610,7 +1614,7 @@ Object.assign(AstraOS, {
             this.initEasterEggs();
 
             console.log(
-                "%c✅ AstraOS v3.0 Initialized Successfully",
+                "%c✅ AstraOS v0.1 Alpha Initialized Successfully",
                 "color:#00d9ff;font-size:14px;font-weight:bold;"
             );
 

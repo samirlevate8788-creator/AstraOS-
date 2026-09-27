@@ -7,7 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AstraOS | Modern Open-Source Educational Operating System</title>
+    <title>AstraOS | Debian-Based Live Desktop</title>
+
+    <meta name="description" content="AstraOS 0.1 is a Debian 13 live desktop with custom AstraOS branding, everyday apps and developer tools.">
 
     <!-- Google Font -->
 
@@ -48,7 +50,7 @@
 
             <div class="logo">
                 <a href="index.html">
-                <img src="assets/team/logo.png" alt="AstraOS Logo" class="nav-logo">
+                <img src="logo.png" alt="AstraOS Logo" class="nav-logo">
                 </a>
             </div>
 
@@ -109,7 +111,8 @@ GitHub
 
             <p>
 
-                A Modern Open-Source Educational Operating System built from scratch using C, C++ and x86-64 Assembly.
+                A Debian-based live desktop with
+                <span>AstraOS identity</span>, useful tools and a clear path to grow.
 
             </p>
 
@@ -151,7 +154,7 @@ GitHub
 
         <p>
 
-            AstraOS is a modern open-source educational operating system developed from scratch to help students and developers understand kernel development, memory management, scheduling, file systems, networking, shell development, and operating system architecture through practical implementation.
+            AstraOS 0.1 is a Debian 13 live Linux system that starts an AstraOS-branded XFCE desktop. It brings a browser, everyday system tools, developer essentials and a small welcome utility into one bootable image. Custom AstraOS utilities and deeper OS research are planned future work.
 
         </p>
 
@@ -163,45 +166,45 @@ GitHub
 
     <div class="section-title">
         <h2>Core Features</h2>
-        <p>Explore the powerful components of AstraOS.</p>
+        <p>What you can use in the first live build.</p>
     </div>
 
     <div class="feature-container">
 
         <div class="feature-card">
             <i class="fa-solid fa-microchip"></i>
-            <h3>Kernel</h3>
-            <p>Custom kernel built from scratch using C and x86-64 Assembly.</p>
+            <h3>Debian 13 Base</h3>
+            <p>A familiar Linux package foundation with a standard Debian kernel.</p>
         </div>
 
         <div class="feature-card">
             <i class="fa-solid fa-memory"></i>
-            <h3>Memory Management</h3>
-            <p>Efficient memory allocation and virtual memory support.</p>
+            <h3>XFCE Desktop</h3>
+            <p>A lightweight graphical session that starts from the live image.</p>
         </div>
 
         <div class="feature-card">
             <i class="fa-solid fa-hard-drive"></i>
-            <h3>AstraFS</h3>
-            <p>Fast, lightweight and educational custom file system.</p>
+            <h3>BIOS + UEFI Boot</h3>
+            <p>Hybrid ISO with legacy BIOS and UEFI boot entries for amd64 PCs.</p>
         </div>
 
         <div class="feature-card">
             <i class="fa-solid fa-terminal"></i>
-            <h3>Shell</h3>
-            <p>Interactive command-line interface for managing the system.</p>
+            <h3>Everyday Apps</h3>
+            <p>Firefox ESR, terminal, text editor, networking and disk tools.</p>
         </div>
 
         <div class="feature-card">
             <i class="fa-solid fa-network-wired"></i>
-            <h3>Networking</h3>
-            <p>Networking stack for future internet connectivity.</p>
+            <h3>Developer Essentials</h3>
+            <p>Git, build tools, Python, curl and common command-line utilities.</p>
         </div>
 
         <div class="feature-card">
             <i class="fa-solid fa-shield-halved"></i>
-            <h3>Security</h3>
-            <p>Modern security concepts integrated into the OS architecture.</p>
+            <h3>AstraOS Branding</h3>
+            <p>Custom boot screen, wallpaper, desktop defaults, logo and welcome app.</p>
         </div>
 
     </div>
@@ -223,7 +226,7 @@ GitHub
 
         <div class="team-card">
 
-        <img src="assets/team/samir.png" alt="Samir Levate">    
+        <img src="samir.png" alt="Samir Levate">
 
             <h3>Samir Levate</h3>
 
@@ -260,7 +263,7 @@ GitHub
 
         <div class="team-card">
 
-            <img src="assets/team/samarth.png" alt="Samarth Waghmode">
+            <img src="samarth.png" alt="Samarth Waghmode">
 
             <h3>Samarth Waghmode</h3>
 
@@ -289,7 +292,7 @@ GitHub
 
         <div class="team-card">
 
-        <img src="assets/team/ashish.jpeg" alt="Ashish Papadkar">
+            <img src="ashish.jpeg" alt="Ashish Papadkar">
 
             <h3>Ashish Papadkar</h3>
 
@@ -318,7 +321,7 @@ GitHub
 
         <div class="team-card">
 
-            <img src="assets/team/logo.png" alt="AstraOS Logo">
+            <img src="logo.png" alt="AstraOS Logo">
 
             <h3>Join Our Team</h3>
 
@@ -347,7 +350,7 @@ GitHub
 
     <div class="section-title">
         <h2>Development Roadmap</h2>
-        <p>Our journey towards building a complete educational operating system.</p>
+        <p>v0.1 establishes the live Linux base; the next work makes it more distinctly AstraOS.</p>
     </div>
 
     <div class="roadmap-container">
@@ -358,10 +361,9 @@ GitHub
             </div>
 
             <div class="roadmap-content">
-                <h3>Phase 1 - Planning</h3>
+                <h3>v0.1 - Live Linux Foundation <span class="roadmap-status">Built</span></h3>
                 <p>
-                    Research operating system architecture, define project goals,
-                    prepare documentation and organize the development team.
+                    Debian 13, XFCE, BIOS/UEFI boot entries, essential apps and a branded live desktop.
                 </p>
             </div>
         </div>
@@ -372,10 +374,9 @@ GitHub
             </div>
 
             <div class="roadmap-content">
-                <h3>Phase 2 - Bootloader & Kernel</h3>
+                <h3>Next - Boot Validation</h3>
                 <p>
-                    Build the bootloader, initialize the kernel,
-                    memory management and interrupt handling.
+                    Confirm the image starts in a VM and on representative PCs, then fix compatibility issues.
                 </p>
             </div>
         </div>
@@ -386,10 +387,9 @@ GitHub
             </div>
 
             <div class="roadmap-content">
-                <h3>Phase 3 - Shell & File System</h3>
+                <h3>v0.2 - AstraOS Utilities</h3>
                 <p>
-                    Develop Astra Shell, process management,
-                    AstraFS and storage drivers.
+                    Add an AstraOS settings panel, welcome flow and graphical software installation.
                 </p>
             </div>
         </div>
@@ -400,10 +400,9 @@ GitHub
             </div>
 
             <div class="roadmap-content">
-                <h3>Phase 4 - Networking</h3>
+                <h3>Developer & Security Toolkit</h3>
                 <p>
-                    Add networking stack, sockets,
-                    internet support and communication modules.
+                    Curate more development and security tools with documentation and safe defaults.
                 </p>
             </div>
         </div>
@@ -414,10 +413,9 @@ GitHub
             </div>
 
             <div class="roadmap-content">
-                <h3>Phase 5 - GUI</h3>
+                <h3>Long-Term OS Research</h3>
                 <p>
-                    Build a modern graphical desktop,
-                    application framework and package manager.
+                    Explore custom kernel, filesystem and desktop components as separate future projects.
                 </p>
             </div>
         </div>
@@ -441,9 +439,9 @@ GitHub
 
             <i class="fa-solid fa-users"></i>
 
-            <h2>4+</h2>
+            <h2>v0.1</h2>
 
-            <p>Team Members</p>
+            <p>First Live Release</p>
 
         </div>
 
@@ -451,9 +449,9 @@ GitHub
 
             <i class="fa-solid fa-code"></i>
 
-            <h2>3</h2>
+            <h2>amd64</h2>
 
-            <p>Programming Languages</p>
+            <p>64-bit Target</p>
 
         </div>
 
@@ -461,9 +459,9 @@ GitHub
 
             <i class="fa-solid fa-layer-group"></i>
 
-            <h2>10+</h2>
+            <h2>2</h2>
 
-            <p>Core Modules</p>
+            <p>Boot Modes</p>
 
         </div>
 
@@ -471,9 +469,9 @@ GitHub
 
             <i class="fa-solid fa-rocket"></i>
 
-            <h2>2026</h2>
+            <h2>Debian 13</h2>
 
-            <p>Project Started</p>
+            <p>Linux Base</p>
 
         </div>
 
@@ -527,7 +525,7 @@ GitHub
         <div class="feature-card">
             <i class="fa-solid fa-graduation-cap"></i>
             <h3>Educational</h3>
-            <p>Learn operating system development with real source code.</p>
+            <p>Explore the live-build recipe, branding, desktop defaults and welcome utility.</p>
         </div>
 
         <div class="feature-card">
@@ -545,7 +543,7 @@ GitHub
         <div class="feature-card">
             <i class="fa-solid fa-laptop-code"></i>
             <h3>Hands-on Learning</h3>
-            <p>Understand kernels, drivers, memory and scheduling practically.</p>
+            <p>Start with a working desktop and a practical set of development tools.</p>
         </div>
 
     </div>
@@ -581,7 +579,7 @@ GitHub
 
             <div class="contact-item">
                 <i class="fa-brands fa-github"></i>
-                <a href="https://github.com/samirlevate8788-creator/AstraOS"
+                <a href="https://github.com/samirlevate8788-creator/AstraOS-"
                     target="_blank">
                     github.com/samirlevate8788-creator/AstraOS
                 </a>
@@ -654,7 +652,7 @@ GitHub
 
         <div class="footer-social">
 
-            <a href="https://github.com/samirlevate8788-creator/AstraOS"
+            <a href="https://github.com/samirlevate8788-creator/AstraOS-"
                 target="_blank">
 
                 <i class="fa-brands fa-github"></i>
