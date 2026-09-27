@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+# Ubuntu's bundled live-build expects the older Debian ISOLINUX paths.
+mkdir -p /usr/lib/syslinux
+ln -sfn /usr/lib/ISOLINUX/isolinux.bin /usr/lib/syslinux/isolinux.bin
+ln -sfn /usr/lib/syslinux/modules/bios/vesamenu.c32 /usr/lib/syslinux/vesamenu.c32
+
+# The old Ubuntu live-build invokes rsvg with an output path positional argument.
+cat > /usr/local/bin/rsvg <<'EOF'
+#!/bin/bash
+set -euo pipefail
+args=("$@")
+if ((${#args[@]} >= 2)); then
+  output="${args[-1]}"
+  unset 'args[-1]'
+  exec /usr/bin/rsvg-convert "${args[@]}" --output "$output"
+fi
+exec /usr/bin/rsvg-convert "$@"
+EOF
+chmod 0755 /usr/local/bin/rsvg

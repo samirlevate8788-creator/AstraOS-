@@ -1,0 +1,12 @@
+/binary/
+/cache/
+/chroot/
+/config/binary
+/config/bootstrap
+/config/chroot
+/config/common
+/config/source
+/dist/*.iso
+/dist/*.md5
+/dist/*.sha256
+*.log

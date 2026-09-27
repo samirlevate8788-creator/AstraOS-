@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Welcome to AstraOS
+Comment=Welcome to your AstraOS live desktop
+Exec=astraos-welcome
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true

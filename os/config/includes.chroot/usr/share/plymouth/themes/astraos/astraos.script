@@ -1,0 +1,15 @@
+Window.SetBackgroundTopColor(0.02, 0.04, 0.10);
+Window.SetBackgroundBottomColor(0.01, 0.015, 0.04);
+
+logo_image = Image("/usr/share/pixmaps/astraos-logo.png");
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+scale_x = (screen_width * 0.72) / logo_image.GetWidth();
+scale_y = (screen_height * 0.78) / logo_image.GetHeight();
+scale = Math.Min(scale_x, scale_y);
+scaled_logo = logo_image.Scale(logo_image.GetWidth() * scale,
+                              logo_image.GetHeight() * scale);
+logo_sprite = Sprite(scaled_logo);
+logo_sprite.SetX((screen_width - scaled_logo.GetWidth()) / 2);
+logo_sprite.SetY((screen_height - scaled_logo.GetHeight()) / 2);
+logo_sprite.SetZ(-100);

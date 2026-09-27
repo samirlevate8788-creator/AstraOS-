@@ -1,0 +1,5 @@
+NAME="AstraOS"
+VERSION="0.1"
+BASE="Debian GNU/Linux 13 (trixie)"
+EDITION="Live"
+ARCH="amd64"

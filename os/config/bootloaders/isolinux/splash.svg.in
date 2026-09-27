@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b19"/>
+      <stop offset="0.55" stop-color="#10172a"/>
+      <stop offset="1" stop-color="#080c18"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#19d6f2" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#19d6f2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#55f2ff"/>
+      <stop offset="1" stop-color="#8b78ff"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#69cfe4" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect width="640" height="480" fill="url(#grid)"/>
+  <ellipse cx="320" cy="170" rx="245" ry="190" fill="url(#glow)"/>
+  <path d="M0 346H640" stroke="#46d9ed" stroke-opacity="0.25"/>
+  <path d="M0 351H640" stroke="#8978ff" stroke-opacity="0.12"/>
+  <g transform="translate(320 145)" fill="none" stroke="url(#mark)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-45 30 0-49 45 30" stroke-width="7"/>
+    <path d="M-23 9H23" stroke-width="6"/>
+    <path d="M-58 30H58" stroke-width="2" stroke-opacity="0.8"/>
+    <circle r="68" stroke-width="1.5" stroke-opacity="0.38"/>
+    <circle r="78" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="2 9"/>
+  </g>
+  <text x="320" y="263" fill="#f0f7ff" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="8" text-anchor="middle">ASTRAOS</text>
+  <text x="320" y="291" fill="#79dbea" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" letter-spacing="3" text-anchor="middle">LIVE DESKTOP  /  VERSION 0.1</text>
+  <text x="320" y="445" fill="#9caac1" fill-opacity="0.8" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">OPEN SOURCE  |  BUILT ON DEBIAN</text>
+</svg>
