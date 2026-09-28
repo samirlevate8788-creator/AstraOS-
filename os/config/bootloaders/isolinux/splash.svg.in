@@ -30,6 +30,6 @@
     <circle r="78" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="2 9"/>
   </g>
   <text x="320" y="263" fill="#f0f7ff" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="8" text-anchor="middle">ASTRAOS</text>
-  <text x="320" y="291" fill="#79dbea" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" letter-spacing="3" text-anchor="middle">ETHICAL SECURITY LAB  /  VERSION 0.2.0-ALPHA</text>
+  <text x="320" y="291" fill="#79dbea" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" letter-spacing="3" text-anchor="middle">SECURITY WORKSTATION  /  VERSION 0.2.0-ALPHA</text>
   <text x="320" y="445" fill="#9caac1" fill-opacity="0.8" font-family="Inter, Arial, sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">OPEN SOURCE  |  BUILT ON DEBIAN</text>
 </svg>

@@ -1,76 +1,102 @@
 #!/usr/bin/python3
+"""AstraOS welcome screen for the security-learning live workstation."""
+
 import math
 import subprocess
 import tkinter as tk
 from pathlib import Path
 
-NAVY = "#070d1b"
-PANEL = "#0e1830"
-CYAN = "#28b9ff"
-WHITE = "#f4f8ff"
-MUTED = "#9fb3cf"
+NAVY = "#060a12"
+PANEL = "#0c1420"
+PANEL_LIGHT = "#101d2b"
+CYAN = "#63e6ff"
+WHITE = "#eff7ff"
+MUTED = "#9caec1"
+GREEN = "#8ae6bd"
 LOGO = Path("/usr/share/pixmaps/astraos-logo.png")
 GUIDE = Path("/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md")
 
 root = tk.Tk()
-root.title("Welcome to AstraOS")
+root.title("AstraOS Security Workstation")
 root.configure(bg=NAVY)
-root.geometry("680x520")
-root.minsize(560, 460)
+root.geometry("760x590")
+root.minsize(600, 520)
 
-content = tk.Frame(root, bg=NAVY, padx=38, pady=28)
-content.pack(fill="both", expand=True)
+outer = tk.Frame(root, bg=NAVY, padx=34, pady=24)
+outer.pack(fill="both", expand=True)
 
 try:
     logo = tk.PhotoImage(file=str(LOGO))
-    factor = max(1, math.ceil(max(logo.width(), logo.height()) / 180))
+    factor = max(1, math.ceil(max(logo.width(), logo.height()) / 112))
     if factor > 1:
         logo = logo.subsample(factor, factor)
-    image = tk.Label(content, image=logo, bg=NAVY, borderwidth=0)
+    image = tk.Label(outer, image=logo, bg=NAVY, borderwidth=0)
     image.image = logo
-    image.pack(pady=(0, 12))
+    image.pack(pady=(0, 8))
 except tk.TclError:
-    tk.Label(content, text="A", font=("Inter", 42, "bold"), fg=CYAN, bg=NAVY).pack()
+    tk.Label(outer, text="A", font=("Inter", 34, "bold"),
+             fg=CYAN, bg=NAVY).pack(pady=(0, 8))
 
-tk.Label(content, text="Welcome to AstraOS", font=("Inter", 23, "bold"),
-         fg=WHITE, bg=NAVY).pack(pady=(0, 8))
-tk.Label(content, text="Build  •  Learn  •  Innovate", font=("Inter", 12),
-         fg=CYAN, bg=NAVY).pack()
-tk.Label(content, text="AstraOS 0.2.0-alpha · Debian 13 · XFCE live session",
-         font=("Inter", 10), fg=MUTED, bg=NAVY).pack(pady=(12, 22))
+tk.Label(outer, text="ASTRAOS  /  SECURITY WORKSTATION",
+         font=("Inter", 9, "bold"), fg=CYAN, bg=NAVY).pack()
+tk.Label(outer, text="Build in your own lab.",
+         font=("Inter", 24, "bold"), fg=WHITE, bg=NAVY).pack(pady=(8, 2))
+tk.Label(outer, text="0.2.0-alpha · Debian 13 · XFCE live session",
+         font=("Inter", 10), fg=MUTED, bg=NAVY).pack()
 
-tk.Label(content, text="Your desktop is ready. Open a terminal to start building, "
-         "or explore the AstraOS project online.",
-         font=("Inter", 11), fg=WHITE, bg=NAVY, wraplength=520,
-         justify="center").pack(pady=(0, 24))
+card = tk.Frame(outer, bg=PANEL, padx=20, pady=17,
+                highlightthickness=1, highlightbackground="#1b3448")
+card.pack(fill="x", pady=(23, 17))
+tk.Label(card, text="YOUR FIRST STEP",
+         font=("Inter", 9, "bold"), fg=GREEN, bg=PANEL).pack(anchor="w")
+tk.Label(card, text="Start the guided toolkit to launch a local practice target, "
+         "explore defensive tools, and read safe examples.",
+         font=("Inter", 11), fg=WHITE, bg=PANEL, wraplength=600,
+         justify="left").pack(anchor="w", pady=(8, 0))
+
+def launch_toolkit():
+    subprocess.Popen(["astraos-toolkit"], start_new_session=True)
 
 def open_terminal():
     subprocess.Popen(["xfce4-terminal"], start_new_session=True)
+
+def open_guide():
+    if GUIDE.exists():
+        subprocess.Popen(["mousepad", str(GUIDE)], start_new_session=True)
 
 def open_project():
     subprocess.Popen(["xdg-open", "https://github.com/samirlevate8788-creator/AstraOS-"],
                      start_new_session=True)
 
-def open_security_guide():
-    if GUIDE.exists():
-        subprocess.Popen(["mousepad", str(GUIDE)], start_new_session=True)
-        return
-    subprocess.Popen(["xdg-open", "https://samirlevate8788-creator.github.io/AstraOS-/security-lab.html"],
-                     start_new_session=True)
+def make_button(parent, label, action, primary=False):
+    return tk.Button(
+        parent, text=label, command=action,
+        bg=CYAN if primary else PANEL_LIGHT,
+        fg="#06111e" if primary else WHITE,
+        activebackground="#a6edff" if primary else "#1a3045",
+        activeforeground="#06111e" if primary else WHITE,
+        relief="flat", padx=15, pady=12,
+        font=("Inter", 10, "bold"), cursor="hand2"
+    )
 
-actions = tk.Frame(content, bg=NAVY)
-actions.pack()
-tk.Button(actions, text="Open Terminal", command=open_terminal, bg=CYAN, fg="#04101d",
-          activebackground="#79d4ff", relief="flat", padx=20, pady=10,
-          font=("Inter", 10, "bold")).pack(side="left", padx=6)
-tk.Button(actions, text="AstraOS on GitHub", command=open_project, bg=PANEL, fg=WHITE,
-          activebackground="#1a2a49", relief="flat", padx=20, pady=10,
-          font=("Inter", 10, "bold")).pack(side="left", padx=6)
-tk.Button(actions, text="Security Lab Guide", command=open_security_guide, bg=PANEL, fg=WHITE,
-          activebackground="#1a2a49", relief="flat", padx=20, pady=10,
-          font=("Inter", 10, "bold")).pack(side="left", padx=6)
+row_one = tk.Frame(outer, bg=NAVY)
+row_one.pack(fill="x")
+make_button(row_one, "Open Security Toolkit", launch_toolkit, True).pack(
+    side="left", fill="x", expand=True, padx=(0, 6))
+make_button(row_one, "Open Terminal", open_terminal).pack(
+    side="left", fill="x", expand=True, padx=(6, 0))
 
-tk.Label(content, text="This live session does not save changes after shutdown.",
-         font=("Inter", 9), fg=MUTED, bg=NAVY).pack(side="bottom", pady=(20, 0))
+row_two = tk.Frame(outer, bg=NAVY)
+row_two.pack(fill="x", pady=(10, 0))
+make_button(row_two, "Offline Lab Guide", open_guide).pack(
+    side="left", fill="x", expand=True, padx=(0, 6))
+make_button(row_two, "AstraOS source", open_project).pack(
+    side="left", fill="x", expand=True, padx=(6, 0))
+
+tk.Label(outer, text="Practice only on systems you own or have written authorization to assess.",
+         font=("Inter", 9, "bold"), fg="#ffd08b", bg=NAVY,
+         wraplength=650, justify="center").pack(pady=(20, 4))
+tk.Label(outer, text="This live session resets at shutdown. Save your own work to approved storage.",
+         font=("Inter", 9), fg=MUTED, bg=NAVY).pack(side="bottom", pady=(15, 0))
 
 root.mainloop()

@@ -579,9 +579,12 @@ Object.assign(AstraOS, {
 
     initUI() {
 
+        this.createToastContainer();
+
+        if (document.body.classList.contains("cyber-site")) return;
+
         this.createThemeButton();
         this.createBackTop();
-        this.createToastContainer();
 
         this.initTheme();
         this.initBackTop();
@@ -1049,6 +1052,10 @@ Object.assign(AstraOS, {
 
     initGitHub() {
 
+        if (!this.qs("[data-stars], [data-forks], [data-watchers], [data-open-issues], [data-contributors], [data-version]")) {
+            return;
+        }
+
         this.loadRepository();
 
         this.loadContributors();
@@ -1372,6 +1379,8 @@ Object.assign(AstraOS, {
     ========================== */
 
     initPremiumEffects() {
+
+        if (document.body.classList.contains("cyber-site")) return;
 
         this.initMagneticButtons();
         this.initCardTilt();
@@ -1703,5 +1712,55 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll('.github-card').forEach(card => {
     card.addEventListener('click', () => {
         window.open('https://github.com/samirlevate8788-creator/AstraOS-', '_blank');
+    });
+});
+
+// The homepage terminal is a clearly labeled visual simulation, not a live scan.
+document.addEventListener("DOMContentLoaded", () => {
+    const preview = document.querySelector("[data-preview-window]");
+    const output = document.querySelector("[data-terminal-output]");
+    const toggle = document.querySelector("[data-animation-toggle]");
+
+    if (!preview || !output || !toggle) return;
+
+    const frames = [
+        [
+            "[ demo ] local practice session",
+            "$ nmap -sV -p 8765 127.0.0.1",
+            "8765/tcp open  http-alt  (loopback lab)",
+            "$ sudo lynis audit system --quick",
+            "baseline review · inspect report"
+        ].join("\n"),
+        [
+            "[ demo ] lab target is local-only",
+            "$ gobuster dir -u http://127.0.0.1:8765",
+            "Found: /docs/   (sample content)",
+            "Found: /status/ (sample content)",
+            "scope: 127.0.0.1 · no remote host"
+        ].join("\n"),
+        [
+            "[ demo ] defensive review",
+            "$ bandit -r ./your-python-project",
+            "review findings in context",
+            "$ sudo ufw status verbose",
+            "read the current host policy"
+        ].join("\n")
+    ];
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+
+    if (!prefersReducedMotion) {
+        window.setInterval(() => {
+            if (preview.classList.contains("is-paused")) return;
+            frame = (frame + 1) % frames.length;
+            output.textContent = frames[frame];
+        }, 4200);
+    }
+
+    toggle.addEventListener("click", () => {
+        const paused = preview.classList.toggle("is-paused");
+        toggle.setAttribute("aria-pressed", String(paused));
+        toggle.textContent = paused ? "Play terminal animation" : "Pause terminal animation";
     });
 });

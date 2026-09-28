@@ -7,9 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AstraOS | Debian 13 Live Desktop and Security Learning</title>
+    <title>AstraOS — Linux Security Workstation for Ethical Lab Learning</title>
 
-    <meta name="description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
+    <meta name="description" content="AstraOS is a Debian-based Linux security workstation in development, with a guided ethical toolkit, local-only practice lab, and a cinematic terminal desktop preview.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
     <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AstraOS">
-    <meta property="og:title" content="AstraOS | Debian 13 Live Desktop and Security Learning">
-    <meta property="og:description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
+    <meta property="og:title" content="AstraOS — Linux Security Workstation">
+    <meta property="og:description" content="A Debian-based security workstation in development, with guided tools and a local-only practice lab.">
     <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/">
     <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
     <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
@@ -78,8 +78,8 @@
   <meta name="astraos-analytics-id" content="">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-JITWcFL++aDQqsSwVy7CX6N5KQWywT0RyHwF/lUjTgc=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="twitter:title" content="AstraOS | Debian 13 Live Desktop and Security Learning">
-  <meta name="twitter:description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
+  <meta name="twitter:title" content="AstraOS — Linux Security Workstation">
+  <meta name="twitter:description" content="A Debian-based security workstation in development, with guided tools and a local-only practice lab.">
   <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
 
 
@@ -104,687 +104,160 @@
 
 </head>
 
-<body>
+<body class="cyber-site">
+  <div id="loader" class="cyber-loader" aria-label="Loading AstraOS">
+    <div class="loader-logo">ASTRA<span>OS</span></div>
+    <div class="loader-bar"><span></span></div>
+    <p>INITIALIZING SECURITY WORKSTATION</p>
+  </div>
+  <div id="progress-bar"></div>
 
-    <!-- ================= LOADER ================= -->
+  <header class="cyber-header">
+    <nav class="navbar cyber-nav" aria-label="Main navigation">
+      <a class="logo cyber-brand" href="index.html" aria-label="AstraOS home">
+        <img src="assets/images/astraos-logo.png" alt="" class="nav-logo" width="40" height="40">
+        <span>ASTRA<span class="brand-accent">OS</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#workflow">How it works</a></li>
+        <li><a href="security-lab.html">Security Lab</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+      </ul>
+      <div class="cyber-nav-actions">
+        <a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+        </a>
+        <a class="cyber-nav-cta" href="download.html">Get the live build <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
 
-    <div id="loader">
-
-        <div class="loader-logo">AstraOS</div>
-
-        <div class="loader-bar">
-            <span></span>
+  <main id="main-content" class="cyber-shell">
+    <section id="home" class="cyber-hero">
+      <div class="cyber-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="cyber-hero-copy">
+        <p class="cyber-kicker"><span class="status-light"></span> OPEN-SOURCE LINUX SECURITY WORKSTATION</p>
+        <h1>Think like a defender.<br><span>Build in your own lab.</span></h1>
+        <p class="cyber-lede">AstraOS is evolving from a Debian live desktop into a guided security-learning workstation—with a local practice target, a focused toolkit, and a desktop built for developers.</p>
+        <div class="cyber-hero-actions">
+          <a class="cyber-button cyber-button-primary" href="security-lab.html">Explore the security lab <span aria-hidden="true">↗</span></a>
+          <a class="cyber-button cyber-button-quiet" href="download.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Current live build · 0.1.1</a>
         </div>
-
-    </div>
-
-    <!-- ================= PROGRESS BAR ================= -->
-
-    <div id="progress-bar"></div>
-
-    <!-- ================= NAVBAR ================= -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <div class="logo">
-                <a href="index.html">
-                <img src="assets/images/astraos-logo.png" alt="AstraOS Logo" class="nav-logo">
-                </a>
-            </div>
-
-           <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="documentation.html">Documentation</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="contribute.html">Contribute</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            <li><a href="security-lab.html">Security Lab</a></li></ul>
-
-            <div class="social-links">
-
-                <a href="https://github.com/samirlevate8788-creator/AstraOS-"
-
-target="_blank"
-
-class="github-btn" rel="noopener noreferrer">
-
-<i class="fa-brands fa-github"></i>
-
-GitHub
-
-</a>
-<a href="https://www.linkedin.com/company/astro-os-community/"
-                   target="_blank"
-                    class="btn btn-linkedin" rel="noopener noreferrer">
-                 <i class="fab fa-linkedin"></i>
-                    LinkedIn
-</a>
-
-            </div>
-
-
-
-        </nav>
-
-    </header>
-
-    <!-- ================= HERO ================= -->
-
-    <section id="home" class="hero">
-
-        <div class="hero-content">
-
-            <h1>
-
-                Build the Future with
-
-                <span>AstraOS</span>
-
-            </h1>
-
-            <p>
-
-                A Debian 13 live desktop today; an ethical security learning toolkit is in development for the next source build.
-
-            </p>
-
-        <div class="hero-buttons">
-            <a href="download.html" class="primary-btn">
-                <i class="fa-solid fa-download"></i> Download AstraOS 0.1.1
-            </a>
+        <div class="cyber-release-note"><span class="release-dot"></span><span><strong>0.2.0-alpha</strong> is source-only right now. Its ISO still needs a Linux build and validation.</span></div>
+        <div class="cyber-metrics" aria-label="AstraOS project facts">
+          <div><strong>Debian 13</strong><span>Linux base</span></div>
+          <div><strong>XFCE</strong><span>Lightweight desktop</span></div>
+          <div><strong>Local-first</strong><span>Practice target</span></div>
         </div>
-        <p class="hero-secondary-link"><a href="security-lab.html">Explore the Ethical Security Lab guide</a></p>
+      </div>
 
+      <div class="cyber-visual">
+        <div class="cyber-orbit orbit-one" aria-hidden="true"></div>
+        <div class="cyber-orbit orbit-two" aria-hidden="true"></div>
+        <div class="cyber-window" data-preview-window>
+          <div class="cyber-window-titlebar">
+            <div class="window-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span class="window-title">astraos-lab — terminal</span>
+            <span class="window-session">LOCAL SESSION</span>
+          </div>
+          <div class="cyber-window-body">
+            <aside class="cyber-rail" aria-label="Desktop preview shortcuts">
+              <span class="rail-logo">A</span><span class="rail-icon">⌂</span><span class="rail-icon active">⌘</span><span class="rail-icon">▦</span><span class="rail-icon">⚙</span>
+            </aside>
+            <div class="cyber-terminal">
+              <div class="terminal-head"><span>GUIDED PRACTICE</span><span class="simulation-tag">SIMULATED OUTPUT</span></div>
+              <pre class="terminal-output" data-terminal-output aria-live="off">[ demo ] local practice session
+$ nmap -sV -p 8765 127.0.0.1
+8765/tcp open  http-alt  (loopback lab)
+$ sudo lynis audit system --quick
+baseline review · inspect report</pre>
+              <div class="terminal-cursor" aria-hidden="true"></div>
+              <div class="terminal-foot"><span><i class="status-light"></i> LAB TARGET: 127.0.0.1</span><span>NO REMOTE SCAN RUNNING</span></div>
+            </div>
+          </div>
+          <div class="cyber-window-footer"><span>⌁ AstraOS Security Workstation</span><span>● Debian 13 · XFCE</span></div>
+        </div>
+        <button class="cyber-demo-toggle" type="button" data-animation-toggle aria-pressed="false">Pause terminal animation</button>
+      </div>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="about">
-
-        <h2>
-
-            About AstraOS
-
-        </h2>
-
-        <p>
-
-            AstraOS 0.1.1 is the BIOS/UEFI boot hotfix for our Debian 13 live Linux system. Both firmware paths reach the AstraOS-branded XFCE desktop in QEMU/KVM, and the terminal launches. Custom AstraOS utilities and physical-PC compatibility testing are next.
-
-        </p>
-
+    <section class="cyber-proof" aria-label="Project capabilities">
+      <div><span class="proof-icon">01</span><p><strong>Guided by design</strong><br>Examples explain scope before tools.</p></div>
+      <div><span class="proof-icon">02</span><p><strong>A lab on your own machine</strong><br>Practice target binds to loopback only.</p></div>
+      <div><span class="proof-icon">03</span><p><strong>Built on Debian</strong><br>Open tools, desktop you can inspect.</p></div>
     </section>
 
-    <section class="release-screenshot" aria-labelledby="live-desktop-title">
-        <div class="section-title">
-            <h2 id="live-desktop-title">See AstraOS running</h2>
-            <p>The first live build boots to an AstraOS-branded XFCE desktop.</p>
-        </div>
-        <figure>
-            <img src="social/astraos-0.1.1-live-desktop-crop.jpg"
-                 alt="AstraOS 0.1 live desktop showing the Welcome to AstraOS window and XFCE wallpaper"
-                 width="1025" height="620" loading="lazy">
-            <figcaption>AstraOS 0.1.1 live desktop running in a virtual machine.</figcaption>
-        </figure>
+    <section id="platform" class="cyber-section">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">THE WORKSTATION</p><h2>Familiar Linux.<br><span>AstraOS character.</span></h2></div>
+        <p>A focused XFCE environment with a dark Arc theme, AstraOS boot identity, a guided toolkit window, and a practice site served only to your own computer.</p>
+      </div>
+      <div class="cyber-platform-grid">
+        <article class="cyber-feature cyber-feature-main">
+          <span class="feature-number">01 / DESKTOP</span><div class="feature-symbol">▰</div>
+          <h3>Your Linux workbench</h3><p>Keep the everyday Linux workflow—terminal, browser, editor, task manager—and add an AstraOS launch point for the security learning tools.</p>
+          <a href="documentation.html">See platform notes <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cyber-feature">
+          <span class="feature-number">02 / PRACTICE</span><div class="feature-symbol">⌁</div>
+          <h3>Loopback lab target</h3><p>Start a small sample website bound to 127.0.0.1. Nmap, Gobuster, and packet-capture examples stay pointed at this local practice target.</p>
+          <a href="security-lab.html#local-lab">Explore the local lab <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="cyber-feature">
+          <span class="feature-number">03 / DEFENSE</span><div class="feature-symbol">⬡</div>
+          <h3>Investigate and harden</h3><p>Learn Linux audits, host firewall basics, system-call tracing, code review, and file-system forensics with clear guide rails.</p>
+          <a href="security-lab.html#toolkit">Browse the toolkit <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
     </section>
 
-<!-- ================= FEATURES ================= -->
-
-<section id="features" class="features">
-
-    <div class="section-title">
-        <h2>Core Features</h2>
-        <p>What you can use in the first live build.</p>
-    </div>
-
-    <div class="feature-container">
-
-        <div class="feature-card">
-            <i class="fa-solid fa-microchip"></i>
-            <h3>Debian 13 Base</h3>
-            <p>A familiar Linux package foundation with a standard Debian kernel.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-memory"></i>
-            <h3>XFCE Desktop</h3>
-            <p>A lightweight graphical session that starts from the live image.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-hard-drive"></i>
-            <h3>BIOS + UEFI Boot</h3>
-            <p>Hybrid ISO with legacy BIOS and UEFI boot entries for amd64 PCs.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-terminal"></i>
-            <h3>Everyday Apps</h3>
-            <p>Firefox ESR, terminal, text editor, networking and disk tools.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-network-wired"></i>
-            <h3>Developer Essentials</h3>
-            <p>Git, build tools, Python, curl and common command-line utilities.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>AstraOS Branding</h3>
-            <p>Custom boot screen, wallpaper, desktop defaults, logo and welcome app.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= TEAM ================= -->
-
-<section id="team" class="team">
-
-    <div class="section-title">
-        <h2>Meet Our Team</h2>
-        <p>The passionate people building AstraOS.</p>
-    </div>
-
-    <div class="team-container">
-
-        <!-- Founder -->
-
-        <div class="team-card">
-
-        <img src="assets/images/samir.jpg" alt="Samir Levate" loading="lazy" decoding="async">
-
-            <h3><a href="samir.html">Samir Levate</a></h3>
-
-            <span>Founder • Team Lead • System Architect</span>
-
-            <p>
-                Passionate Computer Science student building AstraOS
-                to help students learn operating system development.
-            </p>
-
-            <div class="social-links">
-
-            <a href="https://github.com/samirlevate8788-creator"
-               target="_blank"
-               title="GitHub" rel="noopener noreferrer">
-
-                <i class="fa-brands fa-github"></i>
-
-            </a>
-
-            <a href="https://www.linkedin.com/in/samir-levate-a2647a357"
-               target="_blank"
-               title="LinkedIn" rel="noopener noreferrer">
-
-                <i class="fa-brands fa-linkedin"></i>
-
-            </a>
-
-        </div>
-
-        </div>
-
-        <!-- Co-Founder -->
-
-        <div class="team-card">
-
-            <img src="assets/images/samarth.jpg" alt="Samarth Waghmode" loading="lazy" decoding="async">
-
-            <h3>Samarth Waghmode</h3>
-
-            <span>Co-Founder </span>
-
-            <p>
-                Co-Founder of AstraOS, contributing to system architecture,
-                kernel development and project management.
-            </p>
-
-            <div class="social-links">
-
-                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
-                    <i class="fa-brands fa-github"></i>
-                </span>
-
-                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
-                    <i class="fa-brands fa-linkedin"></i>
-                </span>
-
-            </div>
-
-        </div>
-
-        <!-- Team Member -->
-
-        <div class="team-card">
-
-            <img src="ashish.jpeg" alt="Ashish Papadkar" loading="lazy" decoding="async">
-
-            <h3>Ashish Papadkar</h3>
-
-            <span>Developer • Installation & Hardware Support</span>
-
-            <p>
-                Contributing to AstraOS by improving installation,
-                hardware support, system management and developer workflows.
-            </p>
-
-            <div class="social-links">
-
-                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
-                    <i class="fa-brands fa-github"></i>
-                </span>
-
-                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
-                    <i class="fa-brands fa-linkedin"></i>
-                </span>
-
-            </div>
-
-        </div>
-
-        <!-- Join Team -->
-
-        <div class="team-card">
-
-            <img src="assets/images/astraos-logo.png" alt="AstraOS Logo">
-
-            <h3>Join Our Team</h3>
-
-            <span>Open Positions</span>
-
-            <p>
-                We are looking for passionate developers interested in
-                Operating Systems, C/C++, Assembly, Linux and Open Source.
-            </p>
-
-            <a href="#contact" class="join-btn">
-
-                Apply Now
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= ROADMAP ================= -->
-
-<section id="roadmap" class="roadmap">
-
-    <div class="section-title">
-        <h2>Development Roadmap</h2>
-        <p>v0.1.1 fixes the boot image; BIOS and UEFI reach the AstraOS desktop in QEMU/KVM.</p>
-    </div>
-
-    <div class="roadmap-container">
-
-        <div class="roadmap-item">
-            <div class="roadmap-icon">
-                <i class="fa-solid fa-lightbulb"></i>
-            </div>
-
-            <div class="roadmap-content">
-                <h3>v0.1.1 - Bootable Live Desktop <span class="roadmap-status">VM Verified</span></h3>
-                <p>
-                    Debian 13, XFCE, BIOS and UEFI desktop startup, terminal and AstraOS branding.
-                </p>
-            </div>
-        </div>
-
-        <div class="roadmap-item">
-            <div class="roadmap-icon">
-                <i class="fa-solid fa-code"></i>
-            </div>
-
-            <div class="roadmap-content">
-                <h3>Next - Physical PC Validation</h3>
-                <p>
-                    Check graphics, Wi-Fi and storage compatibility on representative physical PCs.
-                </p>
-            </div>
-        </div>
-
-        <div class="roadmap-item">
-            <div class="roadmap-icon">
-                <i class="fa-solid fa-terminal"></i>
-            </div>
-
-            <div class="roadmap-content">
-                <h3>v0.2 - AstraOS Utilities</h3>
-                <p>
-                    Add an AstraOS settings panel, welcome flow and graphical software installation.
-                </p>
-            </div>
-        </div>
-
-        <div class="roadmap-item">
-            <div class="roadmap-icon">
-                <i class="fa-solid fa-network-wired"></i>
-            </div>
-
-            <div class="roadmap-content">
-                <h3>Developer & Security Toolkit</h3>
-                <p>
-                    Curate more development and security tools with documentation and safe defaults.
-                </p>
-            </div>
-        </div>
-
-        <div class="roadmap-item">
-            <div class="roadmap-icon">
-                <i class="fa-solid fa-desktop"></i>
-            </div>
-
-            <div class="roadmap-content">
-                <h3>Long-Term OS Research</h3>
-                <p>
-                    Explore custom kernel, filesystem and desktop components as separate future projects.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= PROJECT STATS ================= -->
-
-<section class="stats">
-
-    <div class="section-title">
-        <h2>Project Statistics</h2>
-        <p>Current progress of AstraOS.</p>
-    </div>
-
-    <div class="stats-container">
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-users"></i>
-
-            <h2>v0.1.1</h2>
-
-            <p>BIOS + UEFI VM Verified</p>
-
-        </div>
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-code"></i>
-
-            <h2>amd64</h2>
-
-            <p>64-bit Target</p>
-
-        </div>
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-layer-group"></i>
-
-            <h2>2</h2>
-
-            <p>Boot Modes</p>
-
-        </div>
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-rocket"></i>
-
-            <h2>Debian 13</h2>
-
-            <p>Linux Base</p>
-
-        </div>
-
-        <div class="github-stats">
-
-    ⭐ Stars:
-    <span data-stars>0</span>
-
-    <br>
-
-    🍴 Forks:
-    <span data-forks>0</span>
-
-    <br>
-
-    👀 Watchers:
-    <span data-watchers>0</span>
-
-    <br>
-
-    🐞 Issues:
-    <span data-open-issues>0</span>
-
-    <br>
-
-    👥 Contributors:
-    <span data-contributors>0</span>
-
-    <br>
-
-    🚀 Latest Version:
-    <span data-version>Loading...</span>
-
-</div>
-
-    </div>
-
-</section>
-
-<!-- ================= WHY ASTRAOS ================= -->
-
-<section class="why-astraos">
-
-    <div class="section-title">
-        <h2>Why AstraOS?</h2>
-        <p>Designed for learning, collaboration and innovation.</p>
-    </div>
-
-    <div class="feature-container">
-
-        <div class="feature-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h3>Educational</h3>
-            <p>Explore the live-build recipe, branding, desktop defaults and welcome utility.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-code-branch"></i>
-            <h3>Open Source</h3>
-            <p>Anyone can contribute and improve AstraOS.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-users"></i>
-            <h3>Community Driven</h3>
-            <p>Developed by passionate students and developers.</p>
-        </div>
-
-        <div class="feature-card">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>Hands-on Learning</h3>
-            <p>Start with a working desktop and a practical set of development tools.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Join the AstraOS community and contribute to the future of open-source operating systems.</p>
-    </div>
-
-    <div class="contact-container">
-
-        <!-- Contact Info -->
-
-        <div class="contact-info">
-
-            <h3>Get In Touch</h3>
-
-            <p>
-                Whether you're a student, developer, or open-source enthusiast,
-                we'd love to hear from you.
-            </p>
-
-            <div class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>astraos.project@gmail.com</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa-brands fa-github"></i>
-                <a href="https://github.com/samirlevate8788-creator/AstraOS-"
-                    target="_blank" rel="noopener noreferrer">
-                    github.com/samirlevate8788-creator/AstraOS
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
-                    AstraOS LinkedIn
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>India</span>
-            </div>
-
-        </div>
-
-        <!-- Contact Form -->
-
-        <form class="contact-form">
-
-            <div class="form-trap" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" autocomplete="off" tabindex="-1"></label></div>
-
-            <input
-                type="text"
-                name="name"
-                aria-label="Your name"
-                autocomplete="name"
-                minlength="3"
-                maxlength="40"
-                placeholder="Your Name"
-                required>
-
-            <input
-                type="email"
-                name="email"
-                aria-label="Your email address"
-                autocomplete="email"
-                maxlength="254"
-                placeholder="Your Email"
-                required>
-
-            <input
-                type="text"
-                name="subject"
-                aria-label="Message subject"
-                minlength="3"
-                maxlength="100"
-                placeholder="Subject"
-                required>
-
-            <textarea
-                name="message"
-                aria-label="Your message"
-                rows="6"
-                minlength="10"
-                maxlength="1000"
-                placeholder="Write your message..."
-                required></textarea>
-
-            <button type="submit">
-
-                Send Message
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-content">
-
-        <h2>AstraOS</h2>
-
-        <p>
-
-            Build • Learn • Collaborate • Innovate
-
-        </p>
-
-        <div class="footer-social">
-
-            <a href="https://github.com/samirlevate8788-creator/AstraOS-"
-                target="_blank" rel="noopener noreferrer">
-
-                <i class="fa-brands fa-github"></i>
-
-            </a>
-
-            <a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
-
-                <i class="fa-brands fa-linkedin"></i>
-
-            </a>
-
-            <a href="mailto:astraos.project@gmail.com">
-
-                <i class="fa-solid fa-envelope"></i>
-
-            </a>
-
-        </div>
-
-        <p class="copyright">
-
-            © 2026 AstraOS. All Rights Reserved.
-
-        </p>
-
-    </div>
-
-  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
-</footer>
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script src="script.js" defer></script>
-
+    <section id="toolkit" class="cyber-section cyber-toolkit-section">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">TOOLS WITH CONTEXT</p><h2>One system.<br><span>Four learning tracks.</span></h2></div>
+        <p>Tool availability refers to the development source configuration. These packages are not in the currently downloadable 0.1.1 ISO.</p>
+      </div>
+      <div class="cyber-track-grid">
+        <article class="cyber-track"><span class="track-index">TRACK / 01</span><div class="track-glyph">⌁</div><h3>Network visibility</h3><p>Nmap · Wireshark · tcpdump · Gobuster</p><span class="track-scope">Loopback-first exercises</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 02</span><div class="track-glyph">⌘</div><h3>App & binary analysis</h3><p>Bandit · GDB · strace · ltrace · Binwalk</p><span class="track-scope">Your code and files</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 03</span><div class="track-glyph">◈</div><h3>Forensics foundations</h3><p>YARA · The Sleuth Kit · Foremost</p><span class="track-scope">Images you own or may examine</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 04</span><div class="track-glyph">⬡</div><h3>Linux defense</h3><p>Lynis · UFW · auditd · Fail2ban</p><span class="track-scope">Review before changing settings</span></article>
+      </div>
+      <div class="cyber-scope-note"><span class="scope-shield">✓</span><p><strong>Authorized learning only.</strong> No public-target scanning, credential guessing, traffic interception, or automated exploitation is built into the guided examples.</p><a href="terms.html">Read the usage rules</a></div>
+    </section>
+
+    <section id="workflow" class="cyber-section cyber-workflow">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">START SMALL · LEARN DEEPLY</p><h2>A lab flow that<br><span>keeps scope clear.</span></h2></div>
+        <p>The toolkit gives you a place to begin, explains where a command is meant to run, and keeps the practice web target on the local machine.</p>
+      </div>
+      <div class="cyber-steps">
+        <article><span>01</span><h3>Start the local target</h3><p>Open AstraOS Security Toolkit and start the sample site. It listens only at 127.0.0.1:8765.</p></article>
+        <article><span>02</span><h3>Choose a learning tool</h3><p>Read the tool description and copy a loopback or owned-file example. The toolkit never runs a command for you.</p></article>
+        <article><span>03</span><h3>Review what happened</h3><p>Explain the output, stop the target, and write down what you learned. For other systems, get written authorization first.</p></article>
+      </div>
+      <a class="cyber-text-link" href="security-lab.html">Open the complete lab guide <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section id="roadmap" class="cyber-release-panel">
+      <div class="release-panel-glow" aria-hidden="true"></div>
+      <div><p class="cyber-kicker">DEVELOPMENT BUILD · NOT RELEASED YET</p><h2>AstraOS 0.2.0-alpha</h2><p>Security workstation source, loopback practice site, guided toolkit utility, and refreshed desktop identity. The ISO still needs building in Linux and boot validation before it can be called a release.</p></div>
+      <div class="release-panel-actions"><a class="cyber-button cyber-button-primary" href="roadmap.html">Follow development <span aria-hidden="true">→</span></a><a class="release-source-link" href="https://github.com/samirlevate8788-creator/AstraOS-/tree/os/v0.1-live-build/os" target="_blank" rel="noopener noreferrer">Review OS source</a></div>
+    </section>
+  </main>
+
+  <footer class="cyber-footer">
+    <a class="cyber-brand" href="index.html"><img src="assets/images/astraos-logo.png" alt="" width="34" height="34"> <span>ASTRA<span class="brand-accent">OS</span></span></a>
+    <p>Open-source security learning · Debian · XFCE</p>
+    <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+    <span class="cyber-copyright">© 2026 AstraOS project · Build responsibly.</span>
+  </footer>
+
+  <script src="script.js" defer></script>
   <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
     <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
     <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
-  </section>
-</body>
+  </section></body>
 
 </html>

@@ -1,0 +1,239 @@
+#!/usr/bin/python3
+"""AstraOS guided security toolkit with a loopback-only practice web target."""
+
+import subprocess
+import sys
+import tkinter as tk
+import webbrowser
+from pathlib import Path
+from tkinter import messagebox
+
+NAVY = "#07111f"
+PANEL = "#0d1b2c"
+PANEL_LIGHT = "#12243a"
+CYAN = "#54dcff"
+GREEN = "#8af0c5"
+WHITE = "#ecf7ff"
+MUTED = "#a4b8cc"
+ORANGE = "#ffca80"
+GUIDE = Path("/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md")
+LAB_SITE = Path("/usr/share/astraos/lab-site")
+LAB_URL = "http://127.0.0.1:8765"
+LAB_PORT = 8765
+
+TOOLS = [
+    ("Network", "Nmap", "Inspect the one-port service on AstraOS's local practice target.",
+     "nmap -sV -p 8765 127.0.0.1"),
+    ("Network", "Gobuster", "Discover the sample paths on the local AstraOS practice site only.",
+     "gobuster dir -u http://127.0.0.1:8765 -w /usr/share/astraos/lab-wordlist.txt"),
+    ("Network", "Wireshark", "Choose the lo interface and capture only requests you generate to 127.0.0.1:8765.",
+     ""),
+    ("Network", "tcpdump", "View packets for the loopback practice site. Packet capture can contain sensitive data.",
+     "sudo tcpdump -i lo -nn port 8765"),
+    ("Defense", "Lynis", "Review local Linux hardening recommendations; inspect each finding before changing settings.",
+     "sudo lynis audit system --quick"),
+    ("Defense", "UFW", "Read the current host firewall status before considering any changes.",
+     "sudo ufw status verbose"),
+    ("Defense", "auditd", "View a summary only after the local audit service and rules are configured.",
+     "sudo aureport --summary"),
+    ("Defense", "Fail2ban", "Learn how local services use log-based protections. Review the guide before enabling a jail.",
+     "sudo fail2ban-client status"),
+    ("AppSec", "Bandit", "Review Python source code that you own or have permission to assess.",
+     "bandit -r ./your-python-project"),
+    ("AppSec", "GDB", "Debug a program you wrote or are authorized to inspect.",
+     "gdb ./your-own-program"),
+    ("AppSec", "strace", "Observe system calls made by a program you own; trace output may contain private paths.",
+     "strace -f -o ./trace.txt ./your-own-program"),
+    ("AppSec", "ltrace", "Observe library calls made by your own test program.",
+     "ltrace ./your-own-program"),
+    ("Firmware", "Binwalk", "Inspect firmware files you own or are explicitly allowed to analyze.",
+     "binwalk ./owned-firmware.bin"),
+    ("Forensics", "YARA", "Run a bundled harmless rule against bundled training text. AstraOS ships no malware samples.",
+     "yara /usr/share/astraos/lab-rules/harmless-marker.yar /usr/share/astraos/lab-samples/harmless-sample.txt"),
+    ("Forensics", "The Sleuth Kit", "Inspect a forensic image that you own or are authorized to examine.",
+     "mmls ./owned-lab-image.dd"),
+    ("Forensics", "Foremost", "Recover files from your own training image into a separate output folder.",
+     "foremost -i ./owned-lab-image.dd -o ./recovered"),
+]
+
+
+class AstraOSToolkit:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("AstraOS Security Workstation")
+        self.root.geometry("980x680")
+        self.root.minsize(760, 560)
+        self.root.configure(bg=NAVY)
+        self.lab_process = None
+        self.current_tool = None
+        self._build()
+        self.root.protocol("WM_DELETE_WINDOW", self.close)
+        self.select_tool(0)
+        self.root.mainloop()
+
+    def _build(self):
+        header = tk.Frame(self.root, bg=NAVY, padx=26, pady=22)
+        header.pack(fill="x")
+        tk.Label(header, text="ASTRAOS  /  SECURITY WORKSTATION",
+                 fg=CYAN, bg=NAVY, font=("Inter", 10, "bold")).pack(anchor="w")
+        tk.Label(header, text="Guided tools. Isolated practice.",
+                 fg=WHITE, bg=NAVY, font=("Inter", 23, "bold")).pack(anchor="w", pady=(7, 0))
+        tk.Label(header, text="Use only systems you own or have written authorization to assess.",
+                 fg=ORANGE, bg=NAVY, font=("Inter", 10)).pack(anchor="w", pady=(5, 0))
+
+        body = tk.Frame(self.root, bg=NAVY, padx=20, pady=4)
+        body.pack(fill="both", expand=True)
+        side = tk.Frame(body, bg=PANEL, padx=10, pady=12)
+        side.pack(side="left", fill="y")
+        tk.Label(side, text="TOOLBOX", fg=MUTED, bg=PANEL,
+                 font=("Inter", 9, "bold")).pack(anchor="w", padx=8, pady=(0, 8))
+        self.tool_list = tk.Listbox(
+            side, width=24, bg=PANEL, fg=WHITE, selectbackground="#145371",
+            selectforeground=WHITE, borderwidth=0, highlightthickness=0,
+            font=("Inter", 10), activestyle="none"
+        )
+        scrollbar = tk.Scrollbar(side, orient="vertical", command=self.tool_list.yview)
+        scrollbar.pack(side="right", fill="y")
+        self.tool_list.configure(yscrollcommand=scrollbar.set)
+        self.tool_list.pack(side="left", fill="both", expand=True)
+        for category, name, _, _ in TOOLS:
+            self.tool_list.insert("end", f"{category.upper():10}  {name}")
+        self.tool_list.bind("<<ListboxSelect>>", self._on_select)
+
+        self.detail = tk.Frame(body, bg=PANEL, padx=24, pady=22)
+        self.detail.pack(side="left", fill="both", expand=True, padx=(14, 0))
+        self.category_label = tk.Label(self.detail, text="", fg=CYAN, bg=PANEL,
+                                       font=("Inter", 9, "bold"))
+        self.category_label.pack(anchor="w")
+        self.name_label = tk.Label(self.detail, text="", fg=WHITE, bg=PANEL,
+                                   font=("Inter", 21, "bold"))
+        self.name_label.pack(anchor="w", pady=(5, 10))
+        self.description = tk.Label(self.detail, text="", fg=MUTED, bg=PANEL,
+                                    font=("Inter", 11), justify="left", wraplength=640)
+        self.description.pack(anchor="w", fill="x", pady=(0, 20))
+        tk.Label(self.detail, text="SAFE EXAMPLE  /  REVIEW BEFORE USING",
+                 fg=GREEN, bg=PANEL, font=("Inter", 9, "bold")).pack(anchor="w")
+        self.command = tk.Text(self.detail, height=4, wrap="word", bg="#050b13",
+                               fg=WHITE, insertbackground=WHITE, relief="flat",
+                               font=("DejaVu Sans Mono", 10), padx=12, pady=10)
+        self.command.pack(fill="x", pady=(8, 10))
+        self.copy_button = tk.Button(self.detail, text="Copy example",
+                                     command=self.copy_example, bg="#113b54", fg=WHITE,
+                                     activebackground="#18577a", activeforeground=WHITE,
+                                     relief="flat", padx=14, pady=9, cursor="hand2")
+        self.copy_button.pack(anchor="w")
+        tk.Label(self.detail,
+                 text="This copies text only. It never runs a command for you.",
+                 fg=MUTED, bg=PANEL, font=("Inter", 9)).pack(anchor="w", pady=(9, 0))
+
+        lab = tk.Frame(self.root, bg=PANEL_LIGHT, padx=20, pady=14)
+        lab.pack(fill="x", padx=20, pady=(14, 20))
+        lab_text = tk.Frame(lab, bg=PANEL_LIGHT)
+        lab_text.pack(side="left", fill="x", expand=True)
+        tk.Label(lab_text, text="LOCAL PRACTICE TARGET",
+                 fg=CYAN, bg=PANEL_LIGHT, font=("Inter", 9, "bold")).pack(anchor="w")
+        self.lab_status = tk.Label(lab_text, text="Stopped · binds to 127.0.0.1 only",
+                                   fg=MUTED, bg=PANEL_LIGHT, font=("Inter", 10))
+        self.lab_status.pack(anchor="w", pady=(4, 0))
+        controls = tk.Frame(lab, bg=PANEL_LIGHT)
+        controls.pack(side="right")
+        tk.Button(controls, text="Start local lab", command=self.start_lab,
+                  bg=CYAN, fg="#06111e", activebackground="#a6edff",
+                  relief="flat", padx=13, pady=9, cursor="hand2").pack(side="left", padx=4)
+        tk.Button(controls, text="Open lab site", command=self.open_lab,
+                  bg="#17344d", fg=WHITE, activebackground="#225071",
+                  relief="flat", padx=13, pady=9, cursor="hand2").pack(side="left", padx=4)
+        tk.Button(controls, text="Stop", command=self.stop_lab,
+                  bg="#17344d", fg=WHITE, activebackground="#225071",
+                  relief="flat", padx=13, pady=9, cursor="hand2").pack(side="left", padx=4)
+
+        footer = tk.Frame(self.root, bg=NAVY, padx=20, pady=0)
+        footer.pack(fill="x", pady=(0, 12))
+        tk.Button(footer, text="Open offline guide", command=self.open_guide,
+                  bg=PANEL, fg=WHITE, activebackground=PANEL_LIGHT, relief="flat",
+                  padx=12, pady=8, cursor="hand2").pack(side="left")
+        tk.Label(footer, text="AstraOS live session · Files reset at shutdown",
+                 fg=MUTED, bg=NAVY, font=("Inter", 9)).pack(side="right")
+
+    def _on_select(self, _event=None):
+        selected = self.tool_list.curselection()
+        if selected:
+            self.select_tool(selected[0])
+
+    def select_tool(self, index):
+        category, name, description, example = TOOLS[index]
+        self.current_tool = example
+        self.category_label.configure(text=f"{category.upper()}  /  LEARNING TOOL")
+        self.name_label.configure(text=name)
+        self.description.configure(text=description)
+        self.command.configure(state="normal")
+        self.command.delete("1.0", "end")
+        self.command.insert("1.0", example or "No command is needed for this guided activity.")
+        self.command.configure(state="disabled")
+        self.copy_button.configure(state=("normal" if example else "disabled"))
+        self.tool_list.selection_clear(0, "end")
+        self.tool_list.selection_set(index)
+        self.tool_list.activate(index)
+
+    def copy_example(self):
+        if not self.current_tool:
+            return
+        self.root.clipboard_clear()
+        self.root.clipboard_append(self.current_tool)
+        self.lab_status.configure(text="Example copied · command not run", fg=GREEN)
+
+    def start_lab(self):
+        if self.lab_process and self.lab_process.poll() is None:
+            self.lab_status.configure(text=f"Running locally · {LAB_URL}", fg=GREEN)
+            return
+        if not LAB_SITE.is_dir():
+            messagebox.showerror("Practice site missing",
+                                 "The AstraOS local lab files are not installed.")
+            return
+        try:
+            self.lab_process = subprocess.Popen(
+                [sys.executable, "-m", "http.server", str(LAB_PORT),
+                 "--bind", "127.0.0.1", "--directory", str(LAB_SITE)],
+                stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL, start_new_session=True
+            )
+            self.root.after(350, self._confirm_lab_started)
+        except OSError as error:
+            messagebox.showerror("Could not start local lab", str(error))
+
+    def _confirm_lab_started(self):
+        if self.lab_process and self.lab_process.poll() is None:
+            self.lab_status.configure(text=f"Running locally · {LAB_URL}", fg=GREEN)
+        else:
+            self.lab_status.configure(text="Could not start · check whether port 8765 is busy", fg=ORANGE)
+
+    def open_lab(self):
+        if not self.lab_process or self.lab_process.poll() is not None:
+            messagebox.showinfo("Start the lab first",
+                                "Start the local practice target before opening its web page.")
+            return
+        webbrowser.open(LAB_URL)
+
+    def stop_lab(self):
+        if self.lab_process and self.lab_process.poll() is None:
+            self.lab_process.terminate()
+            try:
+                self.lab_process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                self.lab_process.kill()
+        self.lab_process = None
+        self.lab_status.configure(text="Stopped · binds to 127.0.0.1 only", fg=MUTED)
+
+    def open_guide(self):
+        if GUIDE.exists():
+            subprocess.Popen(["mousepad", str(GUIDE)], start_new_session=True)
+        else:
+            messagebox.showerror("Guide missing", "The offline AstraOS guide was not found.")
+
+    def close(self):
+        self.stop_lab()
+        self.root.destroy()
+
+
+if __name__ == "__main__":
+    AstraOSToolkit()

@@ -11,6 +11,9 @@ BUILD_DIR="$(printenv ASTRAOS_BUILD_DIR || printf '%s' /var/tmp/astraos-live-bui
 
 mkdir -p "$BUILD_DIR/config"
 cp -a "$SOURCE_DIR/config/." "$BUILD_DIR/config/"
+chmod 0755 \
+  "$BUILD_DIR/config/includes.chroot/usr/local/bin/astraos-welcome" \
+  "$BUILD_DIR/config/includes.chroot/usr/local/bin/astraos-toolkit"
 BOOTLOADER_DIR="$BUILD_DIR/config/bootloaders/isolinux"
 if [ -d "$BOOTLOADER_DIR" ]; then
   # live-build 3.x uses legacy locations from Debian's newer syslinux packages.

@@ -1,0 +1,3 @@
+AstraOS YARA exercise.
+This is harmless plain text created for local training.
+Marker: ASTRAOS_TRAINING_SAMPLE

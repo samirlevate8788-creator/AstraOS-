@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AstraOS Security Toolkit
+Comment=Guided security learning tools and a loopback-only local practice target
+Exec=astraos-toolkit
+Icon=/usr/share/pixmaps/astraos-logo.png
+Terminal=false
+Categories=System;Utility;Security;
+StartupNotify=true

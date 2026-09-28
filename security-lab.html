@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethical Security Lab | AstraOS</title>
-  <meta name="description" content="AstraOS ethical security learning lab with defensive tools, safe local-only exercises, and guides for authorized systems.">
+  <title>AstraOS Security Lab | Guided Local-First Learning</title>
+  <meta name="description" content="AstraOS security workstation lab: guided network visibility, Linux defense, app analysis, forensics, and a loopback-only practice target.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
   <meta name="astraos-analytics-id" content="">
@@ -14,14 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AstraOS">
-  <meta property="og:title" content="Ethical Security Lab | AstraOS">
-  <meta property="og:description" content="AstraOS ethical security learning lab with defensive tools, safe local-only exercises, and guides for authorized systems.">
+  <meta property="og:title" content="AstraOS Security Lab | Guided Local-First Learning">
+  <meta property="og:description" content="AstraOS security workstation lab: guided network visibility, Linux defense, app analysis, forensics, and a loopback-only practice target.">
   <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/security-lab.html">
   <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
   <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ethical Security Lab | AstraOS">
-  <meta name="twitter:description" content="AstraOS ethical security learning lab with defensive tools, safe local-only exercises, and guides for authorized systems.">
+  <meta name="twitter:title" content="AstraOS Security Lab | Guided Local-First Learning">
+  <meta name="twitter:description" content="AstraOS security workstation lab: guided network visibility, Linux defense, app analysis, forensics, and a loopback-only practice target.">
   <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
 
   <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/security-lab.html">
@@ -45,26 +45,76 @@
 
 
 </head>
-<body>
-  <header><nav class="navbar"><div class="logo"><a href="index.html">AstraOS</a></div><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="security-lab.html" aria-current="page">Security Lab</a></li><li><a href="documentation.html">Documentation</a></li><li><a href="download.html">Download</a></li></ul><a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">GitHub</a></nav></header>
-  <main>
-    <section class="hero about-hero"><div class="hero-content"><p class="release-kicker">DEFENSIVE · AUTHORIZED · HANDS-ON</p><h1>Ethical Security <span>Lab</span></h1><p>Learn network visibility, Linux hardening, system auditing, and secure coding in a lab you own.</p><div class="hero-buttons"><a class="primary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/tree/os/v0.1-live-build/os" target="_blank" rel="noopener noreferrer">View security build source</a></div></div></section>
-    <section class="documentation"><div class="section-title"><h2>Tools planned for the next image</h2><p>These tools are in the 0.2.0-alpha source configuration. They are not included in the published v0.1.1 ISO yet.</p></div><div class="feature-container">
-      <article class="feature-card"><h3>Nmap</h3><p>Inventory services on your own lab machine. Start a local test server, then inspect only loopback:</p><pre><code>python3 -m http.server 8000<br>nmap -sV -p 8000 127.0.0.1</code></pre></article>
-      <article class="feature-card"><h3>Wireshark + tcpdump</h3><p>Observe packets you generate on your own computer. Choose the loopback interface and avoid capturing other people's traffic.</p><pre><code>sudo tcpdump -i lo -nn</code></pre><p>Open Wireshark, select the loopback interface, then visit <code>http://127.0.0.1:8000</code>.</p></article>
-      <article class="feature-card"><h3>Lynis</h3><p>Run a local defensive configuration audit and use the report as a hardening checklist:</p><pre><code>sudo lynis audit system --quick</code></pre></article>
-      <article class="feature-card"><h3>Bandit</h3><p>Find common security issues in Python code you own or are authorized to review:</p><pre><code>bandit -r ./your-python-project</code></pre></article>
-      <article class="feature-card"><h3>UFW</h3><p>Review your machine's firewall state. Read the output before changing rules:</p><pre><code>sudo ufw status verbose</code></pre></article>
-      <article class="feature-card"><h3>Linux audit</h3><p>Review local audit reports after auditd is configured and running:</p><pre><code>sudo aureport --summary</code></pre></article>
-    </div></section>
-    <section class="documentation"><div class="section-title"><h2>Safe practice path</h2></div><article class="doc-card"><ol><li>Use a disposable virtual machine or a computer you own.</li><li>Use loopback (127.0.0.1) for the network exercises on this page.</li><li>Write down the expected result before running a tool, then explain what each output field means.</li><li>For other systems, get written authorization that names the targets, time window, and allowed tests.</li><li>Keep a backup and document any configuration change so you can undo it.</li></ol><p><strong>Do not:</strong> scan public or campus networks without permission, guess passwords, intercept other users, or run disruptive tests. A tool being installed does not mean a target is authorized.</p><p>Start with the <a class="text-link" href="documentation.html">AstraOS boot and build docs</a>. The current published v0.1.1 release remains a basic live desktop; rebuild from the development source after reviewing packages if you want to test the future tool set.</p></article></section>
+<body class="cyber-site">
+  <div id="progress-bar"></div>
+  <header class="cyber-header">
+    <nav class="navbar cyber-nav" aria-label="Main navigation">
+      <a class="logo cyber-brand" href="index.html"><img src="assets/images/astraos-logo.png" alt="" width="36" height="36"><span>ASTRA<span class="brand-accent">OS</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#platform">Platform</a></li>
+        <li><a href="index.html#toolkit">Toolkit</a></li>
+        <li><a href="index.html#workflow">How it works</a></li>
+        <li><a href="security-lab.html" aria-current="page">Security Lab</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+      </ul>
+      <div class="cyber-nav-actions"><a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">Source</a><a class="cyber-nav-cta" href="download.html">Current ISO · 0.1.1</a></div>
+    </nav>
+  </header>
+  <main id="main-content" class="cyber-shell">
+    <section class="cyber-subhero">
+      <p class="cyber-kicker"><span class="status-light"></span> DEFENSIVE · AUTHORIZED · LOCAL-FIRST</p>
+      <h1>Learn the tools.<br><span>Know your scope.</span></h1>
+      <p>A guided learning path across network visibility, Linux defense, application analysis, and forensics. Start with the local AstraOS training site; it is served only to your own computer.</p>
+      <div class="cyber-hero-actions"><a class="cyber-button cyber-button-primary" href="#local-lab">Start the local lab <span aria-hidden="true">↓</span></a><a class="cyber-button cyber-button-quiet" href="os/config/includes.chroot/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md">Read the offline guide</a></div>
+      <div class="cyber-release-note"><span class="release-dot"></span><span>These advanced packages are in the <strong>0.2.0-alpha source</strong>. The downloadable ISO remains 0.1.1 until a new image is built and validated.</span></div>
+    </section>
+
+    <section id="local-lab" class="cyber-section">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">YOUR FIRST EXERCISE</p><h2>A safe target<br><span>already on your desktop.</span></h2></div>
+        <p>The AstraOS Toolkit starts a small static site at 127.0.0.1:8765. It has no login, collection form, or remote services. The server binds to loopback only.</p>
+      </div>
+      <div class="cyber-platform-grid">
+        <article class="cyber-feature"><span class="feature-number">STEP / 01</span><div class="feature-symbol">▶</div><h3>Start the sample site</h3><p>Open AstraOS Security Toolkit from the welcome window or XFCE menu. Choose Start local lab, then Open lab site.</p><a href="os/config/includes.chroot/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md">See local setup <span aria-hidden="true">→</span></a></article>
+        <article class="cyber-feature"><span class="feature-number">STEP / 02</span><div class="feature-symbol">⌁</div><h3>Inspect this loopback host</h3><p>Use only the built-in local practice target. These examples do not contact an internet host.</p><pre><code>nmap -sV -p 8765 127.0.0.1
+gobuster dir -u http://127.0.0.1:8765 -w /usr/share/astraos/lab-wordlist.txt</code></pre></article>
+        <article class="cyber-feature"><span class="feature-number">STEP / 03</span><div class="feature-symbol">■</div><h3>Observe and stop</h3><p>Study your own requests on the loopback interface. Stop the server from the Toolkit when the exercise ends.</p><pre><code>sudo tcpdump -i lo -nn port 8765
+Wireshark filter: tcp.port == 8765</code></pre></article>
+      </div>
+    </section>
+
+    <section id="toolkit" class="cyber-section">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">THE DEVELOPMENT TOOLBOX</p><h2>Four tracks.<br><span>One careful workflow.</span></h2></div>
+        <p>Tool scope depends on the target and your authorization. The AstraOS Toolkit copies examples but does not execute them for you.</p>
+      </div>
+      <div class="cyber-track-grid">
+        <article class="cyber-track"><span class="track-index">TRACK / 01</span><div class="track-glyph">⌁</div><h3>Network visibility</h3><p>Nmap · Gobuster · Wireshark · tcpdump</p><span class="track-scope">Use the built-in 127.0.0.1 lab only</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 02</span><div class="track-glyph">⌘</div><h3>Linux defense</h3><p>Lynis · UFW · Fail2ban · auditd</p><span class="track-scope">Review settings before changes</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 03</span><div class="track-glyph">▤</div><h3>App & binary analysis</h3><p>Bandit · GDB · strace · ltrace · Binwalk</p><span class="track-scope">Your own code and firmware</span></article>
+        <article class="cyber-track"><span class="track-index">TRACK / 04</span><div class="track-glyph">◈</div><h3>Forensics</h3><p>YARA · The Sleuth Kit · Foremost</p><span class="track-scope">Authorized images and samples</span></article>
+      </div>
+    </section>
+
+    <section class="cyber-section">
+      <div class="cyber-scope-note"><span class="scope-shield">✓</span><p><strong>Clear scope is part of the skill.</strong> Practice on systems you own or have written permission to assess. No password guessing, other people's traffic capture, public-target scans, or automated exploitation is included in these guided labs.</p><a href="terms.html">Usage rules</a></div>
+    </section>
+
+    <section class="cyber-release-panel">
+      <div class="release-panel-glow" aria-hidden="true"></div>
+      <div><p class="cyber-kicker">SOURCE IN DEVELOPMENT</p><h2>Build and validate before release.</h2><p>The advanced tool set, desktop utility, and local practice site must be packaged into a new ISO, booted in a VM, and tested before the v0.2.0-alpha image is published.</p></div>
+      <div class="release-panel-actions"><a class="cyber-button cyber-button-primary" href="documentation.html">Build documentation <span aria-hidden="true">→</span></a><a class="release-source-link" href="roadmap.html">View roadmap</a></div>
+    </section>
   </main>
-  <footer><div class="footer-content"><h2>AstraOS</h2><p>Learn security through authorized, defensive practice.</p><div class="footer-links"><a href="index.html">Home</a><a href="documentation.html">Documentation</a><a href="download.html">Download</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
-</footer>
+  <footer class="cyber-footer">
+    <a class="cyber-brand" href="index.html"><img src="assets/images/astraos-logo.png" alt="" width="30" height="30"><span>ASTRA<span class="brand-accent">OS</span></span></a>
+    <p>Learn security through authorized, defensive practice.</p>
+    <div class="footer-legal-links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+    <span class="cyber-copyright">© 2026 AstraOS project · Build responsibly.</span>
+  </footer>
   <script src="script.js" defer></script>
   <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
     <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
     <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
-  </section>
-</body>
+  </section></body>
 </html>

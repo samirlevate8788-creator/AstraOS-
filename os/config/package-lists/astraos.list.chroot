@@ -53,3 +53,15 @@ plymouth-themes
 papirus-icon-theme
 fonts-inter
 librsvg2-bin
+arc-theme
+xfce4-whiskermenu-plugin
+
+# Advanced learning, reverse engineering, and digital forensics
+gobuster
+gdb
+strace
+ltrace
+binwalk
+yara
+sleuthkit
+foremost
