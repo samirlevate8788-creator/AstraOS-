@@ -3,13 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Download, boot and build AstraOS 0.1.1, the BIOS and UEFI boot-fixed Debian live system.">
-  <title>Documentation | AstraOS</title>
+  <meta name="description" content="AstraOS documentation for downloading, booting, building, and learning about the Debian-based live desktop.">
+  <title>AstraOS Documentation | Boot, Build and Security Lab</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
+  <meta name="astraos-analytics-id" content="">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AstraOS">
+  <meta property="og:title" content="AstraOS Documentation | Boot, Build and Security Lab">
+  <meta property="og:description" content="AstraOS documentation for downloading, booting, building, and learning about the Debian-based live desktop.">
+  <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/documentation.html">
+  <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+  <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AstraOS Documentation | Boot, Build and Security Lab">
+  <meta name="twitter:description" content="AstraOS documentation for downloading, booting, building, and learning about the Debian-based live desktop.">
+  <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+
+  <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/documentation.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
   <header><nav class="navbar">
@@ -20,13 +56,13 @@
       <li><a href="roadmap.html">Roadmap</a></li><li><a href="contribute.html">Contribute</a></li>
       <li><a href="download.html">Download</a></li><li><a href="faq.html">FAQ</a></li>
       <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
+    <li><a href="security-lab.html">Security Lab</a></li></ul>
     <a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">GitHub</a>
   </nav></header>
   <main>
     <section class="hero about-hero"><div class="hero-content">
       <p class="release-kicker">GUIDES · BUILD · BOOT</p><h1>AstraOS <span>Documentation</span></h1>
-      <p>Everything needed to try the AstraOS 0.1.1 boot-hotfix image or rebuild it from the source configuration.</p>
+      <p>Boot the published AstraOS 0.1.1 image, build the newer 0.2.0-alpha security-learning source, or follow the safe lab guide.</p>
       <div class="hero-buttons"><a class="primary-btn" href="download.html">Download v0.1.1</a><a class="secondary-btn" href="#build">Build from source</a></div>
     </div></section>
     <section class="documentation" id="boot">
@@ -43,32 +79,43 @@
       </div>
     </section>
     <section class="documentation" id="build">
-      <div class="section-title"><h2>Build from source on Ubuntu or WSL</h2><p>Use the repository's live-build configuration to generate the same amd64 image.</p></div>
+      <div class="section-title"><h2>Build from source on Ubuntu or WSL</h2><p>The current development recipe builds a separate 0.2.0-alpha amd64 image with the ethical security learning tools.</p></div>
       <div class="doc-card">
         <pre><code>sudo apt update
 sudo apt install --yes debian-archive-keyring live-build debootstrap \
   xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools \
   isolinux rsync cpio git
 git clone https://github.com/samirlevate8788-creator/AstraOS-.git
-cd AstraOS-/os
+cd AstraOS-
+git switch os/v0.1-live-build
+cd os
 sudo bash ./build.sh</code></pre>
-        <p>The ISO and checksum are written to <code>os/dist/</code>. The build needs network access to Debian mirrors and several gigabytes of free space.</p>
+        <p>The new ISO and checksum are written to <code>os/dist/</code> as <code>AstraOS-0.2.0-alpha-amd64.iso</code>. This development build has not been released or hardware-validated. The existing v0.1.1 download remains unchanged. The build needs network access to Debian mirrors and several gigabytes of free space.</p>
       </div>
     </section>
     <section class="documentation">
       <div class="section-title"><h2>Build layout</h2></div>
       <div class="feature-container">
-        <article class="feature-card"><i class="fa-solid fa-box-open"></i><h3>Packages</h3><p><code>os/config/package-lists/</code> selects the desktop, browser, tools and developer packages.</p></article>
-        <article class="feature-card"><i class="fa-solid fa-image"></i><h3>Branding</h3><p><code>os/config/includes.chroot/</code> contains artwork, desktop settings and the welcome utility.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-box-open"></i><h3>Packages</h3><p><code>os/config/package-lists/</code> selects the desktop, browser, defensive security tools and developer packages.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-image"></i><h3>Branding and guide</h3><p><code>os/config/includes.chroot/</code> contains artwork, desktop settings, welcome utility and the offline Ethical Security Lab guide.</p></article>
         <article class="feature-card"><i class="fa-solid fa-compact-disc"></i><h3>Boot image</h3><p><code>os/build.sh</code> creates the BIOS and UEFI hybrid ISO and EFI USB partition.</p></article>
       </div>
     </section>
     <section class="documentation">
-      <div class="section-title"><h2>v0.1 scope</h2></div>
-      <div class="doc-card"><p>This is a Debian-based live distribution, not a custom kernel or disk installer. Version 0.1.1 fixes the live image's BIOS and UEFI boot packaging. Both paths and the desktop were verified in QEMU/KVM; PC-specific runtime compatibility still needs testing. The UEFI loader is unsigned, so Secure Boot may need to be disabled.</p></div>
+      <div class="section-title"><h2>Live release scope</h2></div>
+      <div class="doc-card"><p>The published v0.1.1 image is a Debian-based live distribution, not a custom kernel or disk installer. Its BIOS and UEFI paths reached the desktop in QEMU/KVM; physical PC compatibility still needs testing. The UEFI loader is unsigned, so Secure Boot may need to be disabled. Security tools described in the <a class="text-link" href="security-lab.html">Ethical Security Lab</a> are part of the 0.2.0-alpha source work, not this download.</p></div>
+    </section>
+    <section class="documentation" id="website-security">
+      <div class="section-title"><h2>Website deployment notes</h2></div>
+      <div class="doc-card"><p>The static site upgrades insecure subresources and uses HTTPS canonical URLs. GitHub Pages host settings cannot be changed from repository files: the repository owner still needs to open <strong>Settings → Pages</strong> and enable <strong>Enforce HTTPS</strong>. The contact form opens a local email draft instead of posting data to a server, so its honeypot is a basic client-side check, not server-grade spam protection. Optional GA4 stays off until a measurement ID is configured and a visitor accepts analytics.</p></div>
     </section>
   </main>
-  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div></footer>
-  <script src="script.js"></script>
+  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+</footer>
+  <script src="script.js" defer></script>
+  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
+    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
+    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
+  </section>
 </body>
 </html>

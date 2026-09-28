@@ -63,7 +63,7 @@ lb config \
   --syslinux-theme live-build \
   --iso-application "AstraOS Live" \
   --iso-publisher "AstraOS Project" \
-  --iso-volume "ASTRAOS_0_1" \
+  --iso-volume "ASTRAOS_0_2" \
   --memtest none \
   --security false \
   --binary-images iso-hybrid \
@@ -126,13 +126,13 @@ mcopy -i "$EFI_IMAGE" "$EFI_WORK/BOOTX64.EFI" ::/EFI/BOOT/BOOTX64.EFI
 mkdir -p "$BUILD_DIR/binary/EFI/BOOT"
 cp -f "$EFI_WORK/BOOTX64.EFI" "$BUILD_DIR/binary/EFI/BOOT/BOOTX64.EFI"
 
-DUAL_ISO="$BUILD_DIR/AstraOS-0.1.1-amd64-dual.iso"
+DUAL_ISO="$BUILD_DIR/AstraOS-0.2.0-alpha-amd64-dual.iso"
 xorriso -as mkisofs \
   -r -J -joliet-long -iso-level 3 \
-  -V ASTRAOS_0_1 \
+  -V ASTRAOS_0_2 \
   -A "AstraOS Live" \
   -publisher "AstraOS Project" \
-  -p "AstraOS v0.1.1 boot hotfix build" \
+  -p "AstraOS v0.2.0-alpha ethical security learning build" \
   -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
   -partition_cyl_align on \
   -partition_offset 0 \
@@ -149,8 +149,8 @@ xorriso -as mkisofs \
   -o "$DUAL_ISO" \
   "$BUILD_DIR/binary"
 
-cp -f "$DUAL_ISO" "$SOURCE_DIR/dist/AstraOS-0.1.1-amd64.iso"
-(cd "$SOURCE_DIR/dist" && sha256sum AstraOS-0.1.1-amd64.iso > AstraOS-0.1.1-amd64.iso.sha256)
-printf 'AstraOS ISO: %s\n' "$SOURCE_DIR/dist/AstraOS-0.1.1-amd64.iso"
+cp -f "$DUAL_ISO" "$SOURCE_DIR/dist/AstraOS-0.2.0-alpha-amd64.iso"
+(cd "$SOURCE_DIR/dist" && sha256sum AstraOS-0.2.0-alpha-amd64.iso > AstraOS-0.2.0-alpha-amd64.iso.sha256)
+printf 'AstraOS ISO: %s\n' "$SOURCE_DIR/dist/AstraOS-0.2.0-alpha-amd64.iso"
 printf 'AstraOS SHA-256: '
-cut -d ' ' -f 1 "$SOURCE_DIR/dist/AstraOS-0.1-amd64.iso.sha256"
+cut -d ' ' -f 1 "$SOURCE_DIR/dist/AstraOS-0.2.0-alpha-amd64.iso.sha256"

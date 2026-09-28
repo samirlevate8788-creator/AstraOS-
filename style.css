@@ -615,6 +615,15 @@ header{
 
 }
 
+.social-links .social-placeholder{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    color:#64748b;
+    font-size:inherit;
+    cursor:default;
+}
+
 .join-btn{
 
     display:inline-block;
@@ -2988,5 +2997,210 @@ filter:hue-rotate(180deg);
 
     .profile-card > img {
         max-width: 240px;
+    }
+}
+
+/* Accessibility, privacy controls, and responsive fixes */
+:root {
+    color-scheme: dark;
+    --astra-link: #93c5fd;
+    --astra-muted: #cbd5e1;
+}
+
+a:not(.primary-btn):not(.secondary-btn):not(.github-btn):not(.btn-linkedin),
+.text-link, .nav-links a:hover, .nav-links a.active,
+.team-card span, .doc-card h3, .logo, .release-kicker {
+    color: var(--astra-link);
+}
+
+p, li, .doc-card p, .feature-card p, .team-card p {
+    color: var(--astra-muted);
+}
+
+:focus-visible {
+    outline: 3px solid #7dd3fc !important;
+    outline-offset: 3px;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+.consent-banner[hidden] {
+    display: none !important;
+}
+
+.consent-banner {
+    position: fixed;
+    z-index: 10002;
+    inset: auto 18px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    background: #0b1427;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .55);
+}
+
+.consent-banner h2 {
+    margin: 0 0 6px;
+    color: #f8fafc;
+    font-size: 1.1rem;
+}
+
+.consent-banner p {
+    margin: 0 0 6px;
+    color: #cbd5e1;
+}
+
+.consent-actions, .footer-legal-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.consent-actions button, .footer-legal-links button {
+    cursor: pointer;
+}
+
+.consent-actions button {
+    width: auto;
+    white-space: nowrap;
+}
+
+.footer-legal-links {
+    justify-content: center;
+    margin: 18px auto;
+}
+
+.footer-legal-links a, .footer-legal-links button {
+    border: 0;
+    background: transparent;
+    color: #bfdbfe;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 6px 8px;
+}
+
+.hero-secondary-link {
+    margin-top: 16px;
+}
+
+.hero-secondary-link a {
+    color: #bfdbfe;
+    text-underline-offset: 4px;
+}
+
+.form-trap {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+.form-note {
+    margin-top: 12px;
+    color: #cbd5e1;
+    font-size: .9rem;
+}
+
+.legal-page .doc-card {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.legal-page .doc-card h2 {
+    margin: 26px 0 10px;
+    color: #bfdbfe;
+}
+
+.legal-page .doc-card h2:first-child {
+    margin-top: 0;
+}
+
+.security-lab-page pre, .feature-card pre {
+    max-width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.not-found-page {
+    min-height: 75vh;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        position: relative;
+        width: 92%;
+    }
+
+    .navbar .social-links {
+        gap: 8px;
+        font-size: .9rem;
+    }
+
+    .navbar .btn-linkedin {
+        padding: 9px 12px;
+        font-size: .95rem;
+    }
+
+    .nav-links {
+        top: calc(100% + 8px);
+        right: 0;
+        width: min(300px, 92vw);
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+        gap: 8px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .consent-banner {
+        inset: auto 10px 10px;
+        display: block;
+        padding: 16px;
+    }
+
+    .consent-actions {
+        margin-top: 12px;
+    }
+
+    .consent-actions button {
+        flex: 1 1 100%;
+    }
+
+    .navbar .github-btn, .navbar .btn-linkedin {
+        display: none;
+    }
+
+    .footer-legal-links {
+        gap: 4px;
+    }
+
+    .doc-card, .feature-card, .team-card {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
 }

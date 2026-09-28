@@ -3,13 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AstraOS development roadmap: v0.1.1 live desktop boot hotfix, hardware validation and AstraOS utilities.">
-  <title>Roadmap | AstraOS</title>
+  <meta name="description" content="See the AstraOS roadmap, current live desktop release, hardware validation work, and planned security learning tools.">
+  <title>AstraOS Roadmap</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
+  <meta name="astraos-analytics-id" content="">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AstraOS">
+  <meta property="og:title" content="AstraOS Roadmap">
+  <meta property="og:description" content="See the AstraOS roadmap, current live desktop release, hardware validation work, and planned security learning tools.">
+  <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/roadmap.html">
+  <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+  <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AstraOS Roadmap">
+  <meta name="twitter:description" content="See the AstraOS roadmap, current live desktop release, hardware validation work, and planned security learning tools.">
+  <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+
+  <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/roadmap.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
   <header><nav class="navbar">
@@ -20,7 +56,7 @@
       <li><a class="active" href="roadmap.html">Roadmap</a></li><li><a href="contribute.html">Contribute</a></li>
       <li><a href="download.html">Download</a></li><li><a href="faq.html">FAQ</a></li>
       <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
+    <li><a href="security-lab.html">Security Lab</a></li></ul>
     <a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">GitHub</a>
   </nav></header>
   <main>
@@ -38,17 +74,22 @@
       <div class="doc-card"><p>Check the live image on representative PCs, including their graphics, Wi-Fi and storage devices. The unsigned UEFI loader may require Secure Boot to be disabled; hardware coverage is not yet established.</p></div>
     </section>
     <section class="documentation">
-      <div class="section-title"><h2>Planned after v0.1.1</h2></div>
+      <div class="section-title"><h2>0.2.0-alpha · Security learning source in development</h2><p>These tools and guides are committed to source configuration; a rebuilt and validated ISO is still required.</p></div>
       <div class="feature-container">
         <article class="feature-card"><i class="fa-solid fa-sliders"></i><h3>Desktop settings</h3><p>AstraOS settings panel, defaults and clearer first-run setup.</p></article>
         <article class="feature-card"><i class="fa-solid fa-download"></i><h3>Software installer</h3><p>A simple graphical path for finding and installing supported packages.</p></article>
-        <article class="feature-card"><i class="fa-solid fa-shield-halved"></i><h3>Developer & security tools</h3><p>Add curated tools with clear documentation and safe defaults.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-shield-halved"></i><h3>Defensive security toolkit</h3><p>Nmap, Wireshark, tcpdump, Lynis, Bandit, UFW and auditd with authorized, local-lab-first guides.</p></article>
         <article class="feature-card"><i class="fa-solid fa-laptop-code"></i><h3>Custom OS research</h3><p>Explore kernel, filesystem and desktop components as separate long-term work; they are not part of v0.1.</p></article>
       </div>
     </section>
-    <section class="contact"><div class="section-title"><h2>Try the current build</h2><p>Download the v0.1.1 live image or review the source configuration.</p></div><div class="contact-buttons"><a class="primary-btn" href="download.html">Download v0.1.1</a><a class="secondary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/tree/main/os">View source</a></div></section>
+    <section class="contact"><div class="section-title"><h2>Try the current build</h2><p>Download the v0.1.1 live image or review the source configuration.</p></div><div class="contact-buttons"><a class="primary-btn" href="download.html">Download v0.1.1</a><a class="secondary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/tree/os/v0.1-live-build/os">View source</a></div></section>
   </main>
-  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="documentation.html">Documentation</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div></footer>
-  <script src="script.js"></script>
+  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="documentation.html">Documentation</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+</footer>
+  <script src="script.js" defer></script>
+  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
+    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
+    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
+  </section>
 </body>
 </html>

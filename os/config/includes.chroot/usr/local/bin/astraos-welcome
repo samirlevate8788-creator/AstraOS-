@@ -10,6 +10,7 @@ CYAN = "#28b9ff"
 WHITE = "#f4f8ff"
 MUTED = "#9fb3cf"
 LOGO = Path("/usr/share/pixmaps/astraos-logo.png")
+GUIDE = Path("/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md")
 
 root = tk.Tk()
 root.title("Welcome to AstraOS")
@@ -35,7 +36,7 @@ tk.Label(content, text="Welcome to AstraOS", font=("Inter", 23, "bold"),
          fg=WHITE, bg=NAVY).pack(pady=(0, 8))
 tk.Label(content, text="Build  •  Learn  •  Innovate", font=("Inter", 12),
          fg=CYAN, bg=NAVY).pack()
-tk.Label(content, text="AstraOS 0.1 · Debian 13 · XFCE live session",
+tk.Label(content, text="AstraOS 0.2.0-alpha · Debian 13 · XFCE live session",
          font=("Inter", 10), fg=MUTED, bg=NAVY).pack(pady=(12, 22))
 
 tk.Label(content, text="Your desktop is ready. Open a terminal to start building, "
@@ -50,12 +51,22 @@ def open_project():
     subprocess.Popen(["xdg-open", "https://github.com/samirlevate8788-creator/AstraOS-"],
                      start_new_session=True)
 
+def open_security_guide():
+    if GUIDE.exists():
+        subprocess.Popen(["mousepad", str(GUIDE)], start_new_session=True)
+        return
+    subprocess.Popen(["xdg-open", "https://samirlevate8788-creator.github.io/AstraOS-/security-lab.html"],
+                     start_new_session=True)
+
 actions = tk.Frame(content, bg=NAVY)
 actions.pack()
 tk.Button(actions, text="Open Terminal", command=open_terminal, bg=CYAN, fg="#04101d",
           activebackground="#79d4ff", relief="flat", padx=20, pady=10,
           font=("Inter", 10, "bold")).pack(side="left", padx=6)
 tk.Button(actions, text="AstraOS on GitHub", command=open_project, bg=PANEL, fg=WHITE,
+          activebackground="#1a2a49", relief="flat", padx=20, pady=10,
+          font=("Inter", 10, "bold")).pack(side="left", padx=6)
+tk.Button(actions, text="Security Lab Guide", command=open_security_guide, bg=PANEL, fg=WHITE,
           activebackground="#1a2a49", relief="flat", padx=20, pady=10,
           font=("Inter", 10, "bold")).pack(side="left", padx=6)
 

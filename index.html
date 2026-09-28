@@ -7,19 +7,23 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AstraOS | Debian-Based Live Desktop</title>
+    <title>AstraOS | Debian 13 Live Desktop and Security Learning</title>
 
-    <meta name="description" content="AstraOS 0.1.1 is a bootable Debian 13 live desktop with an AstraOS-branded XFCE session, browser, terminal and developer essentials. Explore the open-source project and download the live image.">
+    <meta name="description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/">
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AstraOS">
-    <meta property="og:title" content="AstraOS 0.1.1 — Bootable Linux Live Desktop">
-    <meta property="og:description" content="A Debian 13 live desktop with AstraOS branding, everyday apps and developer essentials. Boot it, explore it and help shape what comes next.">
+    <meta property="og:title" content="AstraOS | Debian 13 Live Desktop and Security Learning">
+    <meta property="og:description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
     <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/">
     <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
-    <meta property="og:image:alt" content="AstraOS 0.1 live desktop with the Welcome to AstraOS window">
+    <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
     <meta name="twitter:card" content="summary_large_image">
 
     <script type="application/ld+json">
@@ -70,6 +74,34 @@
 
     <link rel="stylesheet" href="style.css">
 
+
+  <meta name="astraos-analytics-id" content="">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-JITWcFL++aDQqsSwVy7CX6N5KQWywT0RyHwF/lUjTgc=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="twitter:title" content="AstraOS | Debian 13 Live Desktop and Security Learning">
+  <meta name="twitter:description" content="AstraOS 0.1.1 is a Debian 13 live desktop. Explore the project, download the current release, and preview ethical security tools planned for the next source build.">
+  <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -98,7 +130,7 @@
 
             <div class="logo">
                 <a href="index.html">
-                <img src="logo.png" alt="AstraOS Logo" class="nav-logo">
+                <img src="assets/images/astraos-logo.png" alt="AstraOS Logo" class="nav-logo">
                 </a>
             </div>
 
@@ -113,7 +145,7 @@
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <li><a href="security-lab.html">Security Lab</a></li></ul>
 
             <div class="social-links">
 
@@ -121,7 +153,7 @@
 
 target="_blank"
 
-class="github-btn">
+class="github-btn" rel="noopener noreferrer">
 
 <i class="fa-brands fa-github"></i>
 
@@ -130,13 +162,13 @@ GitHub
 </a>
 <a href="https://www.linkedin.com/company/astro-os-community/"
                    target="_blank"
-                    class="btn btn-linkedin">
+                    class="btn btn-linkedin" rel="noopener noreferrer">
                  <i class="fab fa-linkedin"></i>
                     LinkedIn
 </a>
 
             </div>
-            
+
 
 
         </nav>
@@ -159,34 +191,16 @@ GitHub
 
             <p>
 
-                A Debian-based live desktop with
-                <span>AstraOS identity</span>, useful tools and a clear path to grow.
+                A Debian 13 live desktop today; an ethical security learning toolkit is in development for the next source build.
 
             </p>
 
         <div class="hero-buttons">
-
-            <a href="download.html"
-                class="primary-btn">
-
-            <i class="fa-solid fa-download"></i>
-                Download AstraOS
-
-            </a>
-
-            <a href="documentation.html"
-             class="secondary-btn">
-
-            <i class="fa-solid fa-book"></i>
-              Documentation
-
-            </a>
-            <a href="contribute.html"
-                class="secondary-btn">
-                   Join Our Team
-
+            <a href="download.html" class="primary-btn">
+                <i class="fa-solid fa-download"></i> Download AstraOS 0.1.1
             </a>
         </div>
+        <p class="hero-secondary-link"><a href="security-lab.html">Explore the Ethical Security Lab guide</a></p>
 
     </section>
 
@@ -287,7 +301,7 @@ GitHub
 
         <div class="team-card">
 
-        <img src="samir.png" alt="Samir Levate">
+        <img src="assets/images/samir.jpg" alt="Samir Levate" loading="lazy" decoding="async">
 
             <h3><a href="samir.html">Samir Levate</a></h3>
 
@@ -302,7 +316,7 @@ GitHub
 
             <a href="https://github.com/samirlevate8788-creator"
                target="_blank"
-               title="GitHub">
+               title="GitHub" rel="noopener noreferrer">
 
                 <i class="fa-brands fa-github"></i>
 
@@ -310,7 +324,7 @@ GitHub
 
             <a href="https://www.linkedin.com/in/samir-levate-a2647a357"
                target="_blank"
-               title="LinkedIn">
+               title="LinkedIn" rel="noopener noreferrer">
 
                 <i class="fa-brands fa-linkedin"></i>
 
@@ -324,7 +338,7 @@ GitHub
 
         <div class="team-card">
 
-            <img src="samarth.png" alt="Samarth Waghmode">
+            <img src="assets/images/samarth.jpg" alt="Samarth Waghmode" loading="lazy" decoding="async">
 
             <h3>Samarth Waghmode</h3>
 
@@ -337,13 +351,13 @@ GitHub
 
             <div class="social-links">
 
-                <a href="#">
+                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
                     <i class="fa-brands fa-github"></i>
-                </a>
+                </span>
 
-                <a href="#">
+                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
                     <i class="fa-brands fa-linkedin"></i>
-                </a>
+                </span>
 
             </div>
 
@@ -353,7 +367,7 @@ GitHub
 
         <div class="team-card">
 
-            <img src="ashish.jpeg" alt="Ashish Papadkar">
+            <img src="ashish.jpeg" alt="Ashish Papadkar" loading="lazy" decoding="async">
 
             <h3>Ashish Papadkar</h3>
 
@@ -366,13 +380,13 @@ GitHub
 
             <div class="social-links">
 
-                <a href="#">
+                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
                     <i class="fa-brands fa-github"></i>
-                </a>
+                </span>
 
-                <a href="#">
+                <span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
                     <i class="fa-brands fa-linkedin"></i>
-                </a>
+                </span>
 
             </div>
 
@@ -382,7 +396,7 @@ GitHub
 
         <div class="team-card">
 
-            <img src="logo.png" alt="AstraOS Logo">
+            <img src="assets/images/astraos-logo.png" alt="AstraOS Logo">
 
             <h3>Join Our Team</h3>
 
@@ -641,15 +655,14 @@ GitHub
             <div class="contact-item">
                 <i class="fa-brands fa-github"></i>
                 <a href="https://github.com/samirlevate8788-creator/AstraOS-"
-                    target="_blank">
+                    target="_blank" rel="noopener noreferrer">
                     github.com/samirlevate8788-creator/AstraOS
                 </a>
             </div>
 
             <div class="contact-item">
                 <i class="fa-brands fa-linkedin"></i>
-                <a href="#"
-                    target="_blank">
+                <a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
                     AstraOS LinkedIn
                 </a>
             </div>
@@ -665,23 +678,42 @@ GitHub
 
         <form class="contact-form">
 
+            <div class="form-trap" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" autocomplete="off" tabindex="-1"></label></div>
+
             <input
                 type="text"
+                name="name"
+                aria-label="Your name"
+                autocomplete="name"
+                minlength="3"
+                maxlength="40"
                 placeholder="Your Name"
                 required>
 
             <input
                 type="email"
+                name="email"
+                aria-label="Your email address"
+                autocomplete="email"
+                maxlength="254"
                 placeholder="Your Email"
                 required>
 
             <input
                 type="text"
+                name="subject"
+                aria-label="Message subject"
+                minlength="3"
+                maxlength="100"
                 placeholder="Subject"
                 required>
 
             <textarea
+                name="message"
+                aria-label="Your message"
                 rows="6"
+                minlength="10"
+                maxlength="1000"
                 placeholder="Write your message..."
                 required></textarea>
 
@@ -714,13 +746,13 @@ GitHub
         <div class="footer-social">
 
             <a href="https://github.com/samirlevate8788-creator/AstraOS-"
-                target="_blank">
+                target="_blank" rel="noopener noreferrer">
 
                 <i class="fa-brands fa-github"></i>
 
             </a>
 
-            <a href="#">
+            <a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
 
                 <i class="fa-brands fa-linkedin"></i>
 
@@ -742,12 +774,17 @@ GitHub
 
     </div>
 
+  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
 </footer>
 
 <!-- ================= JAVASCRIPT ================= -->
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
+  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
+    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
+    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
+  </section>
 </body>
 
 </html>

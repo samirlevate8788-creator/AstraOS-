@@ -1,4 +1,4 @@
-# AstraOS 0.1 desktop
+# AstraOS 0.2 ethical security learning desktop
 xfce4
 xfce4-goodies
 lightdm
@@ -35,6 +35,17 @@ curl
 wget
 build-essential
 python3-tk
+
+# Ethical cybersecurity study tools. Use only on systems you own or have
+# explicit written permission to assess. No password-cracking or exploit kits.
+nmap
+wireshark
+tcpdump
+lynis
+python3-bandit
+ufw
+fail2ban
+auditd
 
 # AstraOS look and feel
 plymouth

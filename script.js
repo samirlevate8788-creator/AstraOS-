@@ -5,6 +5,11 @@
 
 "use strict";
 
+// GitHub Pages must also have its owner-managed "Enforce HTTPS" switch enabled.
+if (location.hostname === "samirlevate8788-creator.github.io" && location.protocol === "http:") {
+    location.replace(`https:${location.href.slice(location.protocol.length)}`);
+}
+
 const AstraOS = {
 
     /* ==========================
@@ -197,26 +202,48 @@ Object.assign(AstraOS, {
 
         let menuBtn = this.qs(".menu-toggle");
 
+        if (!menuBtn && !this.navbar) return;
+
         if (!menuBtn) {
 
             menuBtn = document.createElement("button");
 
             menuBtn.className = "menu-toggle";
 
+            menuBtn.type = "button";
             menuBtn.innerHTML = "☰";
+            menuBtn.setAttribute("aria-label", "Open navigation menu");
 
             this.navbar.appendChild(menuBtn);
 
         }
 
         const nav = this.qs(".nav-links");
+        if (!nav) return;
+
+        if (!nav.id) nav.id = "primary-navigation";
+        menuBtn.setAttribute("aria-controls", nav.id);
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        const closeMenu = () => {
+            nav.classList.remove("open");
+            menuBtn.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open navigation menu");
+        };
 
         this.on(menuBtn, "click", () => {
 
-            nav.classList.toggle("open");
+            const isOpen = nav.classList.toggle("open");
+            menuBtn.classList.toggle("active", isOpen);
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
+            menuBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
 
-            menuBtn.classList.toggle("active");
+        });
 
+        nav.querySelectorAll("a").forEach(link => this.on(link, "click", closeMenu));
+        this.on(document, "keydown", event => {
+            if (event.key === "Escape") closeMenu();
         });
 
     },
@@ -782,78 +809,108 @@ Object.assign(AstraOS, {
 
     initContactForm() {
 
-        const form = this.qs(".contact-form");
+        this.qsa(".contact-form").forEach(form => {
+            form.dataset.startedAt = String(Date.now());
 
-        if (!form) return;
+            this.on(form, "submit", (e) => {
 
-        this.on(form, "submit", (e) => {
+                e.preventDefault();
 
-            e.preventDefault();
+                const trap = form.querySelector('[name="website"]');
+                if (trap && trap.value.trim()) return;
+                if (Date.now() - Number(form.dataset.startedAt || Date.now()) < 1200) {
+                    this.showToast("Please review the message briefly, then submit again.", "warning");
+                    return;
+                }
 
-            const name =
-                form.querySelector('input[name="name"]');
+                const name = form.querySelector('input[name="name"]');
+                const email = form.querySelector('input[name="email"]');
+                const subject = form.querySelector('input[name="subject"]');
+                const message = form.querySelector('textarea[name="message"]');
 
-            const email =
-                form.querySelector('input[name="email"]');
+                if (!name || !email || !subject || !message) {
+                    this.showToast("This contact form is temporarily unavailable.", "error");
+                    return;
+                }
 
-            const subject =
-                form.querySelector('input[name="subject"]');
+                if (!this.validateName(name.value)) {
+                    this.showToast("Enter a valid name", "error");
+                    name.focus();
+                    return;
+                }
 
-            const message =
-                form.querySelector("textarea");
+                if (!this.validateEmail(email.value)) {
+                    this.showToast("Invalid email address", "error");
+                    email.focus();
+                    return;
+                }
 
-            if (!this.validateName(name.value)) {
+                if (subject.value.trim().length < 3) {
+                    this.showToast("Subject is too short", "warning");
+                    subject.focus();
+                    return;
+                }
 
-                this.showToast("Enter a valid name", "error");
+                if (message.value.trim().length < 10) {
+                    this.showToast("Message is too short", "warning");
+                    message.focus();
+                    return;
+                }
 
-                name.focus();
+                const recipient = "astraos.project@gmail.com";
+                const mailBody = `Name: ${name.value.trim()}\nReply email: ${email.value.trim()}\n\n${message.value.trim()}`;
+                const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject.value.trim())}&body=${encodeURIComponent(mailBody)}`;
+                window.location.href = mailto;
+                this.showToast("Email draft opened. Review it and press Send in your email app.", "success");
 
-                return;
-
-            }
-
-            if (!this.validateEmail(email.value)) {
-
-                this.showToast("Invalid email address", "error");
-
-                email.focus();
-
-                return;
-
-            }
-
-            if (subject && subject.value.trim().length < 3) {
-
-                this.showToast("Subject is too short", "warning");
-
-                subject.focus();
-
-                return;
-
-            }
-
-            if (message.value.trim().length < 10) {
-
-                this.showToast("Message is too short", "warning");
-
-                message.focus();
-
-                return;
-
-            }
-
-            this.showToast(
-
-                "Message Sent Successfully 🚀",
-
-                "success"
-
-            );
-
-            form.reset();
-
+            });
         });
 
+    },
+
+    initConsent() {
+        const banner = this.qs("[data-consent-banner]");
+        if (!banner) return;
+
+        let choice = "";
+        try { choice = localStorage.getItem("astraos-analytics-consent") || ""; } catch (_) {}
+        banner.hidden = Boolean(choice);
+
+        this.qsa("[data-consent-action]").forEach(button => {
+            this.on(button, "click", () => {
+                const action = button.dataset.consentAction;
+                if (action === "settings") {
+                    banner.hidden = false;
+                    const accept = banner.querySelector('[data-consent-action="accept"]');
+                    accept?.focus();
+                    return;
+                }
+                if (action !== "accept" && action !== "reject") return;
+                const selected = action === "accept" ? "accepted" : "rejected";
+                try { localStorage.setItem("astraos-analytics-consent", selected); } catch (_) {}
+                banner.hidden = true;
+                if (selected === "accepted") this.loadOptionalAnalytics();
+                else if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
+            });
+        });
+    },
+
+    loadOptionalAnalytics() {
+        let choice = "";
+        try { choice = localStorage.getItem("astraos-analytics-consent") || ""; } catch (_) {}
+        const id = document.querySelector('meta[name="astraos-analytics-id"]')?.content.trim() || "";
+        if (choice !== "accepted" || !/^G-[A-Z0-9]+$/.test(id) || document.querySelector(`script[data-analytics-id="${id}"]`)) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("consent", "default", { analytics_storage: "granted" });
+        window.gtag("config", id, { anonymize_ip: true });
+        const analytics = document.createElement("script");
+        analytics.async = true;
+        analytics.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+        analytics.dataset.analyticsId = id;
+        document.head.appendChild(analytics);
     },
 
     /* ==========================
@@ -862,7 +919,7 @@ Object.assign(AstraOS, {
 
     validateName(name) {
 
-        return /^[A-Za-z ]{3,40}$/.test(
+        return /^[\p{L}][\p{L}\p{M} '’-]{1,39}$/u.test(
 
             name.trim()
 
@@ -1539,7 +1596,7 @@ Object.assign(AstraOS, {
 
         console.log(
 `%c
- █████╗ ███████╗████████╗██████╗  █████╗ 
+ █████╗ ███████╗████████╗██████╗  █████╗
 ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
 ███████║███████╗   ██║   ██████╔╝███████║
 ██╔══██║╚════██║   ██║   ██╔══██╗██╔══██║
@@ -1580,8 +1637,6 @@ Object.assign(AstraOS, {
             /* ---------- Navigation ---------- */
 
             this.initNavigation();
-            this.initMobileMenu();
-            this.initScrollSpy();
 
             /* ---------- Animations ---------- */
 
@@ -1590,6 +1645,8 @@ Object.assign(AstraOS, {
             /* ---------- UI ---------- */
 
             this.initUI();
+            this.initConsent();
+            this.loadOptionalAnalytics();
 
             /* ---------- Contact ---------- */
 

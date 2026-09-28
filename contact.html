@@ -7,7 +7,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact | AstraOS</title>
+<meta name="description" content="Contact the AstraOS project, open an email draft, or report a bug and request a feature through GitHub.">
+
+<title>Contact AstraOS</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,6 +21,42 @@
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
+  <meta name="astraos-analytics-id" content="">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AstraOS">
+  <meta property="og:title" content="Contact AstraOS">
+  <meta property="og:description" content="Contact the AstraOS project, open an email draft, or report a bug and request a feature through GitHub.">
+  <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/contact.html">
+  <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+  <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact AstraOS">
+  <meta name="twitter:description" content="Contact the AstraOS project, open an email draft, or report a bug and request a feature through GitHub.">
+  <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
+
+  <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/contact.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -50,13 +88,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <li><a href="contact.html" class="active">Contact</a></li>
 
-</ul>
+<li><a href="security-lab.html">Security Lab</a></li></ul>
 
-<a href="https://github.com/samirlevate8788-creator/AstraOS-" 
-                
+<a href="https://github.com/samirlevate8788-creator/AstraOS-"
+
                     target="_blank"
 
-                   class="github-btn">
+                   class="github-btn" rel="noopener noreferrer">
 
                   <i class="fa-brands fa-github"></i>
 
@@ -66,13 +104,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 <a href="https://www.linkedin.com/company/astro-os-community/"
                    target="_blank"
-                    class="btn btn-linkedin">
+                    class="btn btn-linkedin" rel="noopener noreferrer">
                  <i class="fab fa-linkedin"></i>
                     LinkedIn
                 </a>
 
             </div>
-            
+
 
 </nav>
 
@@ -126,7 +164,7 @@ We'd love to hear from developers, students and contributors.
 
 <p>
 
-sameerlewate8788@gmail.com
+astraos.project@gmail.com
 
 </p>
 
@@ -140,7 +178,7 @@ sameerlewate8788@gmail.com
 
 <p>
 
-"https://github.com/samirlevate8788-creator/AstraOS-" 
+"https://github.com/samirlevate8788-creator/AstraOS-"
 
 </p>
 
@@ -188,7 +226,7 @@ India 🇮🇳
 
 <p>
 
-We'll get back to you as soon as possible.
+Your browser will validate the message and open an email draft for you to review and send.
 
 </p>
 
@@ -198,23 +236,44 @@ We'll get back to you as soon as possible.
 
 <form class="contact-form">
 
+<div class="form-trap" aria-hidden="true">
+<label>Leave this field empty<input type="text" name="website" autocomplete="off" tabindex="-1"></label>
+</div>
+
 <input
 type="text"
+name="name"
+aria-label="Your name"
+autocomplete="name"
+minlength="3"
+maxlength="40"
 placeholder="Your Name"
 required>
 
 <input
 type="email"
+name="email"
+aria-label="Your email address"
+autocomplete="email"
+maxlength="254"
 placeholder="Your Email"
 required>
 
 <input
 type="text"
+name="subject"
+aria-label="Message subject"
+minlength="3"
+maxlength="100"
 placeholder="Subject"
 required>
 
 <textarea
+name="message"
+aria-label="Your message"
 rows="6"
+minlength="10"
+maxlength="1000"
 placeholder="Your Message"
 required></textarea>
 
@@ -225,6 +284,8 @@ class="primary-btn">
 Send Message
 
 </button>
+
+<p class="form-note">This static site does not receive or store your message. The email app opens only after you submit.</p>
 
 </form>
 
@@ -254,7 +315,7 @@ The vision behind AstraOS starts with a passion for learning and open-source dev
 
 <div class="team-card">
 
-<img src="samir.png" alt="Samir Levate">
+<img src="assets/images/samir.jpg" alt="Samir Levate" loading="lazy" decoding="async">
 
 <h3>Samir Levate</h3>
 
@@ -268,21 +329,21 @@ Leading the AstraOS project with a focus on operating systems, open-source colla
 
 <div class="social-links">
 
-<a href="https://github.com/samirlevate8788-creator/AstraOS-" 
+<a href="https://github.com/samirlevate8788-creator/AstraOS-"
 
-target="_blank">
+target="_blank" rel="noopener noreferrer">
 
 <i class="fa-brands fa-github"></i>
 
 </a>
 
-<a href="#">
+<a href="https://www.linkedin.com/in/samir-levate/" target="_blank" rel="noopener noreferrer">
 
 <i class="fa-brands fa-linkedin"></i>
 
 </a>
 
-<a href="mailto:sameerlewate8788@gmail.com">
+<a href="mailto:astraos.project@gmail.com">
 
 <i class="fa-solid fa-envelope"></i>
 
@@ -404,11 +465,11 @@ Explore source code, create issues and submit pull requests.
 
 </p>
 
-<a href="https://github.com/samirlevate8788-creator/AstraOS-" 
+<a href="https://github.com/samirlevate8788-creator/AstraOS-"
 
 target="_blank"
 
-class="primary-btn">
+class="primary-btn" rel="noopener noreferrer">
 
 Visit GitHub
 
@@ -428,13 +489,11 @@ Community server coming soon for discussions and support.
 
 </p>
 
-<a href="#"
-
-class="primary-btn">
+<span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
 
 Coming Soon
 
-</a>
+</span>
 
 </div>
 
@@ -450,9 +509,7 @@ Follow project updates and professional announcements.
 
 </p>
 
-<a href="#"
-
-class="primary-btn">
+<a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
 
 Follow Us
 
@@ -644,11 +701,11 @@ Contact the core team directly for important queries.
 
 <div class="section-title">
 
-<h2>Newsletter</h2>
+<h2>Release updates</h2>
 
 <p>
 
-Stay updated with AstraOS releases and announcements.
+Follow public release announcements on GitHub. This website does not collect newsletter emails.
 
 </p>
 
@@ -656,22 +713,7 @@ Stay updated with AstraOS releases and announcements.
 
 <div class="doc-card">
 
-<form class="newsletter-form">
-
-<input
-type="email"
-placeholder="Enter your email address"
-required>
-
-<button
-type="submit"
-class="primary-btn">
-
-Subscribe
-
-</button>
-
-</form>
+<a class="primary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/releases" target="_blank" rel="noopener noreferrer">View GitHub releases</a>
 
 </div>
 
@@ -743,11 +785,11 @@ Join our community and help shape the future of AstraOS.
 
 <div class="contact-buttons">
 
-<a href="https://github.com/samirlevate8788-creator/AstraOS-" 
+<a href="https://github.com/samirlevate8788-creator/AstraOS-"
 
 target="_blank"
 
-class="primary-btn">
+class="primary-btn" rel="noopener noreferrer">
 
 <i class="fa-brands fa-github"></i>
 
@@ -909,39 +951,33 @@ Build • Learn • Collaborate • Innovate
 
 <div class="social-links">
 
-<a href="https://github.com/samirlevate8788-creator/AstraOS-" 
+<a href="https://github.com/samirlevate8788-creator/AstraOS-"
 
 target="_blank"
 
-title="GitHub">
+title="GitHub" rel="noopener noreferrer">
 
 <i class="fa-brands fa-github"></i>
 
 </a>
 
-<a href="#"
-
-title="LinkedIn">
+<a href="https://www.linkedin.com/company/astro-os-community/" target="_blank" rel="noopener noreferrer">
 
 <i class="fa-brands fa-linkedin"></i>
 
 </a>
 
-<a href="#"
-
-title="Discord">
+<span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
 
 <i class="fa-brands fa-discord"></i>
 
-</a>
+</span>
 
-<a href="#"
-
-title="X">
+<span class="social-placeholder" aria-label="Link destination not configured" title="Profile link not provided">
 
 <i class="fa-brands fa-x-twitter"></i>
 
-</a>
+</span>
 
 </div>
 
@@ -959,10 +995,15 @@ AstraOS v0.1 Alpha · Debian-based live system.
 
 </div>
 
+  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
+  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
+    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
+    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
+  </section>
 </body>
 
 </html>

@@ -37,5 +37,5 @@
   </g>
   <text x="960" y="760" text-anchor="middle" fill="#f3f8ff" font-family="Inter, sans-serif" font-size="82" font-weight="700" letter-spacing="16">ASTRA<tspan fill="#35bfff">OS</tspan></text>
   <text x="960" y="818" text-anchor="middle" fill="#9ab6d5" font-family="Inter, sans-serif" font-size="21" letter-spacing="8">BUILD  •  LEARN  •  INNOVATE</text>
-  <text x="960" y="984" text-anchor="middle" fill="#54aee8" fill-opacity=".7" font-family="Inter, sans-serif" font-size="16" letter-spacing="5">ASTRAOS 0.1  ·  DEBIAN LIVE  ·  XFCE</text>
+  <text x="960" y="984" text-anchor="middle" fill="#54aee8" fill-opacity=".7" font-family="Inter, sans-serif" font-size="16" letter-spacing="5">ASTRAOS 0.2.0-ALPHA  ·  SECURITY LEARNING  ·  XFCE</text>
 </svg>
