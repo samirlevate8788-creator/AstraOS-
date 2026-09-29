@@ -7,9 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AstraOS — Linux Security Workstation for Ethical Lab Learning</title>
+    <title>AstraOS — Security &amp; Productivity Desktop</title>
 
-    <meta name="description" content="AstraOS is a Debian-based Linux security workstation in development, with a guided ethical toolkit, local-only practice lab, and a cinematic terminal desktop preview.">
+    <meta name="description" content="AstraOS is a Debian-based security and office desktop in development, with ethical local labs, LibreOffice, browser ad blocking and defensive defaults.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
     <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AstraOS">
-    <meta property="og:title" content="AstraOS — Linux Security Workstation">
-    <meta property="og:description" content="A Debian-based security workstation in development, with guided tools and a local-only practice lab.">
+    <meta property="og:title" content="AstraOS — Security &amp; Productivity Desktop">
+    <meta property="og:description" content="A Debian-based security and office workstation in development, with local labs, office apps, ad blocking and defensive defaults.">
     <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/">
     <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
     <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
@@ -75,11 +75,10 @@
     <link rel="stylesheet" href="style.css">
 
 
-  <meta name="astraos-analytics-id" content="">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-JITWcFL++aDQqsSwVy7CX6N5KQWywT0RyHwF/lUjTgc=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-JITWcFL++aDQqsSwVy7CX6N5KQWywT0RyHwF/lUjTgc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="twitter:title" content="AstraOS — Linux Security Workstation">
-  <meta name="twitter:description" content="A Debian-based security workstation in development, with guided tools and a local-only practice lab.">
+  <meta name="twitter:description" content="A Debian-based security and office workstation in development, with local labs, office apps and defensive defaults.">
   <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
 
 
@@ -105,12 +104,6 @@
 </head>
 
 <body class="cyber-site">
-  <div id="loader" class="cyber-loader" aria-label="Loading AstraOS">
-    <div class="loader-logo">ASTRA<span>OS</span></div>
-    <div class="loader-bar"><span></span></div>
-    <p>INITIALIZING SECURITY WORKSTATION</p>
-  </div>
-  <div id="progress-bar"></div>
 
   <header class="cyber-header">
     <nav class="navbar cyber-nav" aria-label="Main navigation">
@@ -122,6 +115,7 @@
         <li><a href="#platform">Platform</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#workflow">How it works</a></li>
+        <li><a href="team.html">Founder</a></li>
         <li><a href="security-lab.html">Security Lab</a></li>
         <li><a href="documentation.html">Docs</a></li>
       </ul>
@@ -138,14 +132,14 @@
     <section id="home" class="cyber-hero">
       <div class="cyber-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="cyber-hero-copy">
-        <p class="cyber-kicker"><span class="status-light"></span> OPEN-SOURCE LINUX SECURITY WORKSTATION</p>
-        <h1>Think like a defender.<br><span>Build in your own lab.</span></h1>
-        <p class="cyber-lede">AstraOS is evolving from a Debian live desktop into a guided security-learning workstation—with a local practice target, a focused toolkit, and a desktop built for developers.</p>
+        <p class="cyber-kicker"><span class="status-light"></span> OPEN-SOURCE SECURITY + PRODUCTIVITY DESKTOP</p>
+        <h1>Do focused work.<br><span>Learn security safely.</span></h1>
+        <p class="cyber-lede">A Debian-based desktop bringing office work, development and ethical security study together. It pairs familiar desktop workflows with a local-only practice lab and clear privacy-first defaults.</p>
         <div class="cyber-hero-actions">
           <a class="cyber-button cyber-button-primary" href="security-lab.html">Explore the security lab <span aria-hidden="true">↗</span></a>
           <a class="cyber-button cyber-button-quiet" href="download.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Current live build · 0.1.1</a>
         </div>
-        <div class="cyber-release-note"><span class="release-dot"></span><span><strong>0.2.0-alpha</strong> is source-only right now. Its ISO still needs a Linux build and validation.</span></div>
+        <div class="cyber-release-note"><span class="release-dot"></span><span><strong>Development source only:</strong> the new office apps, blocker and hardening need a fresh ISO build before download.</span></div>
         <div class="cyber-metrics" aria-label="AstraOS project facts">
           <div><strong>Debian 13</strong><span>Linux base</span></div>
           <div><strong>XFCE</strong><span>Lightweight desktop</span></div>
@@ -192,12 +186,12 @@ baseline review · inspect report</pre>
     <section id="platform" class="cyber-section">
       <div class="cyber-section-heading">
         <div><p class="cyber-kicker">THE WORKSTATION</p><h2>Familiar Linux.<br><span>AstraOS character.</span></h2></div>
-        <p>A focused XFCE environment with a dark Arc theme, AstraOS boot identity, a guided toolkit window, and a practice site served only to your own computer.</p>
+        <p>A focused XFCE desktop with AstraOS identity, familiar window and workspace controls, office apps, a guided toolkit, and a practice site served only to your own computer.</p>
       </div>
       <div class="cyber-platform-grid">
         <article class="cyber-feature cyber-feature-main">
           <span class="feature-number">01 / DESKTOP</span><div class="feature-symbol">▰</div>
-          <h3>Your Linux workbench</h3><p>Keep the everyday Linux workflow—terminal, browser, editor, task manager—and add an AstraOS launch point for the security learning tools.</p>
+          <h3>Linux at the foundation</h3><p>Debian 13 and XFCE provide the system base. AstraOS adds a polished desktop workflow and familiar shortcuts while keeping Linux tools, packages and files accessible.</p>
           <a href="documentation.html">See platform notes <span aria-hidden="true">→</span></a>
         </article>
         <article class="cyber-feature">
@@ -213,10 +207,34 @@ baseline review · inspect report</pre>
       </div>
     </section>
 
+    <section class="cyber-section" id="everyday-work">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">EVERYDAY WORK</p><h2>Office, browser,<br><span>and developer tools.</span></h2></div>
+        <p>The development image combines useful work apps with a Linux security-learning environment. App availability is for the source build until a new ISO is produced.</p>
+      </div>
+      <div class="cyber-platform-grid">
+        <article class="cyber-feature"><span class="feature-number">01 / OFFICE</span><div class="feature-symbol">▤</div><h3>Write, calculate, present</h3><p>LibreOffice Writer, Calc and Impress cover documents, spreadsheets and presentations with common Microsoft Office file formats.</p></article>
+        <article class="cyber-feature"><span class="feature-number">02 / BROWSER</span><div class="feature-symbol">◉</div><h3>Browse with fewer distractions</h3><p>Firefox ESR with Debian's uBlock Origin extension package for blocking many ads and trackers. Filter lists and sites can still change.</p></article>
+        <article class="cyber-feature"><span class="feature-number">03 / WORKFLOW</span><div class="feature-symbol">⌘</div><h3>A familiar desktop feel</h3><p>Use windows, workspaces, a dock-like launcher and standard keyboard shortcuts. AstraOS remains Debian Linux; it does not contain Windows or macOS.</p></article>
+      </div>
+    </section>
+
+    <section class="cyber-section cyber-security-baseline" id="privacy-security">
+      <div class="cyber-section-heading">
+        <div><p class="cyber-kicker">SECURE DEFAULTS · NOT MAGIC</p><h2>Reduce risk.<br><span>Keep control.</span></h2></div>
+        <p>A layered baseline makes common attacks harder, but no operating system can promise that nobody will ever break in. Keep software updated and protect your accounts and files.</p>
+      </div>
+      <div class="cyber-proof cyber-security-points">
+        <div><span class="proof-icon">01</span><p><strong>Inbound firewall</strong><br>UFW defaults to blocking unsolicited incoming connections.</p></div>
+        <div><span class="proof-icon">02</span><p><strong>AppArmor</strong><br>Linux application confinement is included and enabled in the boot configuration.</p></div>
+        <div><span class="proof-icon">03</span><p><strong>Website stays quiet</strong><br>No analytics, cookie banner or startup overlay on the redesigned site.</p></div>
+      </div>
+    </section>
+
     <section id="toolkit" class="cyber-section cyber-toolkit-section">
       <div class="cyber-section-heading">
         <div><p class="cyber-kicker">TOOLS WITH CONTEXT</p><h2>One system.<br><span>Four learning tracks.</span></h2></div>
-        <p>Tool availability refers to the development source configuration. These packages are not in the currently downloadable 0.1.1 ISO.</p>
+        <p>These tools are selected for authorized defensive learning in the development source. They are not in the currently downloadable 0.1.1 ISO.</p>
       </div>
       <div class="cyber-track-grid">
         <article class="cyber-track"><span class="track-index">TRACK / 01</span><div class="track-glyph">⌁</div><h3>Network visibility</h3><p>Nmap · Wireshark · tcpdump · Gobuster</p><span class="track-scope">Loopback-first exercises</span></article>
@@ -242,22 +260,24 @@ baseline review · inspect report</pre>
 
     <section id="roadmap" class="cyber-release-panel">
       <div class="release-panel-glow" aria-hidden="true"></div>
-      <div><p class="cyber-kicker">DEVELOPMENT BUILD · NOT RELEASED YET</p><h2>AstraOS 0.2.0-alpha</h2><p>Security workstation source, loopback practice site, guided toolkit utility, and refreshed desktop identity. The ISO still needs building in Linux and boot validation before it can be called a release.</p></div>
+      <div><p class="cyber-kicker">DEVELOPMENT BUILD · NOT RELEASED YET</p><h2>AstraOS 0.2.0-alpha</h2><p>Office apps, ad blocking, defensive defaults, security workstation tools and a loopback practice site are in source. A new ISO still needs a Linux build and boot validation.</p></div>
       <div class="release-panel-actions"><a class="cyber-button cyber-button-primary" href="roadmap.html">Follow development <span aria-hidden="true">→</span></a><a class="release-source-link" href="https://github.com/samirlevate8788-creator/AstraOS-/tree/os/v0.1-live-build/os" target="_blank" rel="noopener noreferrer">Review OS source</a></div>
+    </section>
+
+    <section class="cyber-founder" aria-labelledby="founder-title">
+      <img src="assets/images/samir.jpg" alt="Samir Levate, founder and project lead of AstraOS" width="400" height="400" loading="lazy" decoding="async">
+      <div><p class="cyber-kicker">BUILT IN THE OPEN</p><h2 id="founder-title">A student project with a practical goal.</h2><p>Samir Levate is building AstraOS as an open-source Linux desktop for office work, development and responsible security learning.</p><a class="cyber-text-link" href="team.html">Meet the project lead <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 
   <footer class="cyber-footer">
     <a class="cyber-brand" href="index.html"><img src="assets/images/astraos-logo.png" alt="" width="34" height="34"> <span>ASTRA<span class="brand-accent">OS</span></span></a>
     <p>Open-source security learning · Debian · XFCE</p>
-    <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+    <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="team.html">Founder</a></div>
     <span class="cyber-copyright">© 2026 AstraOS project · Build responsibly.</span>
   </footer>
 
   <script src="script.js" defer></script>
-  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
-    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
-    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
-  </section></body>
+</body>
 
 </html>

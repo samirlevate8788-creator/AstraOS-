@@ -8,8 +8,14 @@ network-manager-gnome
 
 # Everyday apps
 firefox-esr
+webext-ublock-origin-firefox
 mousepad
 xfce4-terminal
+libreoffice-writer
+libreoffice-calc
+libreoffice-impress
+hunspell-en-us
+fonts-liberation
 
 # System and disk tools
 xfce4-taskmanager
@@ -46,6 +52,8 @@ python3-bandit
 ufw
 fail2ban
 auditd
+apparmor
+apparmor-utils
 
 # AstraOS look and feel
 plymouth

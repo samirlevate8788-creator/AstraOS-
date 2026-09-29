@@ -3026,52 +3026,11 @@ button, input, textarea, select {
     font: inherit;
 }
 
-.consent-banner[hidden] {
-    display: none !important;
-}
-
-.consent-banner {
-    position: fixed;
-    z-index: 10002;
-    inset: auto 18px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 20px 24px;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    background: #0b1427;
-    box-shadow: 0 18px 60px rgba(0, 0, 0, .55);
-}
-
-.consent-banner h2 {
-    margin: 0 0 6px;
-    color: #f8fafc;
-    font-size: 1.1rem;
-}
-
-.consent-banner p {
-    margin: 0 0 6px;
-    color: #cbd5e1;
-}
-
-.consent-actions, .footer-legal-links {
+.footer-legal-links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-.consent-actions button, .footer-legal-links button {
-    cursor: pointer;
-}
-
-.consent-actions button {
-    width: auto;
-    white-space: nowrap;
 }
 
 .footer-legal-links {
@@ -3079,7 +3038,7 @@ button, input, textarea, select {
     margin: 18px auto;
 }
 
-.footer-legal-links a, .footer-legal-links button {
+.footer-legal-links a {
     border: 0;
     background: transparent;
     color: #bfdbfe;
@@ -3169,20 +3128,6 @@ button, input, textarea, select {
 }
 
 @media (max-width: 600px) {
-    .consent-banner {
-        inset: auto 10px 10px;
-        display: block;
-        padding: 16px;
-    }
-
-    .consent-actions {
-        margin-top: 12px;
-    }
-
-    .consent-actions button {
-        flex: 1 1 100%;
-    }
-
     .navbar .github-btn, .navbar .btn-linkedin {
         display: none;
     }
@@ -3246,37 +3191,8 @@ body.cyber-site p {
     color: var(--cyber-muted);
 }
 
-.cyber-loader {
-    background:
-        radial-gradient(ellipse at center, rgba(28, 124, 165, .19), transparent 45%),
-        #060a12 !important;
-}
-
-.cyber-loader .loader-logo {
-    color: var(--cyber-text);
-    letter-spacing: .16em;
-    font-size: 29px;
-}
-
-.cyber-loader .loader-logo span,
 .brand-accent {
     color: var(--cyber-cyan);
-}
-
-.cyber-loader p {
-    margin-top: 16px;
-    color: var(--cyber-muted);
-    font: 700 10px/1.5 Inter, sans-serif;
-    letter-spacing: .2em;
-}
-
-.cyber-loader .loader-bar {
-    height: 3px;
-    background: #172536;
-}
-
-.cyber-loader .loader-bar span {
-    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-cyan));
 }
 
 .cyber-header {
@@ -3515,9 +3431,19 @@ body.cyber-site p {
 }
 
 .cyber-button-primary {
-    background: linear-gradient(105deg, #75a8ff, #5addf5);
-    color: #06101c;
-    box-shadow: 0 10px 30px rgba(78, 202, 255, .17);
+    background: linear-gradient(105deg, #1764a8, #177f93);
+    color: #f3f8ff;
+    box-shadow: 0 4px 14px rgba(38, 142, 189, .15);
+}
+
+.cyber-button-primary:hover {
+    background: linear-gradient(105deg, #2073b8, #198c9d);
+    box-shadow: 0 6px 18px rgba(38, 142, 189, .2);
+}
+
+.cyber-button:focus-visible {
+    outline: 2px solid #7dd3fc;
+    outline-offset: 3px;
 }
 
 .cyber-button-quiet {
@@ -4201,6 +4127,36 @@ body.cyber-site p {
 .cyber-footer > p {
     margin: 0;
     font-size: 10px;
+}
+
+.cyber-founder {
+    max-width: 1180px;
+    margin: 4rem auto;
+    padding: clamp(1.4rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(150px, 240px) 1fr;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid rgba(84, 220, 255, .2);
+    border-radius: 1.5rem;
+    background: linear-gradient(120deg, rgba(13, 27, 44, .96), rgba(7, 17, 31, .88));
+}
+
+.cyber-founder img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(84, 220, 255, .32);
+}
+
+.cyber-founder h2 { margin: .25rem 0 .75rem; color: #ecf7ff; }
+.cyber-founder p:not(.cyber-kicker) { color: #a4b8cc; line-height: 1.7; }
+.cyber-security-points { margin-top: 1.25rem; }
+
+@media (max-width: 620px) {
+    .cyber-founder { margin: 2rem 1rem; grid-template-columns: 1fr; }
+    .cyber-founder img { width: min(100%, 240px); }
 }
 
 .cyber-footer .footer-legal-links {

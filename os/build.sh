@@ -71,7 +71,7 @@ lb config \
   --security false \
   --binary-images iso-hybrid \
   --archive-areas "main contrib non-free non-free-firmware" \
-  --bootappend-live "boot=live components quiet splash username=astra hostname=astraos"
+  --bootappend-live "boot=live components quiet splash username=astra hostname=astraos apparmor=1 security=apparmor"
 
 # Keep the BIOS Syslinux modules beside isolinux.bin in the ISO. The boot menu
 # loads vesamenu.c32, which in turn needs ldlinux.c32, libcom32.c32 and

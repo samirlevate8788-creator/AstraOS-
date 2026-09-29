@@ -18,33 +18,9 @@ const AstraOS = {
 
     cache() {
 
-        this.loader = document.getElementById("loader");
         this.progressBar = document.getElementById("progress-bar");
         this.navbar = document.querySelector(".navbar");
         this.hero = document.querySelector(".hero");
-
-    },
-
-    /* ==========================
-       Loader
-    ========================== */
-
-    initLoader() {
-
-        if (!this.loader) return;
-
-        window.addEventListener("load", () => {
-
-            this.loader.style.opacity = "0";
-            this.loader.style.visibility = "hidden";
-
-            setTimeout(() => {
-
-                this.loader.remove();
-
-            }, 700);
-
-        });
 
     },
 
@@ -871,51 +847,6 @@ Object.assign(AstraOS, {
 
     },
 
-    initConsent() {
-        const banner = this.qs("[data-consent-banner]");
-        if (!banner) return;
-
-        let choice = "";
-        try { choice = localStorage.getItem("astraos-analytics-consent") || ""; } catch (_) {}
-        banner.hidden = Boolean(choice);
-
-        this.qsa("[data-consent-action]").forEach(button => {
-            this.on(button, "click", () => {
-                const action = button.dataset.consentAction;
-                if (action === "settings") {
-                    banner.hidden = false;
-                    const accept = banner.querySelector('[data-consent-action="accept"]');
-                    accept?.focus();
-                    return;
-                }
-                if (action !== "accept" && action !== "reject") return;
-                const selected = action === "accept" ? "accepted" : "rejected";
-                try { localStorage.setItem("astraos-analytics-consent", selected); } catch (_) {}
-                banner.hidden = true;
-                if (selected === "accepted") this.loadOptionalAnalytics();
-                else if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
-            });
-        });
-    },
-
-    loadOptionalAnalytics() {
-        let choice = "";
-        try { choice = localStorage.getItem("astraos-analytics-consent") || ""; } catch (_) {}
-        const id = document.querySelector('meta[name="astraos-analytics-id"]')?.content.trim() || "";
-        if (choice !== "accepted" || !/^G-[A-Z0-9]+$/.test(id) || document.querySelector(`script[data-analytics-id="${id}"]`)) return;
-
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () { window.dataLayer.push(arguments); };
-        window.gtag("js", new Date());
-        window.gtag("consent", "default", { analytics_storage: "granted" });
-        window.gtag("config", id, { anonymize_ip: true });
-        const analytics = document.createElement("script");
-        analytics.async = true;
-        analytics.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
-        analytics.dataset.analyticsId = id;
-        document.head.appendChild(analytics);
-    },
-
     /* ==========================
        Validation
     ========================== */
@@ -1638,7 +1569,6 @@ Object.assign(AstraOS, {
 
             /* ---------- Core ---------- */
 
-            this.initLoader();
             this.initProgressBar();
             this.initNavbar();
             this.smoothScroll();
@@ -1654,9 +1584,6 @@ Object.assign(AstraOS, {
             /* ---------- UI ---------- */
 
             this.initUI();
-            this.initConsent();
-            this.loadOptionalAnalytics();
-
             /* ---------- Contact ---------- */
 
             this.initContactForm();

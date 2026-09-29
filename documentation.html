@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
-  <meta name="astraos-analytics-id" content="">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AstraOS">
@@ -52,7 +51,7 @@
     <div class="logo"><a href="index.html">AstraOS</a></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a class="active" href="documentation.html">Documentation</a></li><li><a href="team.html">Team</a></li>
+      <li><a class="active" href="documentation.html">Documentation</a></li><li><a href="team.html">Founder</a></li>
       <li><a href="roadmap.html">Roadmap</a></li><li><a href="contribute.html">Contribute</a></li>
       <li><a href="download.html">Download</a></li><li><a href="faq.html">FAQ</a></li>
       <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
@@ -110,12 +109,8 @@ sudo bash ./build.sh</code></pre>
       <div class="doc-card"><p>The static site upgrades insecure subresources and uses HTTPS canonical URLs. GitHub Pages host settings cannot be changed from repository files: the repository owner still needs to open <strong>Settings → Pages</strong> and enable <strong>Enforce HTTPS</strong>. The contact form opens a local email draft instead of posting data to a server, so its honeypot is a basic client-side check, not server-grade spam protection. Optional GA4 stays off until a measurement ID is configured and a visitor accepts analytics.</p></div>
     </section>
   </main>
-  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><button type="button" data-consent-action="settings">Privacy choices</button></div>
+  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
 </footer>
   <script src="script.js" defer></script>
-  <section class="consent-banner" data-consent-banner role="dialog" aria-labelledby="consent-title" aria-describedby="consent-copy" hidden>
-    <div><h2 id="consent-title">Your privacy choices</h2><p id="consent-copy">Optional analytics is off unless you accept it. Your choice is saved in this browser.</p><a href="privacy.html">Privacy policy</a></div>
-    <div class="consent-actions"><button type="button" class="secondary-btn" data-consent-action="reject">Reject analytics</button><button type="button" class="primary-btn" data-consent-action="accept">Accept analytics</button></div>
-  </section>
 </body>
 </html>

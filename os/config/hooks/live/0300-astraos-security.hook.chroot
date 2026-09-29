@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+# Enable UFW at boot in the built live image. Outbound traffic stays allowed,
+# while the shipped defaults block unsolicited inbound connections.
+WANTS_DIR=/etc/systemd/system/multi-user.target.wants
+mkdir -p "$WANTS_DIR"
+for UNIT in /usr/lib/systemd/system/ufw.service /lib/systemd/system/ufw.service; do
+    if [ -f "$UNIT" ]; then
+        ln -sfn "$UNIT" "$WANTS_DIR/ufw.service"
+        break
+    fi
+done
