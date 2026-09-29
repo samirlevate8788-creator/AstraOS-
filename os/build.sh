@@ -6,6 +6,12 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
+# live-build's final zsync metadata step invokes xz on the host.
+if ! command -v xz >/dev/null 2>&1; then
+  echo "Missing build dependency: xz-utils (install it on the Linux builder and retry)." >&2
+  exit 1
+fi
+
 SOURCE_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$(printenv ASTRAOS_BUILD_DIR || printf '%s' /var/tmp/astraos-live-build)"
 
@@ -34,7 +40,14 @@ if [ -d "$BUILD_DIR/config/hooks/live" ]; then
 fi
 
 cd "$BUILD_DIR"
-lb clean
+if [ "${ASTRAOS_REUSE_CHROOT:-false}" = "true" ]; then
+  # Retain the installed chroot and downloaded package cache on an explicitly
+  # requested rebuild; clear stage markers so changed package lists are applied.
+  lb clean --binary
+  lb clean --stage
+else
+  lb clean
+fi
 # Ubuntu's live-build 3.x firmware scan requests a non-existent root
 # Contents-amd64.gz on Debian mirrors. Firmware is selected explicitly in the
 # AstraOS package list instead.

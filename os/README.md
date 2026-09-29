@@ -24,11 +24,13 @@ Use tools only for authorized study and defensive practice. Do not scan systems 
 The existing Ubuntu WSL distribution is the build environment. Run these commands in Ubuntu:
 
     sudo apt update
-    sudo apt install --yes debian-archive-keyring live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools isolinux rsync cpio git
+    sudo apt install --yes debian-archive-keyring live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools isolinux rsync cpio git xz-utils
     cd /mnt/c/Users/HP/Documents/Codex/AstraOS/os
     sudo bash ./build.sh
 
 The build script copies the configuration to /var/tmp/astraos-live-build inside Ubuntu's Linux filesystem, builds there, and writes AstraOS-0.2.1-alpha-amd64.iso and its SHA-256 checksum to os/dist/. Previous images remain intact. Set ASTRAOS_BUILD_DIR to choose another Linux-filesystem build directory.
+
+The default build starts clean. To reuse an existing chroot and its package cache after an interrupted build, run `ASTRAOS_REUSE_CHROOT=true sudo --preserve-env=ASTRAOS_REUSE_CHROOT bash ./build.sh` from the `os/` directory. The build still regenerates the binary image.
 
 The build needs network access to Debian mirrors and several gigabytes of free space. Firewall and AppArmor behavior still needs validation in the rebuilt image and on physical hardware. No software can guarantee that an operating system is impossible to compromise. Review the package list and licenses before redistributing a build.
 
