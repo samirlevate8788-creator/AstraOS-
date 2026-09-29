@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Welcome to AstraOS Security Workstation
+Name=Welcome to AstraOS Security and Office Workstation
 Comment=Welcome to your AstraOS live desktop
 Exec=astraos-welcome
 OnlyShowIn=XFCE;

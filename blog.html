@@ -1,93 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Read AstraOS development notes, release updates, and progress on an ethical security learning desktop.">
-  <title>AstraOS Development Updates</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="assets/images/astraos-logo.png">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self' https://api.github.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AstraOS">
-  <meta property="og:title" content="AstraOS Development Updates">
-  <meta property="og:description" content="Read AstraOS development notes, release updates, and progress on an ethical security learning desktop.">
-  <meta property="og:url" content="https://samirlevate8788-creator.github.io/AstraOS-/blog.html">
-  <meta property="og:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
-  <meta property="og:image:alt" content="AstraOS Debian live desktop with the branded welcome screen">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AstraOS Development Updates">
-  <meta name="twitter:description" content="Read AstraOS development notes, release updates, and progress on an ethical security learning desktop.">
-  <meta name="twitter:image" content="https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg">
-
-  <link rel="canonical" href="https://samirlevate8788-creator.github.io/AstraOS-/blog.html">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="0; url=roadmap.html">
+  <link rel="canonical" href="roadmap.html">
+  <title>AstraOS</title>
 </head>
 <body>
-  <header><nav class="navbar">
-    <div class="logo"><a href="index.html">AstraOS</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-      <li><a href="documentation.html">Documentation</a></li><li><a href="team.html">Founder</a></li>
-      <li><a href="roadmap.html">Roadmap</a></li><li><a href="contribute.html">Contribute</a></li>
-      <li><a href="download.html">Download</a></li><li><a href="faq.html">FAQ</a></li>
-      <li><a class="active" href="blog.html">Updates</a></li><li><a href="contact.html">Contact</a></li>
-    <li><a href="security-lab.html">Security Lab</a></li></ul>
-    <a class="github-btn" href="https://github.com/samirlevate8788-creator/AstraOS-" target="_blank" rel="noopener noreferrer">GitHub</a>
-  </nav></header>
-  <main>
-    <section class="hero about-hero"><div class="hero-content">
-      <p class="release-kicker">PROJECT UPDATES</p><h1>AstraOS <span>Build Log</span></h1>
-      <p>Release notes and practical progress from the AstraOS project.</p>
-    </div></section>
-    <section class="documentation">
-      <article class="doc-card">
-        <p class="release-kicker">28 SEPTEMBER 2026 · 0.2.0-ALPHA SOURCE IN DEVELOPMENT</p>
-        <h2>Ethical Security Lab and website hardening</h2>
-        <p>The source tree now includes a defensive security tool set, an offline local-lab guide, AstraOS welcome-screen access to the guide, and updated boot and desktop branding. The website now has privacy and terms pages, optional analytics consent, a custom 404 page, per-page search and social metadata, and improved form behavior.</p>
-        <p>This is source work only. The downloadable ISO is still v0.1.1; the new configuration has not yet been built into a release ISO.</p>
-        <a class="primary-btn" href="security-lab.html">Open the Ethical Security Lab guide</a>
-      </article>
-      <article class="doc-card">
-        <p class="release-kicker">27 SEPTEMBER 2026 · V0.1.1 BOOT HOTFIX</p>
-        <h2>AstraOS boots in BIOS and UEFI virtual machines</h2>
-        <p>AstraOS 0.1.1 fixes the BIOS Syslinux modules and UEFI boot image packaging for the Debian 13 live desktop. QEMU/KVM tests reached the branded XFCE desktop in both BIOS and UEFI modes, and the XFCE terminal opened successfully.</p>
-        <p>The image includes Firefox ESR, Mousepad, networking and disk tools, developer essentials, AstraOS wallpaper, boot menu and welcome app. It is still a live-only preview with no disk installer; the unsigned UEFI loader may require Secure Boot to be disabled. Testing on physical PCs remains open.</p>
-        <a class="primary-btn" href="download.html">Download AstraOS 0.1.1</a>
-      </article>
-      <div class="section-title"><h2>What comes next</h2><p>Check compatibility on physical PCs, then focus on AstraOS-specific tools.</p></div>
-      <div class="feature-container">
-        <article class="feature-card"><i class="fa-solid fa-vial"></i><h3>Hardware validation</h3><p>Test the image on representative physical PCs and record compatibility results.</p></article>
-        <article class="feature-card"><i class="fa-solid fa-sliders"></i><h3>Desktop utilities</h3><p>Develop an AstraOS settings panel, first-run flow and software installer.</p></article>
-        <article class="feature-card"><i class="fa-solid fa-book"></i><h3>Documentation</h3><p>Keep build, boot and troubleshooting instructions tied to the image people can download.</p></article>
-      </div>
-    </section>
-  </main>
-  <footer><div class="footer-content"><h2>AstraOS</h2><p>Build · Learn · Collaborate</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="documentation.html">Documentation</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="https://github.com/samirlevate8788-creator/AstraOS-">GitHub</a></div><p class="copyright">© 2026 AstraOS Project</p></div>  <div class="footer-legal-links"><a href="security-lab.html">Security Lab</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-</footer>
-  <script src="script.js" defer></script>
+  <p>This AstraOS page has moved. <a href="roadmap.html">Continue to the AstraOS site</a>.</p>
 </body>
 </html>

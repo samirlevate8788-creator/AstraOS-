@@ -1,6 +1,23 @@
-# AstraOS Security Workstation · Guided Local Lab
+# AstraOS Security + Office Workstation · Guided Local Lab
 
-AstraOS 0.2.0-alpha is a development source build for learning defensive security, application analysis, network visibility, and digital forensics. The public 0.1.1 ISO is still the previous desktop and does not include these additions. Do not describe this tool set as released until a new ISO has been built and validated.
+AstraOS 0.2.1-alpha is a development source build for office work, defensive security, application analysis, network visibility, and digital forensics. The public 0.1.1 ISO is still the previous desktop and does not include these additions. Do not describe this tool set as released until a new ISO has been built and validated.
+
+## Office and privacy tools
+
+- Firefox ESR includes uBlock Origin and tracking protection. Review a site's permissions before allowing camera, microphone, location, or notifications.
+- LibreOffice Writer, Calc, and Impress are available from the applications menu and welcome screen.
+- KeePassXC stores passwords in a local encrypted vault. Keep the master password private and back up the vault securely.
+- Synaptic is a graphical software manager. Package installation needs administrator approval and network access; changes in a live session disappear at shutdown.
+- GUFW gives a graphical view of the local firewall. AstraOS starts with an inbound-deny policy; review a rule before changing it.
+- Firejail can isolate an application you own. The guided example below disables network access for the sandboxed editor.
+- ClamAV is available for user-started malware scans. Its signature updater is not started in the background; refreshing signatures downloads data from the Internet.
+
+## Live account and data safety
+
+- The live username is `astra`. Debian Live's standard live password is `live`; AstraOS does not embed a private account password in the image. Treat that public default as public, and change it for the current session before using administrator commands: `passwd`.
+- A live session resets at shutdown. Copy work to storage you trust before powering off, and do not use a non-persistent live session for sensitive or irreplaceable data.
+- KeePassXC stores credentials in an encrypted vault. Protect the master password and keep any backup somewhere secure.
+- Avoid putting passwords, private keys, personal documents, or unredacted logs in a bug report.
 
 ## Scope and safety
 
@@ -38,6 +55,12 @@ Find sample paths on that same loopback site:
 
 These examples are scoped to 127.0.0.1. Do not substitute an address you do not own or have written permission to assess.
 
+### Web server checks · Nikto
+
+Nikto sends active test requests. Use it only against the built-in loopback site or another target you own and have written permission to assess:
+
+    nikto -h http://127.0.0.1:8765
+
 ## 3. Observe your own packets · tcpdump and Wireshark
 
 With the local site running, make a request in the browser and view only its loopback traffic:
@@ -70,6 +93,15 @@ If auditd is configured and has recorded events, view a local summary:
 
 A finding is a prompt to investigate, not proof of compromise. Do not enable firewall rules, jails, or audit settings on a remote system without authorization and a recovery plan.
 
+### Malware scan · ClamAV
+
+ClamAV is an on-demand file scanner. It is not real-time protection and cannot guarantee that a file is safe. Update its signatures when you choose to use network data, then scan files you own:
+
+    sudo freshclam
+    clamscan --infected --recursive "$HOME/Downloads"
+
+The signature update uses the Internet; scanning does not upload the selected files. Signatures and package changes are lost when the live session shuts down.
+
 ## 5. Application and binary analysis · Bandit, GDB, strace, ltrace, Binwalk
 
 Review Python source code that you wrote or may assess:
@@ -90,6 +122,10 @@ Inspect a firmware file you own or are allowed to analyze:
 
 Do not flash modified firmware to a device as part of this introductory exercise.
 
+For a private, network-isolated editor session on your own practice file:
+
+    firejail --private --net=none mousepad ./practice.txt
+
 ## 6. Forensics foundations · YARA, The Sleuth Kit, Foremost
 
 Use only training samples and disk images you own or have explicit permission to examine. Do not download, execute, or redistribute malware samples for this guide.
@@ -109,9 +145,10 @@ Keep an untouched source image. Work on a copy and record the file hash and step
 
 | Track | Tools | Learning goal |
 | --- | --- | --- |
-| Network visibility | Nmap, Gobuster, Wireshark, tcpdump | Inspect the built-in loopback site and traffic you generate |
-| Linux defense | Lynis, UFW, Fail2ban, auditd | Review hardening and local system events |
+| Network visibility | Nmap, Gobuster, Nikto, Wireshark, tcpdump | Inspect the built-in loopback site and traffic you generate |
+| Linux defense | Lynis, UFW, Fail2ban, auditd, ClamAV | Review hardening, local events, and on-demand file scans |
 | Application analysis | Bandit, GDB, strace, ltrace, Binwalk | Review your code, programs, and authorized firmware |
 | Forensics | YARA, The Sleuth Kit, Foremost | Learn file classification and image analysis on owned samples |
+| Desktop security | KeePassXC, Synaptic, GUFW, Firejail | Manage a local password vault, software, firewall, and app isolation |
 
 These tools have different licenses, capabilities, and limitations. Read each installed manual and upstream documentation before relying on results. AstraOS is a learning workstation, not a substitute for a security review or professional incident response.

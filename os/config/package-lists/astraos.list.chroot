@@ -1,4 +1,4 @@
-# AstraOS 0.2 ethical security learning desktop
+# AstraOS 0.2.1 ethical security and office desktop
 xfce4
 xfce4-goodies
 lightdm
@@ -16,12 +16,18 @@ libreoffice-calc
 libreoffice-impress
 hunspell-en-us
 fonts-liberation
+keepassxc
 
 # System and disk tools
 xfce4-taskmanager
+xfce4-settings
+pavucontrol
 gnome-disk-utility
 gparted
+synaptic
+gufw
 sudo
+user-setup
 isolinux
 syslinux-utils
 
@@ -45,6 +51,7 @@ python3-tk
 # Ethical cybersecurity study tools. Use only on systems you own or have
 # explicit written permission to assess. No password-cracking or exploit kits.
 nmap
+nikto
 wireshark
 tcpdump
 lynis
@@ -54,6 +61,10 @@ fail2ban
 auditd
 apparmor
 apparmor-utils
+firejail
+firejail-profiles
+clamav
+clamav-freshclam
 
 # AstraOS look and feel
 plymouth

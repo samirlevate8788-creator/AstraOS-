@@ -1,0 +1,21 @@
+{
+  "policies": {
+    "DisableTelemetry": true,
+    "DisableFirefoxStudies": true,
+    "EnableTrackingProtection": {
+      "Value": true,
+      "Locked": false,
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "EmailTracking": true
+    },
+    "PopupBlocking": {
+      "Default": true
+    },
+    "Permissions": {
+      "Notifications": {
+        "BlockNewRequests": true
+      }
+    }
+  }
+}

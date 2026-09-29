@@ -26,6 +26,8 @@ TOOLS = [
      "nmap -sV -p 8765 127.0.0.1"),
     ("Network", "Gobuster", "Discover the sample paths on the local AstraOS practice site only.",
      "gobuster dir -u http://127.0.0.1:8765 -w /usr/share/astraos/lab-wordlist.txt"),
+    ("Web Lab", "Nikto", "Check the built-in loopback practice site only. Nikto sends active test requests; never use it on an unapproved host.",
+     "nikto -h http://127.0.0.1:8765"),
     ("Network", "Wireshark", "Choose the lo interface and capture only requests you generate to 127.0.0.1:8765.",
      ""),
     ("Network", "tcpdump", "View packets for the loopback practice site. Packet capture can contain sensitive data.",
@@ -34,10 +36,14 @@ TOOLS = [
      "sudo lynis audit system --quick"),
     ("Defense", "UFW", "Read the current host firewall status before considering any changes.",
      "sudo ufw status verbose"),
+    ("Defense", "GUFW", "Open the graphical firewall manager. Changing rules can affect network access.",
+     "gufw"),
     ("Defense", "auditd", "View a summary only after the local audit service and rules are configured.",
      "sudo aureport --summary"),
     ("Defense", "Fail2ban", "Learn how local services use log-based protections. Review the guide before enabling a jail.",
      "sudo fail2ban-client status"),
+    ("Defense", "ClamAV", "Update malware signatures on demand, then scan your own Downloads folder. This is an on-demand scanner, not real-time protection.",
+     'sudo freshclam && clamscan --infected --recursive "$HOME/Downloads"'),
     ("AppSec", "Bandit", "Review Python source code that you own or have permission to assess.",
      "bandit -r ./your-python-project"),
     ("AppSec", "GDB", "Debug a program you wrote or are authorized to inspect.",
@@ -46,6 +52,12 @@ TOOLS = [
      "strace -f -o ./trace.txt ./your-own-program"),
     ("AppSec", "ltrace", "Observe library calls made by your own test program.",
      "ltrace ./your-own-program"),
+    ("Isolation", "Firejail", "Open your own text file in a private, network-isolated sandbox.",
+     "firejail --private --net=none mousepad ./practice.txt"),
+    ("Privacy", "KeePassXC", "Create a local encrypted password vault. Never share its master password or database key.",
+     "keepassxc"),
+    ("Desktop", "Synaptic", "Browse Debian packages. Installing software needs administrator approval and a network connection.",
+     "pkexec synaptic"),
     ("Firmware", "Binwalk", "Inspect firmware files you own or are explicitly allowed to analyze.",
      "binwalk ./owned-firmware.bin"),
     ("Forensics", "YARA", "Run a bundled harmless rule against bundled training text. AstraOS ships no malware samples.",
@@ -60,7 +72,7 @@ TOOLS = [
 class AstraOSToolkit:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("AstraOS Security Workstation")
+        self.root.title("AstraOS Security and Office Workstation")
         self.root.geometry("980x680")
         self.root.minsize(760, 560)
         self.root.configure(bg=NAVY)
@@ -74,9 +86,9 @@ class AstraOSToolkit:
     def _build(self):
         header = tk.Frame(self.root, bg=NAVY, padx=26, pady=22)
         header.pack(fill="x")
-        tk.Label(header, text="ASTRAOS  /  SECURITY WORKSTATION",
+        tk.Label(header, text="ASTRAOS  /  SECURITY + OFFICE WORKSTATION",
                  fg=CYAN, bg=NAVY, font=("Inter", 10, "bold")).pack(anchor="w")
-        tk.Label(header, text="Guided tools. Isolated practice.",
+        tk.Label(header, text="Guided tools. Safer defaults. Local practice.",
                  fg=WHITE, bg=NAVY, font=("Inter", 23, "bold")).pack(anchor="w", pady=(7, 0))
         tk.Label(header, text="Use only systems you own or have written authorization to assess.",
                  fg=ORANGE, bg=NAVY, font=("Inter", 10)).pack(anchor="w", pady=(5, 0))

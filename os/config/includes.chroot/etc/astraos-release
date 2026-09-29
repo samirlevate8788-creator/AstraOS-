@@ -1,6 +1,6 @@
 NAME="AstraOS"
-VERSION="0.2.0-alpha"
+VERSION="0.2.1-alpha"
 BASE="Debian GNU/Linux 13 (trixie)"
-EDITION="Security Workstation Live"
+EDITION="Security and Office Workstation Live"
 CHANNEL="Development"
 ARCH="amd64"

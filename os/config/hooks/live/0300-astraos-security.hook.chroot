@@ -11,3 +11,8 @@ for UNIT in /usr/lib/systemd/system/ufw.service /lib/systemd/system/ufw.service;
         break
     fi
 done
+
+# Keep ClamAV scans user-triggered in a live session. Running freshclam
+# manually lets users choose when to download virus signatures.
+mkdir -p /etc/systemd/system
+ln -sfn /dev/null /etc/systemd/system/clamav-freshclam.service
