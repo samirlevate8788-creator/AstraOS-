@@ -3183,8 +3183,13 @@ body.cyber-site::before {
         linear-gradient(90deg, rgba(105, 173, 214, .025) 1px, transparent 1px);
     background-size: 62px 62px;
     mask-image: linear-gradient(to bottom, black, transparent 80%);
+    animation: cyber-grid-drift 46s linear infinite;
     content: "";
     pointer-events: none;
+}
+
+@keyframes cyber-grid-drift {
+    to { background-position: 62px 62px; }
 }
 
 body.cyber-site p {
@@ -3308,6 +3313,24 @@ body.cyber-site p {
     gap: clamp(38px, 6vw, 88px);
     min-height: 680px;
     padding: 88px 0 70px;
+}
+
+.cyber-hero::before {
+    position: absolute;
+    z-index: -1;
+    inset: 5% -8% 10% 18%;
+    background:
+        linear-gradient(115deg, transparent 42%, rgba(102, 211, 242, .08) 49%, transparent 56%),
+        radial-gradient(ellipse at 70% 48%, rgba(39, 104, 169, .16), transparent 68%);
+    mask-image: radial-gradient(ellipse at 67% 48%, #000 10%, transparent 75%);
+    content: "";
+    pointer-events: none;
+    animation: cyber-scan-glow 12s ease-in-out infinite alternate;
+}
+
+@keyframes cyber-scan-glow {
+    from { opacity: .42; transform: translateX(-1.5%); }
+    to { opacity: .9; transform: translateX(1.5%); }
 }
 
 .cyber-atmosphere {
@@ -3546,7 +3569,7 @@ body.cyber-site p {
     z-index: 1;
     overflow: hidden;
     border: 1px solid rgba(152, 193, 224, .23);
-    border-radius: 14px;
+    border-radius: 16px;
     background: rgba(8, 16, 26, .96);
     box-shadow: 0 32px 90px rgba(0, 0, 0, .48), 0 0 70px rgba(59, 176, 225, .08);
     transform: rotateY(-4deg) rotateX(1deg);
@@ -4467,6 +4490,8 @@ body.cyber-site p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    body.cyber-site::before,
+    .cyber-hero::before,
     .cyber-atmosphere span,
     .cyber-hero-copy,
     .cyber-visual,

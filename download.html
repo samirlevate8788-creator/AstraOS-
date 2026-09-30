@@ -92,9 +92,10 @@
           <p class="release-note">This is an early pre-release. Try it in a virtual machine first and keep important data backed up. It runs live, has no disk installer, and session changes disappear at shutdown. The UEFI loader is unsigned; Secure Boot may need to be disabled.</p>
         </div>
         <div class="release-actions">
-          <p><strong>ISO size</strong><br>1.82 GiB</p>
-          <a class="primary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso" download>Download ISO</a>
-          <a class="secondary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso.sha256">Download SHA-256</a>
+          <p><strong>Download size</strong><br>1.82 GiB · one ZIP file</p>
+          <a class="primary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso.zip" download>Download full OS (.zip)</a>
+          <a class="secondary-btn" href="https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso.sha256.txt">Download SHA-256 file</a>
+          <p class="release-note">After downloading, extract the ZIP to get the complete AstraOS ISO. Verify the extracted ISO before writing it to USB.</p>
         </div>
       </div>
     </section>
@@ -106,12 +107,12 @@
     <section class="documentation">
       <div class="section-title">
         <h2>Verify the download</h2>
-        <p>Keep the ISO and checksum file in the same folder before checking.</p>
+        <p>Extract the ZIP first, then keep the ISO and downloaded SHA-256 text file in the same folder before checking.</p>
       </div>
       <div class="doc-card">
         <h3>SHA-256</h3>
         <p class="checksum"><code>63ecada609b406f819b0a765643d1d45ff7739b1ab186cae5f5ce569ad4a5cb2</code></p>
-        <pre><code>Linux / WSL:  sha256sum -c AstraOS-0.2.1-alpha-amd64.iso.sha256
+        <pre><code>Linux / WSL:  sha256sum -c AstraOS-0.2.1-alpha-amd64.iso.sha256.txt
 Windows:      certutil -hashfile AstraOS-0.2.1-alpha-amd64.iso SHA256</code></pre>
       </div>
     </section>
@@ -123,8 +124,8 @@ Windows:      certutil -hashfile AstraOS-0.2.1-alpha-amd64.iso SHA256</code></pr
       <div class="feature-container">
         <article class="feature-card">
           <i class="fa-solid fa-download"></i>
-          <h3>1. Download</h3>
-          <p>Save the ISO and checksum. Verify the SHA-256 value before writing the image.</p>
+          <h3>1. Download and extract</h3>
+          <p>Download the single ZIP file and extract it to get the complete ISO. Save the SHA-256 text file beside it and verify before writing the image.</p>
         </article>
         <article class="feature-card">
           <i class="fa-solid fa-usb"></i>

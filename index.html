@@ -39,13 +39,13 @@
           "description": "A Debian 13 amd64 live preview with an AstraOS-branded XFCE desktop, office apps and ethical security learning tools. Desktop startup is not yet verified.",
           "url": "https://samirlevate8788-creator.github.io/AstraOS-/",
           "image": "https://samirlevate8788-creator.github.io/AstraOS-/social/astraos-0.1.1-live-desktop-crop.jpg",
-          "downloadUrl": "https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso",
+          "downloadUrl": "https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso.zip",
           "author": { "@id": "https://samirlevate8788-creator.github.io/AstraOS-/samir.html#profile" },
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD",
-            "url": "https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso"
+            "url": "https://github.com/samirlevate8788-creator/AstraOS-/releases/download/v0.2.1-alpha/AstraOS-0.2.1-alpha-amd64.iso.zip"
           }
         },
         {
@@ -112,11 +112,8 @@
       </a>
       <ul class="nav-links">
         <li><a href="#platform">Platform</a></li>
-        <li><a href="#toolkit">Toolkit</a></li>
-        <li><a href="#workflow">How it works</a></li>
-
         <li><a href="security-lab.html">Security Lab</a></li>
-        <li><a href="documentation.html">Docs</a></li>
+        <li><a href="documentation.html">About</a></li>
       </ul>
       <div class="cyber-nav-actions">
 
@@ -129,14 +126,14 @@
     <section id="home" class="cyber-hero">
       <div class="cyber-atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="cyber-hero-copy">
-        <p class="cyber-kicker"><span class="status-light"></span> SECURITY + PRODUCTIVITY DESKTOP</p>
-        <h1>Do focused work.<br><span>Learn security safely.</span></h1>
-        <p class="cyber-lede">A Debian-based desktop bringing office work, development and ethical security study together. It pairs familiar desktop workflows with a local-only practice lab and clear privacy-first defaults.</p>
+        <p class="cyber-kicker"><span class="status-light"></span> A LINUX DESKTOP BY ASTRAOS</p>
+        <h1>Work simply.<br><span>Explore securely.</span></h1>
+        <p class="cyber-lede">AstraOS brings everyday office work, software development and responsible security learning into one Debian desktop, with a familiar Mac-inspired finish.</p>
         <div class="cyber-hero-actions">
-          <a class="cyber-button cyber-button-primary" href="security-lab.html">Explore the security lab <span aria-hidden="true">↗</span></a>
-          <a class="cyber-button cyber-button-quiet" href="download.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Preview ISO · 0.2.1-alpha</a>
+          <a class="cyber-button cyber-button-primary" href="download.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Download alpha</a>
+          <a class="cyber-button cyber-button-quiet" href="security-lab.html">Explore the security lab <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="cyber-release-note"><span class="release-dot"></span><span><strong>Preview status:</strong> AstraOS 0.2.1-alpha is available; BIOS boot menu appears in QEMU, but desktop startup is not verified.</span></div>
+        <div class="cyber-release-note"><span class="release-dot"></span><span><strong>Alpha preview:</strong> boot menu appears in QEMU; desktop startup and physical-PC compatibility are not yet verified. Try it in a virtual machine first.</span></div>
         <div class="cyber-metrics" aria-label="AstraOS project facts">
           <div><strong>Debian 13</strong><span>Linux base</span></div>
           <div><strong>XFCE</strong><span>Lightweight desktop</span></div>
@@ -204,30 +201,6 @@ baseline review · inspect report</pre>
       </div>
     </section>
 
-    <section class="cyber-section" id="everyday-work">
-      <div class="cyber-section-heading">
-        <div><p class="cyber-kicker">EVERYDAY WORK</p><h2>Office, browser,<br><span>and developer tools.</span></h2></div>
-        <p>The 0.2.1-alpha preview combines everyday work apps with a Linux security-learning environment. Desktop startup remains unverified, so try it in a virtual machine first.</p>
-      </div>
-      <div class="cyber-platform-grid">
-        <article class="cyber-feature"><span class="feature-number">01 / OFFICE</span><div class="feature-symbol">▤</div><h3>Write, calculate, present</h3><p>LibreOffice Writer, Calc and Impress cover documents, spreadsheets and presentations with common Microsoft Office file formats.</p></article>
-        <article class="cyber-feature"><span class="feature-number">02 / BROWSER</span><div class="feature-symbol">◉</div><h3>Browse with fewer distractions</h3><p>Firefox ESR with Debian's uBlock Origin extension package for blocking many ads and trackers. Filter lists and sites can still change.</p></article>
-        <article class="cyber-feature"><span class="feature-number">03 / WORKFLOW</span><div class="feature-symbol">⌘</div><h3>A familiar desktop feel</h3><p>Use windows, workspaces, a dock-like launcher and standard keyboard shortcuts. AstraOS remains Debian Linux; it does not contain Windows or macOS.</p></article>
-      </div>
-    </section>
-
-    <section class="cyber-section cyber-security-baseline" id="privacy-security">
-      <div class="cyber-section-heading">
-        <div><p class="cyber-kicker">SECURE DEFAULTS · NOT MAGIC</p><h2>Reduce risk.<br><span>Keep control.</span></h2></div>
-        <p>A layered baseline makes common attacks harder, but no operating system can promise that nobody will ever break in. Keep software updated and protect your accounts and files.</p>
-      </div>
-      <div class="cyber-proof cyber-security-points">
-        <div><span class="proof-icon">01</span><p><strong>Inbound firewall</strong><br>UFW defaults to blocking unsolicited incoming connections.</p></div>
-        <div><span class="proof-icon">02</span><p><strong>AppArmor</strong><br>Linux application confinement is included and enabled in the boot configuration.</p></div>
-        <div><span class="proof-icon">03</span><p><strong>Website stays quiet</strong><br>No analytics, cookie banner or startup overlay on the redesigned site.</p></div>
-      </div>
-    </section>
-
     <section id="toolkit" class="cyber-section cyber-toolkit-section">
       <div class="cyber-section-heading">
         <div><p class="cyber-kicker">TOOLS WITH CONTEXT</p><h2>One system.<br><span>Four learning tracks.</span></h2></div>
@@ -240,19 +213,6 @@ baseline review · inspect report</pre>
         <article class="cyber-track"><span class="track-index">TRACK / 04</span><div class="track-glyph">⬡</div><h3>Linux defense</h3><p>Lynis · UFW · auditd · Fail2ban</p><span class="track-scope">Review before changing settings</span></article>
       </div>
       <div class="cyber-scope-note"><span class="scope-shield">✓</span><p><strong>Authorized learning only.</strong> No public-target scanning, credential guessing, traffic interception, or automated exploitation is built into the guided examples.</p><a href="terms.html">Read the usage rules</a></div>
-    </section>
-
-    <section id="workflow" class="cyber-section cyber-workflow">
-      <div class="cyber-section-heading">
-        <div><p class="cyber-kicker">START SMALL · LEARN DEEPLY</p><h2>A lab flow that<br><span>keeps scope clear.</span></h2></div>
-        <p>The toolkit gives you a place to begin, explains where a command is meant to run, and keeps the practice web target on the local machine.</p>
-      </div>
-      <div class="cyber-steps">
-        <article><span>01</span><h3>Start the local target</h3><p>Open AstraOS Security Toolkit and start the sample site. It listens only at 127.0.0.1:8765.</p></article>
-        <article><span>02</span><h3>Choose a learning tool</h3><p>Read the tool description and copy a loopback or owned-file example. The toolkit never runs a command for you.</p></article>
-        <article><span>03</span><h3>Review what happened</h3><p>Explain the output, stop the target, and write down what you learned. For other systems, get written authorization first.</p></article>
-      </div>
-      <a class="cyber-text-link" href="security-lab.html">Open the complete lab guide <span aria-hidden="true">↗</span></a>
     </section>
 
     <section id="roadmap" class="cyber-release-panel">
