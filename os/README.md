@@ -2,7 +2,7 @@
 
 AstraOS is an educational Debian 13 (trixie) amd64 live desktop. The desktop uses a familiar taskbar and quick-launch layout, a consistent dark theme, and Linux-first settings while keeping all software open source. It combines office work with an ethical security-learning workstation: LibreOffice, Firefox ESR with uBlock Origin and privacy defaults, a software center, password vault, firewall GUI, app sandbox, guided security toolkit, and a static loopback-only practice site. It does not bundle Windows or macOS software or claim to be based on those operating systems.
 
-**Release status:** the published download is still AstraOS 0.1.1. The 0.2.1-alpha additions in this source tree are development changes and are not in that existing ISO. Build and validate a new image before calling it a release. Physical PC compatibility remains unverified. The image is live-only and has no disk installer; its UEFI loader is unsigned, so Secure Boot may need to be disabled.
+**Release status:** AstraOS 0.2.1-alpha is an early pre-release. The single downloadable ZIP contains the complete ISO and is provided through the GitHub Release; extract it before writing the image to USB. The ISO checksum is published alongside it. BIOS/UEFI boot entries are present, but desktop startup did not render in our QEMU check and physical PC compatibility is unverified. The image is live-only with no disk installer; its UEFI loader is unsigned, so Secure Boot may need to be disabled.
 
 ## Development toolkit
 
@@ -17,7 +17,7 @@ AstraOS is an educational Debian 13 (trixie) amd64 live desktop. The desktop use
 - Host baseline: AppArmor, a deny-inbound UFW policy, and sysctl settings for safer defaults.
 - AstraOS Security Toolkit starts a static local target on 127.0.0.1:8765 and copies guided examples without executing them. Nmap, Gobuster, and Nikto examples are fixed to that local target. The YARA track includes a harmless rule and text marker, not malware.
 
-Use tools only for authorized study and defensive practice. Do not scan systems or networks without explicit permission, capture other people's traffic, or guess credentials. Read the offline guide at config/includes.chroot/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md before using tools. The public v0.1.1 image does not include this development toolkit.
+Use tools only for authorized study and defensive practice. Do not scan systems or networks without explicit permission, capture other people's traffic, or guess credentials. Read the offline guide at config/includes.chroot/usr/share/doc/astraos/ETHICAL-SECURITY-LAB.md before using tools. The 0.2.1-alpha preview includes this development toolkit.
 
 ## Build on this Windows PC
 
@@ -45,9 +45,9 @@ The build needs network access to Debian mirrors and several gigabytes of free s
 
 AstraOS uses Debian packages and their respective licenses. It does not include Windows or macOS binaries, paid media, or Android/mod APKs. Review each package's license before redistribution. Firewall defaults, malware scans, and browser protections reduce some risks; they cannot promise zero bugs, zero attacks, or absolute privacy.
 
-## Try the currently published image
+## Try AstraOS 0.2.1-alpha
 
-The existing os/dist/AstraOS-0.1.1-amd64.iso is the previous basic live desktop. Write it to an 8 GB or larger USB drive with an image-writing utility, then choose that drive in the PC's firmware boot menu. Writing an image erases the selected USB drive. AstraOS runs as a live desktop and does not install onto the internal drive. The UEFI loader is unsigned, so Secure Boot may need to be disabled.
+Download the single ZIP asset from the v0.2.1-alpha GitHub Release and extract it to get `AstraOS-0.2.1-alpha-amd64.iso` and its `.sha256` file. Verify the ISO checksum before writing it to an 8 GB or larger USB drive with an image-writing utility. Writing an image erases the selected USB drive. AstraOS runs as a live session and does not install to the internal drive. Its UEFI loader is unsigned, so Secure Boot may need to be disabled. Desktop startup and physical-PC compatibility remain unverified; test in a virtual machine first.
 
 ## Source layout
 
